@@ -31,18 +31,10 @@ public class MyMazeGenerator extends AMazeGenerator{
         {
             for(int j =0; j <columns; j++)
             {
-                List<> dirs = new ArrayList<>();
-                int direction;
+                char[] dirs = new char[2];
 
-                if(i == 0 && j == 0)
+                if(i == 0)
                 {
-                    if (Math.random() < 0.5)
-                    {
-                        direction = 2;
-                    } else
-                    {
-                        direction = 4;
-                    }
                 }
             }
         }

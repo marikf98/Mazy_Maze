@@ -1,6 +1,7 @@
 import algorithms.mazeGenerators.Maze;
 import algorithms.mazeGenerators.MazeGenerator;
 import algorithms.mazeGenerators.MyMazeGenerator;
+import algorithms.mazeGenerators.SimpleMazeGenerator;
 
 public class Main {
     public static void main(String[] args) {
@@ -8,7 +9,10 @@ public class Main {
 //        int [][] maz = new int [10][10];
         Maze maze;
         MyMazeGenerator gen = new MyMazeGenerator();
-        maze = gen.generate(5,5);
+        SimpleMazeGenerator simple = new SimpleMazeGenerator();
+//        maze = gen.generate(10,10);
+//        maze.display();
+        maze = simple.generate(5,5);
         maze.display();
     }
 }

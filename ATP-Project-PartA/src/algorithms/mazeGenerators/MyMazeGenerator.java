@@ -23,31 +23,36 @@ public class MyMazeGenerator extends AMazeGenerator{
                 locations[i][j] = new Tuple(i,j);
             }
         }
-
+        int random;
         for(int i = 0; i < rows; i++)
         {
             for(int j = 0; j < columns; j++)
             {
                 if(checkNeighbours(i,j,maze))
                 {
-                    if(!((i-2) < 0) && !((j-2) < 0))
+                    if(!((i-2) < 0 || (j-2) < 0))
                     {
-                        int random = rand.nextInt(2);
-                        if (random == 0) {
+                        random = rand.nextInt(2);
+                        if (random == 0)
+                        {
                             maze.setCellValue(locations[i - 1][j].first, locations[i - 1][j].second, 0);
                         }
                         else
                         {
                             maze.setCellValue(locations[i][j - 1].first, locations[i][j - 1].second, 0);
                         }
+
                         maze.setCellValue(locations[i][j].first, locations[i][j].second, 0);
                     }
+
+
                     if((j-2<0) && !(i - 2 < 0))
                     {
                         maze.setCellValue(locations[i-1][j].first,locations[i-1][j].second,0);
                         maze.setCellValue(locations[i][j].first, locations[i][j].second, 0);
                     }
                     if(!((j - 2 < 0) || (i - 2 < 0)))
+//                    if((j - 2 < 0) && !(i - 2 < 0))
                     {
                         maze.setCellValue(locations[i][j-1].first,locations[i][j-1].second,0);
                         maze.setCellValue(locations[i][j].first, locations[i][j].second, 0);
@@ -55,6 +60,21 @@ public class MyMazeGenerator extends AMazeGenerator{
                 }
             }
         }
+
+        if(rows % 2 == 0 && columns % 2 == 0)
+        {
+            random = rand.nextInt(2);
+            if(random == 0)
+            {
+                maze.setCellValue(rows-2,columns-1,0);
+            }
+            if(random == 1)
+            {
+                maze.setCellValue(rows-1,columns-2,0);
+            }
+            maze.setCellValue(rows-1,columns-1,0);
+        }
+
         maze.setCellValue(rows - 1,columns - 1,0);
         return maze;
     }
@@ -63,49 +83,41 @@ public class MyMazeGenerator extends AMazeGenerator{
     {
         try
         {if(maze.getCellValue(i-1,j-1) == 0) {return false;}}
-
         catch (ArrayIndexOutOfBoundsException e)
         {}
 
         try
         {if(maze.getCellValue(i-1,j) == 0) {return false;}}
-
         catch (ArrayIndexOutOfBoundsException e)
         {}
 
         try
         {if(maze.getCellValue(i-1,j+1) == 0) {return false;}}
-
         catch (ArrayIndexOutOfBoundsException e)
         {}
 
         try
         {if(maze.getCellValue(i,j-1) == 0) {return false;}}
-
         catch (ArrayIndexOutOfBoundsException e)
         {}
 
         try
         {if(maze.getCellValue(i,j+1) == 0) {return false;}}
-
         catch (ArrayIndexOutOfBoundsException e)
         {}
 
         try
         {if(maze.getCellValue(i+1,j-1) == 0) {return false;}}
-
         catch (ArrayIndexOutOfBoundsException e)
         {}
 
         try
         {if(maze.getCellValue(i+1,j) == 0) {return false;}}
-
         catch (ArrayIndexOutOfBoundsException e)
         {}
 
         try
         {if(maze.getCellValue(i+1,j+1) == 0) {return false;}}
-
         catch (ArrayIndexOutOfBoundsException e)
         {}
 

@@ -1,19 +1,11 @@
 package algorithms.mazeGenerators;
 
 public class Tuple {
-    private int value1;
-    private int value2;
+    public int first;
+    public int second;
 
-    public Tuple(int value1, int value2) {
-        this.value1 = value1;
-        this.value2 = value2;
-    }
-
-    public int getValue1() {
-        return value1;
-    }
-
-    public int getValue2() {
-        return value2;
+    public Tuple(int first, int second) {
+        this.first = first;
+        this.second = second;
     }
 }

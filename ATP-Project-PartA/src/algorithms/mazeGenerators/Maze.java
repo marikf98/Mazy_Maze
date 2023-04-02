@@ -1,5 +1,8 @@
 package algorithms.mazeGenerators;
 
+import java.awt.*;
+import java.util.Arrays;
+
 public class Maze {
     /** Maze indexing :
      * 0 - pass
@@ -31,5 +34,36 @@ public class Maze {
     public void setCellValue (int i, int j, int val)
     {
         this.maze[i][j] = val;
+    }
+    public int getRowsLength(){return maze.length;}
+
+    public int getColumnsLength(){return maze[0].length;}
+
+    public void display() {
+        int width = maze[0].length;
+        int height = maze.length;
+        for(int i = 0; i < height; i++)
+        {
+            for(int j = 0; j < width; j++)
+            {
+                System.out.println(maze[i][j]);
+            }
+            System.out.println();
+        }
+
+    }
+
+
+    public void printMaze() {
+        for (int[] row : maze) {
+            for (int cell : row) {
+                if (cell == 0) {
+                    System.out.print(" ");
+                } else {
+                    System.out.print("X");
+                }
+            }
+            System.out.println();
+        }
     }
 }

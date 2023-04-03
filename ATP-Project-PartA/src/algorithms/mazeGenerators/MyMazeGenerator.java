@@ -9,8 +9,8 @@ public class MyMazeGenerator extends AMazeGenerator{
         int [][] grid = new int[rows][columns];
         Maze maze = new Maze(grid);
         maze.setCellValue(0,0,0);
-        Tuple[][] locations = new Tuple[rows][columns];
-        locations[0][0] = new Tuple(0,0);
+        Position[][] locations = new Position[rows][columns];
+        locations[0][0] = new Position(0,0);
         for(int i = 0; i < rows; i++)
         {
             for(int j = 0; j < columns; j ++)
@@ -20,7 +20,7 @@ public class MyMazeGenerator extends AMazeGenerator{
                     continue;
                 }
                 maze.setCellValue(i,j,1);
-                locations[i][j] = new Tuple(i,j);
+                locations[i][j] = new Position(i,j);
             }
         }
         int random;
@@ -35,27 +35,27 @@ public class MyMazeGenerator extends AMazeGenerator{
                         random = rand.nextInt(2);
                         if (random == 0)
                         {
-                            maze.setCellValue(locations[i - 1][j].first, locations[i - 1][j].second, 0);
+                            maze.setCellValue(locations[i - 1][j].getRowIndex(), locations[i - 1][j].getColumnIndex(), 0);
                         }
                         else
                         {
-                            maze.setCellValue(locations[i][j - 1].first, locations[i][j - 1].second, 0);
+                            maze.setCellValue(locations[i][j - 1].getRowIndex(), locations[i][j - 1].getColumnIndex(), 0);
                         }
 
-                        maze.setCellValue(locations[i][j].first, locations[i][j].second, 0);
+                        maze.setCellValue(locations[i][j].getRowIndex(), locations[i][j].getColumnIndex(), 0);
                     }
 
 
                     if((j-2<0) && !(i - 2 < 0))
                     {
-                        maze.setCellValue(locations[i-1][j].first,locations[i-1][j].second,0);
-                        maze.setCellValue(locations[i][j].first, locations[i][j].second, 0);
+                        maze.setCellValue(locations[i-1][j].getRowIndex(),locations[i-1][j].getColumnIndex(),0);
+                        maze.setCellValue(locations[i][j].getRowIndex(), locations[i][j].getColumnIndex(), 0);
                     }
                     if(!((j - 2 < 0) || (i - 2 < 0)))
 //                    if((j - 2 < 0) && !(i - 2 < 0))
                     {
-                        maze.setCellValue(locations[i][j-1].first,locations[i][j-1].second,0);
-                        maze.setCellValue(locations[i][j].first, locations[i][j].second, 0);
+                        maze.setCellValue(locations[i][j-1].getRowIndex(),locations[i][j-1].getColumnIndex(),0);
+                        maze.setCellValue(locations[i][j].getRowIndex(), locations[i][j].getColumnIndex(), 0);
                     }
                 }
             }
@@ -83,42 +83,42 @@ public class MyMazeGenerator extends AMazeGenerator{
     {
         try
         {if(maze.getCellValue(i-1,j-1) == 0) {return false;}}
-        catch (ArrayIndexOutOfBoundsException e)
+        catch (ArrayIndexOutOfBoundsException ignored)
         {}
 
         try
         {if(maze.getCellValue(i-1,j) == 0) {return false;}}
-        catch (ArrayIndexOutOfBoundsException e)
+        catch (ArrayIndexOutOfBoundsException ignored)
         {}
 
         try
         {if(maze.getCellValue(i-1,j+1) == 0) {return false;}}
-        catch (ArrayIndexOutOfBoundsException e)
+        catch (ArrayIndexOutOfBoundsException ignored)
         {}
 
         try
         {if(maze.getCellValue(i,j-1) == 0) {return false;}}
-        catch (ArrayIndexOutOfBoundsException e)
+        catch (ArrayIndexOutOfBoundsException ignored)
         {}
 
         try
         {if(maze.getCellValue(i,j+1) == 0) {return false;}}
-        catch (ArrayIndexOutOfBoundsException e)
+        catch (ArrayIndexOutOfBoundsException ignored)
         {}
 
         try
         {if(maze.getCellValue(i+1,j-1) == 0) {return false;}}
-        catch (ArrayIndexOutOfBoundsException e)
+        catch (ArrayIndexOutOfBoundsException ignored)
         {}
 
         try
         {if(maze.getCellValue(i+1,j) == 0) {return false;}}
-        catch (ArrayIndexOutOfBoundsException e)
+        catch (ArrayIndexOutOfBoundsException ignored)
         {}
 
         try
         {if(maze.getCellValue(i+1,j+1) == 0) {return false;}}
-        catch (ArrayIndexOutOfBoundsException e)
+        catch (ArrayIndexOutOfBoundsException ignored)
         {}
 
         return true;

@@ -1,19 +1,23 @@
 import algorithms.mazeGenerators.Maze;
 import algorithms.mazeGenerators.MyMazeGenerator;
 import algorithms.mazeGenerators.SimpleMazeGenerator;
+import algorithms.search.*;
 
 public class Main {
     public static void main(String[] args) {
-//        System.out.println("Hello world!");
-//        int [][] maz = new int [10][10];
         Maze maze;
         MyMazeGenerator gen = new MyMazeGenerator();
-        SimpleMazeGenerator simple = new SimpleMazeGenerator();
-        maze = gen.generate(10,10);
+//        SimpleMazeGenerator simple = new SimpleMazeGenerator();
+        maze = gen.generate(5,5);
 //        maze = simple.generate(10,10);
         maze.print();
         System.out.println(maze.getStartPosition());
         System.out.println(maze.getGoalPosition());
+        BreadthFirstSearch searcher = new BreadthFirstSearch();
+        SearchableMaze searchableMaze = new SearchableMaze(maze);
+//        DepthFirstSearch searcher = new DepthFirstSearch()
+        Solution solution = searcher.solve(searchableMaze);
+        System.out.println();
     }
 }
 //

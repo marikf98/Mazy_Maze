@@ -3,10 +3,11 @@ package algorithms.search;
 import java.util.*;
 
 public class BreadthFirstSearch extends ASearchingAlgorithm{
-    private Queue<AState> collection;
+    //protected Queue<AState> collection;
     public BreadthFirstSearch() {
         super();
-        this.collection = new LinkedList<AState>();
+//        this.collection = (Queue<AState>)this.collection;
+        this.collection =  new LinkedList<AState>();
     }
 
     @Override
@@ -21,7 +22,8 @@ public class BreadthFirstSearch extends ASearchingAlgorithm{
         while(collection.size() != 0) // maybe this should consider adding queue.size() != 0 && !maze.isSolved()
         {
             prev = temp;
-            temp = collection.poll();
+
+            temp = ((Queue<AState>)collection).poll();
             if(!temp.isVisited())
             {
                 temp.setVisited();
@@ -35,11 +37,19 @@ public class BreadthFirstSearch extends ASearchingAlgorithm{
 
                 ArrayList<AState> possibleMoves = new ArrayList<>();
                 possibleMoves = maze.getAllPossibleStates((MazeState) temp);
-                collection.addAll(possibleMoves);
                 for(AState state: possibleMoves)
                 {
                     state.setPrev(temp);
+                    if(state.getDiagonalMove())
+                    {
+                        state.setCost(temp.getCost() + 15);
+                    }
+                    else
+                    {
+                        state.setCost(temp.getCost() + 10);
+                    }
                 }
+                collection.addAll(possibleMoves);
             }
         }
 

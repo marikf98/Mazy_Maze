@@ -105,6 +105,7 @@ public class SearchableMaze implements ISearchable{
                 possibleMoves.add(visitedMatrix[row-1][column-1]);
                 counter ++;
                 flagMatrix[row-1][column-1] = 1;
+                visitedMatrix[row-1][column-1].setDiagonalMove();
                 //visitedMatrix[row-1][column-1].setVisited();
             }
         }
@@ -120,6 +121,7 @@ public class SearchableMaze implements ISearchable{
             {
                 possibleMoves.add(visitedMatrix[row-1][column-1]);
                 flagMatrix[row-1][column-1] = 1;
+                visitedMatrix[row-1][column-1].setDiagonalMove();
                 //visitedMatrix[row-1][column-1].setVisited();
             }
         }
@@ -137,6 +139,7 @@ public class SearchableMaze implements ISearchable{
             {
                 possibleMoves.add(visitedMatrix[row-1][column+1]);
                 flagMatrix[row-1][column+1] = 1;
+                visitedMatrix[row-1][column+1].setDiagonalMove();
                 counter ++;
                 //visitedMatrix[row-1][column+1].setVisited();
             }
@@ -152,6 +155,7 @@ public class SearchableMaze implements ISearchable{
             {
                 possibleMoves.add(visitedMatrix[row-1][column+1]);
                 flagMatrix[row-1][column+1] = 1;
+                visitedMatrix[row-1][column+1].setDiagonalMove();
                 //visitedMatrix[row-1][column+1].setVisited();
             }
         }
@@ -168,6 +172,7 @@ public class SearchableMaze implements ISearchable{
             {
                 possibleMoves.add(visitedMatrix[row+1][column-1]);
                 flagMatrix[row+1][column-1] = 1;
+                visitedMatrix[row+1][column-1].setDiagonalMove();
                 counter ++;
                 //visitedMatrix[row+1][column-1].setVisited();
             }
@@ -183,6 +188,7 @@ public class SearchableMaze implements ISearchable{
             {
                 possibleMoves.add(visitedMatrix[row+1][column-1]);
                 flagMatrix[row+1][column-1] = 1;
+                visitedMatrix[row+1][column-1].setDiagonalMove();
                 //visitedMatrix[row+1][column-1].setVisited();
             }
         }
@@ -199,6 +205,7 @@ public class SearchableMaze implements ISearchable{
                 {
                 possibleMoves.add(visitedMatrix[row+1][column+1]);
                 flagMatrix[row+1][column+1] = 1;
+                visitedMatrix[row+1][column+1].setDiagonalMove();
                 counter ++;
                 //visitedMatrix[row+1][column+1].setVisited();
             }
@@ -214,6 +221,7 @@ public class SearchableMaze implements ISearchable{
             {
                 possibleMoves.add(visitedMatrix[row+1][column+1]);
                 flagMatrix[row+1][column+1] = 1;
+                visitedMatrix[row+1][column+1].setDiagonalMove();
                 //visitedMatrix[row+1][column+1].setVisited();
             }
         }

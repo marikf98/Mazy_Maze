@@ -8,6 +8,7 @@ public class DepthFirstSearch extends ASearchingAlgorithm{
     private Stack<AState> collection;
 
     public DepthFirstSearch() {
+        super();
         this.collection = new Stack<>();
     }
 
@@ -39,6 +40,15 @@ public class DepthFirstSearch extends ASearchingAlgorithm{
                 for(AState state: neighbours)
                 {
                     state.setPrev(temp);
+                    if(state.getDiagonalMove())
+                    {
+                        state.setCost(temp.getCost() + 15);
+                    }
+                    else
+                    {
+                        state.setCost(temp.getCost() + 10);
+                    }
+
                 }
                 for(AState neighbour : neighbours)
                 {

@@ -1,10 +1,16 @@
 package algorithms.search;
 
+import java.util.Comparator;
+
+//public abstract class AState implements Comparator<AState> {
 public abstract class AState {
+
     private boolean visited;
     private AState prev;
     private int cost;
     private String location;
+    private boolean m_isDiagonalMove;
+
 
     public AState(String location) {
         this.location = location;
@@ -37,7 +43,6 @@ public abstract class AState {
         {
             this.prev = prev;
         }
-        return;
     }
 
     public int getCost() {
@@ -63,7 +68,9 @@ public abstract class AState {
 
     }
 
+//    public abstract int compare(AState first, AState second);
+
     public abstract void setDiagonalMove();
-    public abstract void getDiagonalMove();
+    public abstract boolean getDiagonalMove();
 
 }

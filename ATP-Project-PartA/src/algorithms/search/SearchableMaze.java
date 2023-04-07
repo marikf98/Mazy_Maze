@@ -10,6 +10,7 @@ public class SearchableMaze implements ISearchable{
     private MazeState[][] visitedMatrix;
     private int [][] flagMatrix;
 
+
     public SearchableMaze(Maze maze) {
         this.maze = maze;
         this.solved = false;
@@ -26,6 +27,29 @@ public class SearchableMaze implements ISearchable{
         flagMatrix[0][0] = 1;
     }
 
+    public int getRowsLength() {return this.maze.getRowsLength();}
+    public int getColumnsLength(){return this.maze.getColumnsLength();}
+    public void setUnvisited()
+    {
+        for(int i = 0; i < maze.getRowsLength(); i++)
+        {
+            for(int j = 0; j < maze.getColumnsLength(); j++)
+            {
+                if(i == 0 && j == 0)
+                {
+                    visitedMatrix[i][j].setUnVisited();
+                    visitedMatrix[i][j].setPrev(null);
+                    continue;
+                }
+                visitedMatrix[i][j].setUnVisited();
+                visitedMatrix[i][j].setPrev(null);
+                flagMatrix[i][j] = 0;
+
+            }
+        }
+    }
+
+
     public ArrayList<AState> getAllPossibleStates(MazeState mState)
     {
         ArrayList<AState> possibleMoves = new ArrayList<>();
@@ -35,7 +59,7 @@ public class SearchableMaze implements ISearchable{
 
         try
         {
-            /** up **/
+            /** own **/
 //            if(maze.getCellValue(row+1,column) == 0 && !visitedMatrix[row+1][column].isVisited() && visitedMatrix[row+1][column] != mState)
             if(maze.getCellValue(row+1,column) == 0 && flagMatrix[row+1][column] == 0)
             {
@@ -50,7 +74,7 @@ public class SearchableMaze implements ISearchable{
 
         try
         {
-            /** down **/
+            /** up **/
 //            if(maze.getCellValue(row-1,column) == 0 && !visitedMatrix[row-1][column].isVisited() && visitedMatrix[row-1][column] != mState)
             if(maze.getCellValue(row-1,column) == 0 && flagMatrix[row-1][column] == 0)
 

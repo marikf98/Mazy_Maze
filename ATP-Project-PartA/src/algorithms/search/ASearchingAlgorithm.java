@@ -36,4 +36,9 @@ public abstract class ASearchingAlgorithm implements ISearchingAlgorithm {
         Collections.reverse(solution);
         return solution;
     }
+
+    public void resetMaze(ISearchable maze)
+    {
+        ((SearchableMaze) maze).setUnvisited();
+    }
 }

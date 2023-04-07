@@ -53,6 +53,8 @@ public class BreadthFirstSearch extends ASearchingAlgorithm{
             }
         }
 
+
+
 //        while(temp != null)
 //        {
 //            solution.add(temp);
@@ -61,7 +63,10 @@ public class BreadthFirstSearch extends ASearchingAlgorithm{
 //
 //        Collections.reverse(solution);
 //        return new Solution(solution);
-        return new Solution(getPath(temp));
+        startNode.setPrev(null);
+        Solution sol = new Solution(getPath(temp));
+        resetMaze(maze);
+        return sol;
     }
 
 

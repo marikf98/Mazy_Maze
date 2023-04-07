@@ -26,11 +26,11 @@ class StateComparator implements Comparator<AState>
     public int compare(AState first, AState second) {
         if(first.getCost() < second.getCost())
         {
-            return -1;
+            return 1;
         }
         if(first.getCost() > second.getCost())
         {
-            return 1;
+            return -1;
         }
         else
         {

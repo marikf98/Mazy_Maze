@@ -66,7 +66,10 @@ public class DepthFirstSearch extends ASearchingAlgorithm{
 //            temp = temp.getPrev();
 //        }
 //        Collections.reverse(inReverse);
-        return new Solution(getPath(temp));
+        startNode.setPrev(null);
+        Solution sol = new Solution(getPath(temp));
+        resetMaze(maze);
+        return sol;
     }
 
     @Override

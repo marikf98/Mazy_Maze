@@ -34,6 +34,8 @@ public abstract class AState {
         this.visited = true;
     }
 
+    public void setUnVisited(){this.visited = false;}
+
     public AState getPrev() {
         return prev;
     }
@@ -73,4 +75,9 @@ public abstract class AState {
     public abstract void setDiagonalMove();
     public abstract boolean getDiagonalMove();
 
+    @Override
+    public String toString() {
+        return location;
+
+    }
 }

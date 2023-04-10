@@ -68,7 +68,7 @@ public class Maze {
                 }
                 else
                 {
-                    System.out.print(maze[i][j]);
+                    System.out.print(" " + maze[i][j] + " ");
                 }
             }
             System.out.println("║");

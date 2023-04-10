@@ -5,8 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2da5225f-907e-4b23-8e6e-d618612ed3cb" name="Changes" comment="Fixed some bugs. all the moodle test are successful">
+      <change afterPath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/mazeGenerators/KrusKalGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ATP-Project-PartA/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartA/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/mazeGenerators/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/mazeGenerators/Maze.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/mazeGenerators/MyMazeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/mazeGenerators/MyMazeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/mazeGenerators/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/mazeGenerators/Position.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ATP-Project-PartA/src/test/RunMazeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartA/src/test/RunMazeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/mazeGenerators/Maze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/mazeGenerators/Maze.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/mazeGenerators/MyMazeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/mazeGenerators/MyMazeGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/mazeGenerators/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/mazeGenerators/Position.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/test/RunMazeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/test/RunMazeGenerator.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +59,7 @@
       <recent name="C:\Users\marik\Documents\GitHub\Mazy_Maze\src\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.RunMazeGenerator">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="ATP-Project-PartA" />
@@ -85,8 +95,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.RunMazeGenerator" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.RunSearchOnMaze" />
       </list>
     </recent_temporary>
@@ -188,26 +198,30 @@
           <line>255</line>
           <option name="timeStamp" value="61" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/MazeState.java</url>
           <line>65</line>
           <option name="timeStamp" value="88" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/Main.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="127" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/test/RunSearchOnMaze.java</url>
           <line>12</line>
           <option name="timeStamp" value="129" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/test/RunSearchOnMaze.java</url>
           <line>13</line>
           <option name="timeStamp" value="147" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/Main.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="179" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="161" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -215,6 +229,7 @@
         <watch expression="((MazeState)temp).isGoal" custom="algorithms.search.MazeState" />
         <watch expression="temp" />
         <watch expression="possibleMoves.get(1)" />
+        <watch expression="edges" />
       </configuration>
     </watches-manager>
   </component>

@@ -138,8 +138,25 @@ public class KrusKalGenerator extends AMazeGenerator{
 
             }
         }
-
+        int [][] tempGrid = copyGrid(grid);
+        maze = new Maze(tempGrid);
+        maze.setCellValue(0,0,0);
+        maze.setCellValue(originalRows - 1, originalColumns - 1, 0);
         return maze;
+
+    }
+
+    private int[][] copyGrid(int [][] grid)
+    {
+        int [][] copyGrid = new int[originalRows][originalColumns];
+        for(int i = 0; i < originalRows; i++)
+        {
+            for(int j = 0; j < originalColumns; j++)
+            {
+                copyGrid[i][j] = grid[i][j];
+            }
+        }
+        return copyGrid;
     }
 
 }

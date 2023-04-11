@@ -11,7 +11,7 @@ public class Main {
         KrusKalGenerator krus = new KrusKalGenerator();
 //        SimpleMazeGenerator simple = new SimpleMazeGenerator();
 //        maze = gen.generate(10,10);
-        maze = krus.generate(8,8);
+        maze = krus.generate(1000,1000);
 //        maze = simple.generate(10,10);
 //        maze.print();
 //        System.out.println(maze.getStartPosition());
@@ -25,8 +25,8 @@ public class Main {
 //        Solution BFSsolution = BFSsearcher.solve(BFSsearchableMaze);
 //        Solution DFSsolution = DFSsearcher.solve(DFSsearchableMaze);
 //        Solution BESTsolution = BESTsearcher.solve(BESTsearchableMaze);
-        System.out.println();
-        maze.print();
+        System.out.println("done");
+//        maze.print();
     }
 }
 

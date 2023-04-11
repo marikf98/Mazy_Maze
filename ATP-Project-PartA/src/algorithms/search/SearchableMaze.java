@@ -59,7 +59,7 @@ public class SearchableMaze implements ISearchable{
 
         try
         {
-            /** own **/
+            /** down **/
 //            if(maze.getCellValue(row+1,column) == 0 && !visitedMatrix[row+1][column].isVisited() && visitedMatrix[row+1][column] != mState)
             if(maze.getCellValue(row+1,column) == 0 && flagMatrix[row+1][column] == 0)
             {

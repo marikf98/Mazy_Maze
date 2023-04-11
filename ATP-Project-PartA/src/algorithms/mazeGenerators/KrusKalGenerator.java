@@ -5,8 +5,20 @@ import java.util.Collections;
 import java.util.Random;
 
 public class KrusKalGenerator extends AMazeGenerator{
+    private int originalRows;
+    private int originalColumns;
     @Override
     public Maze generate(int rows, int columns) {
+        this.originalRows = rows;
+        this.originalColumns = columns;
+        if(rows % 2 == 0)
+        {
+            rows ++;
+        }
+        if(columns % 2 == 0)
+        {
+            columns ++;
+        }
         Random rand = new Random();
         int [][] grid = new int[rows][columns];
         Maze maze = new Maze(grid);

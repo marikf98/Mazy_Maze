@@ -16,10 +16,10 @@ public class MyMazeGenerator extends AMazeGenerator{
         {
             for(int j = 0; j < columns; j ++)
             {
-//                if(i == 0 && j == 0)
-//                {
-//                    continue;
-//                }
+                if(i == 0 && j == 0)
+                {
+                    continue;
+                }
                 maze.setCellValue(i,j,1);
                 locations[i][j] = new Position(i,j);
             }

@@ -1,3 +1,4 @@
+import algorithms.mazeGenerators.KrusKalGenerator;
 import algorithms.mazeGenerators.Maze;
 import algorithms.mazeGenerators.MyMazeGenerator;
 import algorithms.mazeGenerators.SimpleMazeGenerator;
@@ -7,8 +8,10 @@ public class Main {
     public static void main(String[] args) {
         Maze maze;
         MyMazeGenerator gen = new MyMazeGenerator();
+        KrusKalGenerator krus = new KrusKalGenerator();
 //        SimpleMazeGenerator simple = new SimpleMazeGenerator();
-        maze = gen.generate(11,11);
+//        maze = gen.generate(10,10);
+        maze = krus.generate(8,8);
 //        maze = simple.generate(10,10);
 //        maze.print();
 //        System.out.println(maze.getStartPosition());
@@ -23,6 +26,7 @@ public class Main {
 //        Solution DFSsolution = DFSsearcher.solve(DFSsearchableMaze);
 //        Solution BESTsolution = BESTsearcher.solve(BESTsearchableMaze);
         System.out.println();
+        maze.print();
     }
 }
 

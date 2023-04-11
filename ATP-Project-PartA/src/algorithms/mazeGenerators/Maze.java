@@ -47,15 +47,15 @@ public class Maze {
 
     public Position getPosition(int i, int j) {return positionMatrix[i][j];}
     public void print() {
-        System.out.print("╔");
-        for (int j = 0; j <  maze[0].length; j++)
-        {
-            System.out.print("═");
-        }
-        System.out.println("╗");
+//        System.out.print("╔");
+//        for (int j = 0; j <  maze[0].length; j++)
+//        {
+//            System.out.print("═");
+//        }
+//        System.out.println("╗");
 
         for (int i = 0; i < maze.length; i++) {
-            System.out.print("║");
+//            System.out.print("║");
             for (int j = 0; j < maze[0].length; j++) {
                 if (i == 0 && j == 0)
                 {
@@ -71,14 +71,14 @@ public class Maze {
                     System.out.print(" " + maze[i][j] + " ");
                 }
             }
-            System.out.println("║");
+//            System.out.println("║");
         }
 
-        System.out.print("╚");
-        for (int j = 0; j < maze[0].length; j++) {
-            System.out.print("═");
-        }
-        System.out.println("╝");
+//        System.out.print("╚");
+//        for (int j = 0; j < maze[0].length; j++) {
+//            System.out.print("═");
+//        }
+//        System.out.println("╝");
     }
 
 

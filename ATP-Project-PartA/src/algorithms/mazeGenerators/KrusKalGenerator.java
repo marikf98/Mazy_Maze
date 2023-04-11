@@ -9,8 +9,10 @@ public class KrusKalGenerator extends AMazeGenerator{
     private int originalColumns;
     @Override
     public Maze generate(int rows, int columns) {
+
         this.originalRows = rows;
         this.originalColumns = columns;
+
         if(rows % 2 == 0)
         {
             rows ++;
@@ -19,12 +21,15 @@ public class KrusKalGenerator extends AMazeGenerator{
         {
             columns ++;
         }
+
         Random rand = new Random();
         int [][] grid = new int[rows][columns];
         Maze maze = new Maze(grid);
         maze.setCellValue(0,0,0);
         Position[][] locations = new Position[rows][columns];
         locations[0][0] = new Position(0,0);
+
+
         for(int i = 0; i < rows; i++)
         {
             for(int j = 0; j < columns; j ++)

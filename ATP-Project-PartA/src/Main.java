@@ -1,32 +1,47 @@
-import algorithms.mazeGenerators.KrusKalGenerator;
-import algorithms.mazeGenerators.Maze;
-import algorithms.mazeGenerators.MyMazeGenerator;
-import algorithms.mazeGenerators.SimpleMazeGenerator;
+import algorithms.mazeGenerators.*;
 import algorithms.search.*;
+
+import java.sql.SQLOutput;
 
 public class Main {
     public static void main(String[] args) {
         Maze maze;
         MyMazeGenerator gen = new MyMazeGenerator();
         KrusKalGenerator krus = new KrusKalGenerator();
+        Prim prim = new Prim();
 //        SimpleMazeGenerator simple = new SimpleMazeGenerator();
 //        maze = gen.generate(10,10);
-        maze = krus.generate(1000,1000);
+//        maze = krus.generate(1000,1000);
+        long startTime = System.currentTimeMillis();
+        maze = prim.generate(8,9);
+        long endTime = System.currentTimeMillis();
+        long elapsedTime = endTime - startTime;
+        System.out.println("Elapsed time: " + elapsedTime + " ms");
+        maze.print();
 //        maze = simple.generate(10,10);
 //        maze.print();
 //        System.out.println(maze.getStartPosition());
 //        System.out.println(maze.getGoalPosition());
-//        SearchableMaze BFSsearchableMaze = new SearchableMaze(maze);
-//        SearchableMaze DFSsearchableMaze = new SearchableMaze(maze);
-//        SearchableMaze BESTsearchableMaze = new SearchableMaze(maze);
-//        BreadthFirstSearch BFSsearcher = new BreadthFirstSearch();
-//        DepthFirstSearch DFSsearcher = new DepthFirstSearch();
-//        BestFirstSearch BESTsearcher = new BestFirstSearch();
-//        Solution BFSsolution = BFSsearcher.solve(BFSsearchableMaze);
-//        Solution DFSsolution = DFSsearcher.solve(DFSsearchableMaze);
-//        Solution BESTsolution = BESTsearcher.solve(BESTsearchableMaze);
+        SearchableMaze BFSsearchableMaze = new SearchableMaze(maze);
+        SearchableMaze DFSsearchableMaze = new SearchableMaze(maze);
+        SearchableMaze BESTsearchableMaze = new SearchableMaze(maze);
+        BreadthFirstSearch BFSsearcher = new BreadthFirstSearch();
+        DepthFirstSearch DFSsearcher = new DepthFirstSearch();
+        BestFirstSearch BESTsearcher = new BestFirstSearch();
+        Solution BFSsolution = BFSsearcher.solve(BFSsearchableMaze);
+        Solution DFSsolution = DFSsearcher.solve(DFSsearchableMaze);
+        Solution BESTsolution = BESTsearcher.solve(BESTsearchableMaze);
         System.out.println("done");
-//        maze.print();
+        System.out.println(BFSsolution);
+        System.out.println(BFSsearcher.getNumberOfNodesEvaluated());
+        System.out.println("------------------");
+        System.out.println(DFSsolution);
+        System.out.println(DFSsearcher.getNumberOfNodesEvaluated());
+        System.out.println("------------------");
+        System.out.println(BESTsolution);
+        System.out.println(BESTsearcher.getNumberOfNodesEvaluated());
+
+
     }
 }
 

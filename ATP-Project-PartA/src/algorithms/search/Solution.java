@@ -12,4 +12,11 @@ public class Solution {
     public ArrayList<AState> getSolutionPath() {
         return pathToGoal;
     }
+    public void print()
+    {
+        for(AState state : this.pathToGoal)
+        {
+            System.out.println(state);
+        }
+    }
 }

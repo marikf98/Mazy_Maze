@@ -48,34 +48,27 @@ public class Maze {
     public Position getPosition(int i, int j) {return positionMatrix[i][j];}
     public void print() {
         System.out.print("╔");
-        for (int j = 0; j <  maze[0].length; j++)
-        {
+        for (int j = 0; j < maze[0].length * 2 + 1; j++) {
             System.out.print("═");
         }
         System.out.println("╗");
 
         for (int i = 0; i < maze.length; i++) {
-            System.out.print("║");
+            System.out.print("║ ");
             for (int j = 0; j < maze[0].length; j++) {
-                if (i == 0 && j == 0)
-                {
-                    System.out.print("S");
-                    continue;
-                }
-                if (i == maze.length-1 && j == maze[0].length-1)
-                {
-                    System.out.print("E");
-                }
-                else
-                {
-                    System.out.print(" " + maze[i][j] + " ");
+                if (i == 0 && j == 0) {
+                    System.out.print("S ");
+                } else if (i == maze.length - 1 && j == maze[0].length - 1) {
+                    System.out.print("E ");
+                } else {
+                    System.out.print(maze[i][j] + " ");
                 }
             }
             System.out.println("║");
         }
 
         System.out.print("╚");
-        for (int j = 0; j < maze[0].length; j++) {
+        for (int j = 0; j < maze[0].length * 2 + 1; j++) {
             System.out.print("═");
         }
         System.out.println("╝");

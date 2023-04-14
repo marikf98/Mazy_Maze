@@ -3,15 +3,18 @@ package algorithms.search;
 import java.util.*;
 
 public class BreadthFirstSearch extends ASearchingAlgorithm{
-    //protected Queue<AState> collection;
     public BreadthFirstSearch() {
         super();
-//        this.collection = (Queue<AState>)this.collection;
         this.collection =  new LinkedList<AState>();
     }
 
     @Override
     public Solution solve(ISearchable maze) {
+        if(maze == null)
+        {
+            System.out.println("You need to supply a valid searchable");
+            return null;
+        }
         AState startNode = maze.getStart();
         AState goalNode = maze.getGoal();
         collection.add(startNode);
@@ -19,7 +22,7 @@ public class BreadthFirstSearch extends ASearchingAlgorithm{
         AState prev = null;
         ArrayList<AState> solution = new ArrayList<>();
 
-        while(collection.size() != 0) // maybe this should consider adding queue.size() != 0 && !maze.isSolved()
+        while(collection.size() != 0)
         {
             prev = temp;
 
@@ -53,16 +56,6 @@ public class BreadthFirstSearch extends ASearchingAlgorithm{
             }
         }
 
-
-
-//        while(temp != null)
-//        {
-//            solution.add(temp);
-//            temp = temp.getPrev();
-//        }
-//
-//        Collections.reverse(solution);
-//        return new Solution(solution);
         startNode.setPrev(null);
         Solution sol = new Solution(getPath(temp));
         resetMaze(maze);

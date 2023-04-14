@@ -2,7 +2,6 @@ package algorithms.search;
 
 import java.util.Comparator;
 
-//public abstract class AState implements Comparator<AState> {
 public abstract class AState {
 
     private boolean visited;
@@ -20,7 +19,6 @@ public abstract class AState {
 
     private boolean isGoal;
 
-    //private String state;
 
     public void setGoal(boolean goal) {
         this.isGoal = goal;
@@ -70,7 +68,6 @@ public abstract class AState {
 
     }
 
-//    public abstract int compare(AState first, AState second);
 
     public abstract void setDiagonalMove();
     public abstract boolean getDiagonalMove();

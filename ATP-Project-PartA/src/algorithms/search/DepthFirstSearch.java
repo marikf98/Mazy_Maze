@@ -14,9 +14,13 @@ public class DepthFirstSearch extends ASearchingAlgorithm{
 
     @Override
     public Solution solve(ISearchable maze) {
+        if(maze == null)
+        {
+            System.out.println("You need to supply a valid searchable");
+            return null;
+        }
         AState startNode = maze.getStart();
         AState goalNode = maze.getGoal();
-//        startNode.setVisited();
         collection.push(startNode);
         AState temp = startNode;
         AState prev = null;
@@ -59,13 +63,6 @@ public class DepthFirstSearch extends ASearchingAlgorithm{
 
         }
 
-//        ArrayList<AState> inReverse = new ArrayList<>();
-//        for(int i = 0; i <=numberOfNodesEvaluated; i++)
-//        {
-//            inReverse.add(temp);
-//            temp = temp.getPrev();
-//        }
-//        Collections.reverse(inReverse);
         startNode.setPrev(null);
         Solution sol = new Solution(getPath(temp));
         resetMaze(maze);

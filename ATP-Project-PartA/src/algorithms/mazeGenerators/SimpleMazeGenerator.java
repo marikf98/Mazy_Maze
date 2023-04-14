@@ -5,6 +5,11 @@ import java.util.Random;
 public class SimpleMazeGenerator extends AMazeGenerator{
     /** check if thats what needed maybe its not supposed to be complitly random **/
     public Maze generate(int rows, int columns) {
+        if(rows < 3 || columns < 3)
+        {
+            System.out.println("The size you entered is to small");
+            return null;
+        }
         int [][] grid = new int[rows][columns];
         Random rand = new Random();
         int numOfPassages;

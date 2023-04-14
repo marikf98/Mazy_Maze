@@ -60,12 +60,10 @@ public class SearchableMaze implements ISearchable{
         try
         {
             /** down **/
-//            if(maze.getCellValue(row+1,column) == 0 && !visitedMatrix[row+1][column].isVisited() && visitedMatrix[row+1][column] != mState)
             if(maze.getCellValue(row+1,column) == 0 && flagMatrix[row+1][column] == 0)
             {
                 possibleMoves.add(visitedMatrix[row+1][column]);
                 flagMatrix[row+1][column] = 1;
-                //visitedMatrix[row+1][column].setVisited();
 
             }
         }
@@ -75,13 +73,11 @@ public class SearchableMaze implements ISearchable{
         try
         {
             /** up **/
-//            if(maze.getCellValue(row-1,column) == 0 && !visitedMatrix[row-1][column].isVisited() && visitedMatrix[row-1][column] != mState)
             if(maze.getCellValue(row-1,column) == 0 && flagMatrix[row-1][column] == 0)
 
             {
                 possibleMoves.add(visitedMatrix[row-1][column]);
                 flagMatrix[row-1][column] = 1;
-                //visitedMatrix[row-1][column].setVisited();
             }
         }
         catch (ArrayIndexOutOfBoundsException ignored)
@@ -90,13 +86,11 @@ public class SearchableMaze implements ISearchable{
         try
         {
             /** left **/
-//            if(maze.getCellValue(row,column-1) == 0 && !visitedMatrix[row][column-1].isVisited() && visitedMatrix[row][column-1] != mState)
             if(maze.getCellValue(row,column-1) == 0 && flagMatrix[row][column-1] == 0)
 
                 {
                 possibleMoves.add(visitedMatrix[row][column-1]);
                 flagMatrix[row][column-1] = 1;
-                //visitedMatrix[row][column-1].setVisited();
             }
         }
         catch (ArrayIndexOutOfBoundsException ignored)
@@ -105,12 +99,10 @@ public class SearchableMaze implements ISearchable{
         try
         {
             /** right **/
-//            if(maze.getCellValue(row,column+1) == 0 && !visitedMatrix[row][column+1].isVisited() && visitedMatrix[row][column+1] != mState)
             if(maze.getCellValue(row,column+1) == 0 && flagMatrix[row][column+1] == 0)
             {
                 possibleMoves.add(visitedMatrix[row][column+1]);
                 flagMatrix[row][column+1] = 1;
-                //visitedMatrix[row][column+1].setVisited();
 
             }
         }
@@ -122,7 +114,6 @@ public class SearchableMaze implements ISearchable{
         try
         {
             /** go left and up **/
-//            if(maze.getCellValue(row,column-1) == 0 && maze.getCellValue(row-1,column-1) == 0 && !visitedMatrix[row-1][column-1].isVisited() && visitedMatrix[row-1][column-1]!=mState)
             if(maze.getCellValue(row,column-1) == 0 && maze.getCellValue(row-1,column-1) == 0 && flagMatrix[row-1][column-1] == 0)
 
             {
@@ -130,7 +121,6 @@ public class SearchableMaze implements ISearchable{
                 counter ++;
                 flagMatrix[row-1][column-1] = 1;
                 visitedMatrix[row-1][column-1].setDiagonalMove();
-                //visitedMatrix[row-1][column-1].setVisited();
             }
         }
         catch (ArrayIndexOutOfBoundsException ignored)
@@ -140,13 +130,11 @@ public class SearchableMaze implements ISearchable{
         try
         {
             /** go up and left **/
-            //if(maze.getCellValue(row-1,column) == 0 && maze.getCellValue(row-1,column-1) == 0 && !visitedMatrix[row-1][column-1].isVisited() && counter == 0 && visitedMatrix[row-1][column-1] != mState)
             if(maze.getCellValue(row-1,column) == 0 && maze.getCellValue(row-1,column-1) == 0 &&  counter == 0 && flagMatrix[row-1][column-1] == 0)
             {
                 possibleMoves.add(visitedMatrix[row-1][column-1]);
                 flagMatrix[row-1][column-1] = 1;
                 visitedMatrix[row-1][column-1].setDiagonalMove();
-                //visitedMatrix[row-1][column-1].setVisited();
             }
         }
         catch (ArrayIndexOutOfBoundsException ignored)
@@ -157,7 +145,6 @@ public class SearchableMaze implements ISearchable{
         try
         {
             /** go right and up **/
-//            if(maze.getCellValue(row,column+1) == 0 && maze.getCellValue(row-1,column+1) == 0 && !visitedMatrix[row-1][column+1].isVisited() && visitedMatrix[row-1][column+1] != mState)
             if(maze.getCellValue(row,column+1) == 0 && maze.getCellValue(row-1,column+1) == 0 && flagMatrix[row-1][column+1] == 0)
 
             {
@@ -165,7 +152,6 @@ public class SearchableMaze implements ISearchable{
                 flagMatrix[row-1][column+1] = 1;
                 visitedMatrix[row-1][column+1].setDiagonalMove();
                 counter ++;
-                //visitedMatrix[row-1][column+1].setVisited();
             }
         }
         catch (ArrayIndexOutOfBoundsException ignored)
@@ -174,13 +160,11 @@ public class SearchableMaze implements ISearchable{
         try
         {
             /** go up and right **/
-            //if(maze.getCellValue(row-1,column) == 0 && maze.getCellValue(row-1,column+1) == 0 && !visitedMatrix[row-1][column+1].isVisited() && counter == 0 && visitedMatrix[row-1][column+1] != mState)
             if(maze.getCellValue(row-1,column) == 0 && maze.getCellValue(row-1,column+1) == 0 && counter == 0 && flagMatrix[row-1][column+1] == 0)
             {
                 possibleMoves.add(visitedMatrix[row-1][column+1]);
                 flagMatrix[row-1][column+1] = 1;
                 visitedMatrix[row-1][column+1].setDiagonalMove();
-                //visitedMatrix[row-1][column+1].setVisited();
             }
         }
         catch (ArrayIndexOutOfBoundsException ignored)
@@ -191,14 +175,12 @@ public class SearchableMaze implements ISearchable{
         try
         {
             /** go left and down **/
-            //if(maze.getCellValue(row,column-1) == 0 && maze.getCellValue(row+1,column-1) == 0 && !visitedMatrix[row+1][column-1].isVisited() && visitedMatrix[row+1][column-1] != mState)
             if(maze.getCellValue(row,column-1) == 0 && maze.getCellValue(row+1,column-1) == 0 && flagMatrix[row+1][column-1] == 0)
             {
                 possibleMoves.add(visitedMatrix[row+1][column-1]);
                 flagMatrix[row+1][column-1] = 1;
                 visitedMatrix[row+1][column-1].setDiagonalMove();
                 counter ++;
-                //visitedMatrix[row+1][column-1].setVisited();
             }
         }
         catch (ArrayIndexOutOfBoundsException ignored)
@@ -207,13 +189,11 @@ public class SearchableMaze implements ISearchable{
         try
         {
             /** go down and left **/
-            //if(maze.getCellValue(row+1,column) == 0 && maze.getCellValue(row+1,column-1) == 0 && !visitedMatrix[row+1][column-1].isVisited() && counter == 0 && visitedMatrix[row+1][column-1] != mState)
             if(maze.getCellValue(row+1,column) == 0 && maze.getCellValue(row+1,column-1) == 0 && counter == 0 && flagMatrix[row+1][column-1] == 0)
             {
                 possibleMoves.add(visitedMatrix[row+1][column-1]);
                 flagMatrix[row+1][column-1] = 1;
                 visitedMatrix[row+1][column-1].setDiagonalMove();
-                //visitedMatrix[row+1][column-1].setVisited();
             }
         }
         catch (ArrayIndexOutOfBoundsException ignored)
@@ -224,14 +204,12 @@ public class SearchableMaze implements ISearchable{
         try
         {
             /** go right and down **/
-            //if(maze.getCellValue(row,column+1) == 0 && maze.getCellValue(row+1,column+1) == 0 && !visitedMatrix[row+1][column+1].isVisited() && visitedMatrix[row+1][column+1] != mState)
             if(maze.getCellValue(row,column+1) == 0 && maze.getCellValue(row+1,column+1) == 0 && flagMatrix[row+1][column+1] == 0)
                 {
                 possibleMoves.add(visitedMatrix[row+1][column+1]);
                 flagMatrix[row+1][column+1] = 1;
                 visitedMatrix[row+1][column+1].setDiagonalMove();
                 counter ++;
-                //visitedMatrix[row+1][column+1].setVisited();
             }
         }
         catch (ArrayIndexOutOfBoundsException ignored)
@@ -240,13 +218,11 @@ public class SearchableMaze implements ISearchable{
         try
         {
             /** go down and right **/
-            //if(maze.getCellValue(row+1,column) == 0 && maze.getCellValue(row+1,column+1) == 0 && !visitedMatrix[row+1][column+1].isVisited() && counter == 0 && visitedMatrix[row+1][column+1] != mState)
             if(maze.getCellValue(row+1,column) == 0 && maze.getCellValue(row+1,column+1) == 0 && counter == 0 && flagMatrix[row+1][column+1] == 0)
             {
                 possibleMoves.add(visitedMatrix[row+1][column+1]);
                 flagMatrix[row+1][column+1] = 1;
                 visitedMatrix[row+1][column+1].setDiagonalMove();
-                //visitedMatrix[row+1][column+1].setVisited();
             }
         }
         catch (ArrayIndexOutOfBoundsException ignored)

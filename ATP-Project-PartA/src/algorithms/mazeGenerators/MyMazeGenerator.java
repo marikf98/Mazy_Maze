@@ -9,6 +9,11 @@ public class MyMazeGenerator extends AMazeGenerator{
     private Maze maze;
     @Override
     public Maze generate(int rows, int columns) {
+        if(rows < 3 || columns < 3)
+        {
+            System.out.println("The size you entered is to small");
+            return null;
+        }
 
         this.originalRows = rows;
         this.originalColumns = columns;
@@ -58,7 +63,6 @@ public class MyMazeGenerator extends AMazeGenerator{
         int columnsWhile = (int)Math.floor(columns / 2);
 
 
-//        while(visited < rows * columns)
         while(visited < rowsWhile * columnsWhile)
         {
             random = rand.nextInt(neighbours.size());

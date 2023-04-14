@@ -75,12 +75,8 @@ public class Maze {
     }
 
 
-//    public Position getStartPosition() {return new Position(0,0);}
     public Position getStartPosition() {return positionMatrix[0][0];}
 
-//    public Position getGoalPosition() {
-//        return new Position(maze.length - 1,maze[0].length - 1);
-//    }
     public Position getGoalPosition() {return  positionMatrix[maze.length - 1][maze[0].length - 1];}
 
 }

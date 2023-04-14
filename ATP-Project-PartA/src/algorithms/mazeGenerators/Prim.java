@@ -87,6 +87,14 @@ public class Prim extends AMazeGenerator{
         maze = new Maze(tempGrid);
         maze.setCellValue(0,0,0);
         maze.setCellValue(originalRows - 1, originalColumns - 1, 0);
+        if(rand.nextInt(2) + 1 == 1)
+        {
+            maze.setCellValue(0,1,0);
+        }
+        else
+        {
+            maze.setCellValue(1,0,0);
+        }
         return maze;
 
     }

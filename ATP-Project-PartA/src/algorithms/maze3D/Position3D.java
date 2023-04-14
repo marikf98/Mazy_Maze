@@ -1,6 +1,4 @@
-package maze3D;
-
-import algorithms.mazeGenerators.Position;
+package algorithms.maze3D;
 
 public class Position3D {
     private int row;

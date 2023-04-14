@@ -4,244 +4,142 @@ import java.lang.reflect.Array;
 import java.util.*;
 
 public class MyMazeGenerator extends AMazeGenerator{
+    private int originalRows;
+    private int originalColumns;
+    private Maze maze;
     @Override
     public Maze generate(int rows, int columns) {
+
+        this.originalRows = rows;
+        this.originalColumns = columns;
+        if(rows % 2 == 0)
+        {
+            rows ++;
+        }
+        if(columns % 2 == 0)
+        {
+            columns ++;
+        }
+
         Random rand = new Random();
         int [][] grid = new int[rows][columns];
         Maze maze = new Maze(grid);
+        this.maze = maze;
         maze.setCellValue(0,0,0);
         Position[][] locations = new Position[rows][columns];
         locations[0][0] = new Position(0,0);
+
+
         for(int i = 0; i < rows; i++)
         {
             for(int j = 0; j < columns; j ++)
             {
-                if(i == 0 && j == 0)
-                {
-                    continue;
-                }
+
                 maze.setCellValue(i,j,1);
                 locations[i][j] = new Position(i,j);
             }
         }
         int random;
-//        ArrayList<Position> forest = new ArrayList<>();
-//        ArrayList<ArrayList<Position>> forest = new ArrayList<ArrayList<Position>>();
-//        for(int i = 1; i < rows - 1; i += 2)
-//        {
-//            for(int j = 1; j < columns - 1; j += 2)
-//            {
-////                forest.add(new Position(i,j));
-//                ArrayList<Position> tempList = new ArrayList<Position>();
-//                tempList.add(new Position(i,j));
-//                forest.add(tempList);
-//                maze.setCellValue(i,j,0);
-//            }
-//        }
-//
-//        ArrayList<Position> edges = new ArrayList<>();
-//
-//        for(int i = 2; i < rows - 1; i += 2)
-//        {
-//            for(int j = 1; j < columns - 1; j += 2)
-//            {
-//                edges.add(new Position(i,j));
-//            }
-//        }
-//
-//        for(int i = 1; i < rows - 1; i += 2)
-//        {
-//            for(int j = 2; j < columns - 1; j += 2)
-//            {
-//                edges.add(new Position(i,j));
-//            }
-//        }
-//
-//        Collections.shuffle(edges);
-//
-//        int ce_row;
-//        int ce_col;
-//        int tree1;
-//        int tree2;
-//        Position newTree;
-//        ArrayList<Position> temp1;
-//        ArrayList<Position> temp2;
-//
-//        while(forest.size() > 1)
-//        {
-//            ce_row = edges.get(0).getRowIndex();
-//            ce_col = edges.get(0).getColumnIndex();
-//
-//            edges.remove(0);
-//            tree1 = 0;
-//            tree2 = 0;
-//
-//            if(ce_row % 2 == 0)
-//            {
-//                for(int i = 0; i < forest.size(); i++)
-//                {
-//                    ArrayList<Position> innerList = forest.get(i);
-//                    for(int j = 0; j < innerList.size(); j++)
-//                    {
-//                        Position pos = innerList.get(j);
-//                        if(pos.equals(new Position(ce_row -1, ce_col)))
-//                        {
-//                            tree1 += i;
-//                        }
-//                        if(pos.equals(new Position(ce_row + 1, ce_col)))
-//                        {
-//                            tree2 += i;
-//                        }
-//                    }
-//                }
-//            }
-//            else
-//            {
-//                for(int i = 0; i < forest.size(); i++)
-//                {
-//                    ArrayList<Position> innerList = forest.get(i);
-//                    for(int j = 0; j < innerList.size(); j++)
-//                    {
-//                        Position pos = innerList.get(j);
-//                        if(pos.equals(new Position(ce_row, ce_col - 1)))
-//                        {
-//                            tree1 += i;
-//                        }
-//                        if(pos.equals(new Position(ce_row, ce_col + 1)))
-//                        {
-//                            tree2 += i;
-//                        }
-//                    }
-//                }
-//            }
-//            System.out.println("tree1 = " + tree1 + " tree2 = " + tree2);
-////            if(tree1 == -1)
-////            {
-////                tree1 = 0;
-////            }
-////            if(tree2 == -1)
-////            {
-////                tree2 = 0;
-////            }
-//            if( tree1 != tree2 )
-//            {
-////                newTree = new Position(forest.get(tree1).getRowIndex() + forest.get(tree2).getRowIndex(), forest.get(tree1).getColumnIndex() + forest.get(tree2).getColumnIndex());
-//                ArrayList<Position> positionsList = new ArrayList<Position>();
-//                ArrayList<Position> tree1List = forest.get(tree1);
-//                ArrayList<Position> tree2List = forest.get(tree2);
-//                positionsList.addAll(tree1List);
-//                positionsList.addAll(tree2List);
-//                //doubleTempList.add(forest.get(tree1).get(0));
-////                temp1 = tree1List;
-////                temp2 = tree2List;
-//                forest.remove(tree1List);
-//                forest.remove(tree2List);
-//                forest.add(positionsList);
-//                maze.setCellValue(ce_row,ce_col,0);
-//
-//            }
-//        }
-        for(int i = 0; i < rows; i++)
+        int current_row = 1;
+        int current_column = 1;
+        maze.setCellValue(current_row,current_column,0);
+
+        ArrayList<Position> neighbours = allNeighbours(current_row,current_column, 1);
+        ArrayList<Position> tempList;
+
+        int visited = 1;
+        Position tempPos;
+        int nearestRow;
+        int nearestColumn;
+        Position tempPosition;
+        ArrayList<Position> unvisited;
+
+        int rowsWhile = (int)Math.floor(rows / 2);
+        int columnsWhile = (int)Math.floor(columns / 2);
+
+
+//        while(visited < rows * columns)
+        while(visited < rowsWhile * columnsWhile)
         {
-            for(int j = 0; j < columns; j++)
-            {
-                if(checkNeighbours(i,j,maze))
-                {
-                    if(!((i-2) < 0 || (j-2) < 0))
-                    {
-                        random = rand.nextInt(2);
-                        if (random == 0)
-                        {
-                            maze.setCellValue(locations[i - 1][j].getRowIndex(), locations[i - 1][j].getColumnIndex(), 0);
-                        }
-                        else
-                        {
-                            maze.setCellValue(locations[i][j - 1].getRowIndex(), locations[i][j - 1].getColumnIndex(), 0);
-                        }
+            random = rand.nextInt(neighbours.size());
+            tempPos = neighbours.get(random);
+            current_row = tempPos.getRowIndex();
+            current_column = tempPos.getColumnIndex();
+            visited += 1;
+            this.maze.setCellValue(current_row, current_column,0);
+            neighbours.remove(random);
+            tempList = allNeighbours(current_row, current_column,0);
+            tempPosition = tempList.get(0);
+            nearestRow = tempPosition.getRowIndex();
+            nearestColumn = tempPosition.getColumnIndex();
+            this.maze.setCellValue((int)Math.floor((current_row + nearestRow) / 2),(int)Math.floor((current_column + nearestColumn) / 2),0);
+            unvisited = allNeighbours(current_row, current_column, 1);
+            Set<Position> set = new HashSet<>(neighbours);
+            set.addAll(unvisited);
+            neighbours = new ArrayList<>(set);
+            Collections.reverse(neighbours);
 
-                        maze.setCellValue(locations[i][j].getRowIndex(), locations[i][j].getColumnIndex(), 0);
-                    }
-
-
-                    if((j-2<0) && !(i - 2 < 0))
-                    {
-                        maze.setCellValue(locations[i-1][j].getRowIndex(),locations[i-1][j].getColumnIndex(),0);
-                        maze.setCellValue(locations[i][j].getRowIndex(), locations[i][j].getColumnIndex(), 0);
-                    }
-                    if(!((j - 2 < 0) || (i - 2 < 0)))
-//                    if((j - 2 < 0) && !(i - 2 < 0))
-                    {
-                        maze.setCellValue(locations[i][j-1].getRowIndex(),locations[i][j-1].getColumnIndex(),0);
-                        maze.setCellValue(locations[i][j].getRowIndex(), locations[i][j].getColumnIndex(), 0);
-                    }
-                }
-            }
         }
 
-        if(rows % 2 == 0 && columns % 2 == 0)
-        {
-            random = rand.nextInt(2);
-            if(random == 0)
-            {
-                maze.setCellValue(rows-2,columns-1,0);
-            }
-            if(random == 1)
-            {
-                maze.setCellValue(rows-1,columns-2,0);
-            }
-            maze.setCellValue(rows-1,columns-1,0);
-        }
 
-        maze.setCellValue(rows - 1,columns - 1,0);
+        int [][] tempGrid = copyGrid(grid);
+        maze = new Maze(tempGrid);
+        maze.setCellValue(0,0,0);
+        maze.setCellValue(originalRows - 1, originalColumns - 1, 0);
+        if(rand.nextInt(2) + 1 == 1)
+        {
+            maze.setCellValue(0,1,0);
+        }
+        else
+        {
+            maze.setCellValue(1,0,0);
+        }
         return maze;
+
     }
 
-    public Boolean checkNeighbours(int i, int j, Maze maze)
+    private int[][] copyGrid(int [][] grid)
     {
-        try
-        {if(maze.getCellValue(i-1,j-1) == 0) {return false;}}
-        catch (ArrayIndexOutOfBoundsException ignored)
-        {}
+        int [][] copyGrid = new int[originalRows][originalColumns];
+        for(int i = 0; i < originalRows; i++)
+        {
+            for(int j = 0; j < originalColumns; j++)
+            {
+                copyGrid[i][j] = grid[i][j];
+            }
+        }
+        return copyGrid;
+    }
 
-        try
-        {if(maze.getCellValue(i-1,j) == 0) {return false;}}
-        catch (ArrayIndexOutOfBoundsException ignored)
-        {}
+    private ArrayList<Position> allNeighbours(int row, int column, int value)
+    {
+        ArrayList<Position> neighbours = new ArrayList<Position>();
 
-        try
-        {if(maze.getCellValue(i-1,j+1) == 0) {return false;}}
-        catch (ArrayIndexOutOfBoundsException ignored)
-        {}
+        if(row > 1 && (this.maze.getCellValue(row - 2, column) == value))
+        {
+            neighbours.add(new Position(row - 2, column));
+        }
 
-        try
-        {if(maze.getCellValue(i,j-1) == 0) {return false;}}
-        catch (ArrayIndexOutOfBoundsException ignored)
-        {}
+        if((row < this.maze.getRowsLength() - 2) && (this.maze.getCellValue(row + 2, column) == value))
+        {
+            neighbours.add(new Position(row + 2, column));
+        }
 
-        try
-        {if(maze.getCellValue(i,j+1) == 0) {return false;}}
-        catch (ArrayIndexOutOfBoundsException ignored)
-        {}
+        if(column > 1 && (this.maze.getCellValue(row, column - 2) == value))
+        {
+            neighbours.add(new Position(row, column - 2));
+        }
 
-        try
-        {if(maze.getCellValue(i+1,j-1) == 0) {return false;}}
-        catch (ArrayIndexOutOfBoundsException ignored)
-        {}
+        if((column < this.maze.getColumnsLength() - 2) && (this.maze.getCellValue(row,column + 2) == value))
+        {
+            neighbours.add(new Position(row, column + 2));
+        }
 
-        try
-        {if(maze.getCellValue(i+1,j) == 0) {return false;}}
-        catch (ArrayIndexOutOfBoundsException ignored)
-        {}
-
-        try
-        {if(maze.getCellValue(i+1,j+1) == 0) {return false;}}
-        catch (ArrayIndexOutOfBoundsException ignored)
-        {}
-
-        return true;
-
+        Collections.shuffle(neighbours);
+        return neighbours;
 
     }
+
+
 
 }
-

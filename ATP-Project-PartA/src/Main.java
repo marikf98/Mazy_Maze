@@ -10,14 +10,14 @@ public class Main {
         KrusKalGenerator krus = new KrusKalGenerator();
         Prim prim = new Prim();
 //        SimpleMazeGenerator simple = new SimpleMazeGenerator();
-//        maze = gen.generate(10,10);
+        maze = gen.generate(1000,1000);
 //        maze = krus.generate(1000,1000);
         long startTime = System.currentTimeMillis();
-        maze = prim.generate(8,9);
+//        maze = prim.generate(8,9);
         long endTime = System.currentTimeMillis();
         long elapsedTime = endTime - startTime;
         System.out.println("Elapsed time: " + elapsedTime + " ms");
-        maze.print();
+//        maze.print();
 //        maze = simple.generate(10,10);
 //        maze.print();
 //        System.out.println(maze.getStartPosition());
@@ -32,13 +32,13 @@ public class Main {
         Solution DFSsolution = DFSsearcher.solve(DFSsearchableMaze);
         Solution BESTsolution = BESTsearcher.solve(BESTsearchableMaze);
         System.out.println("done");
-        System.out.println(BFSsolution);
+//        BFSsolution.print();
         System.out.println(BFSsearcher.getNumberOfNodesEvaluated());
         System.out.println("------------------");
-        System.out.println(DFSsolution);
+//        DFSsolution.print();
         System.out.println(DFSsearcher.getNumberOfNodesEvaluated());
         System.out.println("------------------");
-        System.out.println(BESTsolution);
+//        BESTsolution.print();
         System.out.println(BESTsearcher.getNumberOfNodesEvaluated());
 
 

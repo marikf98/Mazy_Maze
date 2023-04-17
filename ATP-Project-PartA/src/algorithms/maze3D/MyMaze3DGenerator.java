@@ -30,7 +30,7 @@ public class MyMaze3DGenerator extends AMaze3DGenerator {
             }
         }
         Position3D start = new Position3D(0, 0, 0);
-        Position3D end = new Position3D(sizeX - 1, sizeY - 1, sizeZ - 1);
+        Position3D end = new Position3D(sizeX - 1, sizeY - 1, 0);
         generateDFS(start, this.maze);
         return new Maze3D(maze);
 

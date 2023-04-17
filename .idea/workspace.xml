@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2da5225f-907e-4b23-8e6e-d618612ed3cb" name="Changes" comment="finished tests and 2d generation and solvers">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/mazeGenerators/MazeGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/ASearchingAlgorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/ASearchingAlgorithm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/AState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/AState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/SearchableMaze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/SearchableMaze.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ATP-Project-PartA/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartA/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +49,8 @@
     "jdk.selected.JAVA_MODULE": "corretto-15",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -287,11 +285,6 @@
           <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/mazeGenerators/MyMazeGenerator.java</url>
           <line>46</line>
           <option name="timeStamp" value="180" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/mazeGenerators/MyMazeGenerator.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="181" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ATP-Project-PartA/JUnit/algorithms/search/BestFirstSearchTest.java</url>

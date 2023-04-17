@@ -119,4 +119,5 @@ public class Main {
             System.out.println(String.format("Error appending text to file: %s", m_resultsFileName));
         }
     }
+
 }

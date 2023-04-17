@@ -38,6 +38,10 @@ public class MyMaze3DGenerator extends AMaze3DGenerator {
     }
 
     private void generateDFS(Position3D curr, int[][][] maze) {
+        if (maze[curr.getRowIndex()][curr.getColumnIndex()][curr.getDepthIndex()] == 0) {
+            return;
+        }
+
         maze[curr.getRowIndex()][curr.getColumnIndex()][curr.getDepthIndex()] = 0;
         int[][] directions = {{0, 1, 0}, {0, -1, 0}, {1, 0, 0}, {-1, 0, 0}, {0, 0, 1}, {0, 0, -1}};
 
@@ -50,7 +54,7 @@ public class MyMaze3DGenerator extends AMaze3DGenerator {
             int newZ = curr.getDepthIndex() + direction[2];
 
 
-            if (newX < 0 || newY >= sizeX || newY < 0 || newY >= this.sizeY || newZ < 0 || sizeZ <= newZ) {
+            if (newX < 0 || newX >= sizeX || newY < 0 || newY >= sizeY || newZ < 0 || newZ >= sizeZ) {
                 continue;
             }
 
@@ -58,8 +62,8 @@ public class MyMaze3DGenerator extends AMaze3DGenerator {
 
             if (maze[newX][newY][newZ] == 1) {
                 int wallX = (newX + curr.getRowIndex()) / 2;
-                int wallY = (newY + curr.getColumnIndex() / 2);
-                int wallZ = (newZ + curr.getDepthIndex() / 2);
+                int wallY = (newY + curr.getColumnIndex()) / 2;
+                int wallZ = (newZ + curr.getDepthIndex()) / 2;
                 maze[wallX][wallY][wallZ] = 0;
 
                 generateDFS(new Position3D(newX, newY, newZ), maze);

@@ -3,28 +3,29 @@ package algorithms.maze3D;
 public class Position3D {
     private int row;
     private int column;
+    private int depth;
 
-    public int getHigh() {
-        return high;
+    public int getDepthIndex() {
+        return depth;
     }
 
-    public void setHigh(int high) {
-        this.high = high;
+    public void setDepthIndex(int depth) {
+        this.depth = depth;
     }
 
-    private int high;
 
-    public Position3D(int row, int column,int high) {
+    public Position3D(int row, int column,int depth) {
         this.row = row;
         this.column = column;
-        this.high=high;
+        this.depth=depth;
     }
     public int getRowIndex() {return row;}
     public int getColumnIndex() {return column;}
 
+
     @Override
     public String toString() {
-        return "{" + row + "," + column + ","+high+"}";
+        return "{" + row + "," + column + ","+depth+"}";
     }
 
     @Override
@@ -32,7 +33,7 @@ public class Position3D {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Position3D position = (Position3D) o;
-        return row == position.row && column == position.column && high==position.high;
+        return row == position.row && column == position.column && depth==position.depth;
     }
 
 }

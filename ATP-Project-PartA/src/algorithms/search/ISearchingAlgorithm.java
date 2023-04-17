@@ -6,4 +6,6 @@ public interface ISearchingAlgorithm {
     public String getName();
 
     public int getNumberOfNodesEvaluated();
+
+    public void resetMaze(ISearchable maze);
 }

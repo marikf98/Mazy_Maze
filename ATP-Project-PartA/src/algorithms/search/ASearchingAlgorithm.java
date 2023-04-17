@@ -28,6 +28,6 @@ public abstract class ASearchingAlgorithm implements ISearchingAlgorithm {
 
     public void resetMaze(ISearchable maze)
     {
-        ((SearchableMaze) maze).setUnvisited();
+        (maze).setUnvisited();
     }
 }

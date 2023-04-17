@@ -61,8 +61,9 @@ public class SearchableMaze3D implements ISearchable {
             }
         }
         @Override
-        public ArrayList<AState> getAllPossibleStates(Maze3DState mState)
+        public ArrayList<AState> getAllPossibleStates(AState state)
         {
+            Maze3DState mState = (Maze3DState) state;
             ArrayList<AState> possibleMoves = new ArrayList<>();
             int row = mState.getRow();
             int column = mState.getColumn();

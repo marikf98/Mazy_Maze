@@ -50,8 +50,10 @@ public class SearchableMaze implements ISearchable{
     }
 
 
-    public ArrayList<AState> getAllPossibleStates(MazeState mState)
+//    public ArrayList<AState> getAllPossibleStates(MazeState mState)
+    public ArrayList<AState> getAllPossibleStates(AState state)
     {
+        MazeState mState = (MazeState) state;
         ArrayList<AState> possibleMoves = new ArrayList<>();
         int row = mState.getRow();
         int column = mState.getColumn();

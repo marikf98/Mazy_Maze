@@ -141,8 +141,10 @@ public class MyMazeGenerator extends AMazeGenerator{
 
         Collections.shuffle(neighbours);
         return neighbours;
-
     }
+
+    // use the same logic as the allNeighbours function but adjust it for a 3d maze
+
 
 
 

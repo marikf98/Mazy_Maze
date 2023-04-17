@@ -4,22 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2da5225f-907e-4b23-8e6e-d618612ed3cb" name="Changes" comment="finished tests and 2d generation and solvers">
+    <list default="true" id="2da5225f-907e-4b23-8e6e-d618612ed3cb" name="Changes" comment="Fixes Isearchable interface">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/maze3D/SearchableMaze3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/maze3D/SearchableMaze3D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/mazeGenerators/MyMazeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/mazeGenerators/MyMazeGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/ISearchable.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/ISearchable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/SearchableMaze.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/SearchableMaze.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATP-Project-PartA/src/test/GeneralCheckingFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartA/src/test/GeneralCheckingFunctions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/maze3D/Maze3D.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/maze3D/Maze3D.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/maze3D/Maze3DState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/maze3D/Maze3DState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/maze3D/MyMaze3DGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/maze3D/MyMaze3DGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/maze3D/SearchableMaze3D.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/maze3D/SearchableMaze3D.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/BreadthFirstSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/BreadthFirstSearch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/DepthFirstSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/DepthFirstSearch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/ISearchable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/ISearchable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/SearchableMaze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/SearchableMaze.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/test/GeneralCheckingFunctions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/test/GeneralCheckingFunctions.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +65,7 @@
       <recent name="algorithms.search" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BestFirstSearchTest">
+  <component name="RunManager" selected="Application.RunSearchOnMaze">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="ATP-Project-PartA" />
@@ -146,8 +132,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BestFirstSearchTest" />
         <item itemvalue="Application.RunSearchOnMaze" />
+        <item itemvalue="JUnit.BestFirstSearchTest" />
         <item itemvalue="Application.RunMaze3DGenerator" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.BestFirstSearchTest.testLessNodesThenBFS" />
@@ -254,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681584339363</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Fixes Isearchable interface">
+      <created>1681735586575</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1681735586575</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -279,7 +272,8 @@
     <MESSAGE value="added kruskal" />
     <MESSAGE value="working generator , need to fix searcher" />
     <MESSAGE value="finished tests and 2d generation and solvers" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished tests and 2d generation and solvers" />
+    <MESSAGE value="Fixes Isearchable interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixes Isearchable interface" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

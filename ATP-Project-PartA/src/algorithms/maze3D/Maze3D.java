@@ -20,7 +20,10 @@ public class Maze3D {
             }
         }
     }
+    public Position3D  getPosition3D(int i, int j, int z){
+        return positionMatrix[i][j][z];
 
+    }
     public int[][][] getMaze() {
         return maze;
     }
@@ -38,7 +41,7 @@ public class Maze3D {
     }
     public Position3D getStartPosition() {return positionMatrix[0][0][0];}
 
-    public Position3D getGoalPosition() {return  positionMatrix[maze.length - 1][maze[0].length - 1][maze[0][0].length - 1];}
+    public Position3D getGoalPosition() {return  positionMatrix[maze.length - 1][maze[0].length - 1][0];}
 
     public void printMaze3D() {
         for (int z = 0; z < this.maze[0][0].length; z++) {
@@ -51,5 +54,9 @@ public class Maze3D {
             }
             System.out.println();
         }
+    }
+
+    public int getCellValue(int row, int column,int depth) {
+        return this.getMaze()[row][column][depth];
     }
 }

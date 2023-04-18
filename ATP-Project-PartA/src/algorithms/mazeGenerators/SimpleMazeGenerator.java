@@ -3,7 +3,9 @@ package algorithms.mazeGenerators;
 import java.util.Random;
 
 public class SimpleMazeGenerator extends AMazeGenerator{
-    /** check if thats what needed maybe its not supposed to be complitly random **/
+    /** this generator creates a simple maze with a random number of passages and a random amount of walls**/
+
+    /**the generate function receives the size of the maze and creates a random maze **/
     public Maze generate(int rows, int columns) {
         if(rows < 2 || columns < 2)
         {
@@ -15,6 +17,7 @@ public class SimpleMazeGenerator extends AMazeGenerator{
         int numOfPassages;
         int counter = 0;
         int index;
+        /**at first we initialize each even index row to 0 and the odd index row to 1**/
         Maze maze = new Maze(grid);
         for(int i = 0; i <rows; i++)
         {
@@ -30,7 +33,7 @@ public class SimpleMazeGenerator extends AMazeGenerator{
                 }
             }
         }
-
+        /**now we create a random number of passages and walls for each odd row**/
         for(int i = 1; i <rows; i+=2)
         {
             numOfPassages = rand.nextInt(columns - 1) + 1;

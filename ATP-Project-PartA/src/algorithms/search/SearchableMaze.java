@@ -229,7 +229,7 @@ public class SearchableMaze implements ISearchable{
         }
         catch (ArrayIndexOutOfBoundsException ignored)
         {}
-        counter =0;
+        counter = 0;
 
         return possibleMoves;
     }

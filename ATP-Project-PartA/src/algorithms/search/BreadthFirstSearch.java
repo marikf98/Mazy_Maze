@@ -40,7 +40,7 @@ public class BreadthFirstSearch extends ASearchingAlgorithm{
 
                 ArrayList<AState> possibleMoves = new ArrayList<>();
                 //delete cast***
-                possibleMoves = maze.getAllPossibleStates( temp);
+                possibleMoves = maze.getAllPossibleStates( (MazeState)temp);
                 for(AState state: possibleMoves)
                 {
                     state.setPrev(temp);

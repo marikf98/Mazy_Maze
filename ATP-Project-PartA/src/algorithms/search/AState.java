@@ -43,6 +43,10 @@ public abstract class AState {
         {
             this.prev = prev;
         }
+        if(prev == null)
+        {
+            this.prev = null;
+        }
     }
 
     public int getCost() {

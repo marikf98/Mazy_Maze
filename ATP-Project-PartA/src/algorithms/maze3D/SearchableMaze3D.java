@@ -164,7 +164,7 @@ public class SearchableMaze3D implements ISearchable {
 
         @Override
         public AState getGoal() {
-            return visitedMatrix[maze.getMaze().length-1][maze.getMaze()[0].length][0];
+            return visitedMatrix[maze.getMaze().length-1][maze.getMaze()[0].length-1][0];
         }
 
 

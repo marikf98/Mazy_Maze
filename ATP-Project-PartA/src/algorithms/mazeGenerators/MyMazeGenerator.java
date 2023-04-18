@@ -9,7 +9,7 @@ public class MyMazeGenerator extends AMazeGenerator{
     private Maze maze;
     @Override
     public Maze generate(int rows, int columns) {
-        if(rows < 3 || columns < 3)
+        if(rows < 2 || columns < 2)
         {
             System.out.println("The size you entered is to small");
             return null;

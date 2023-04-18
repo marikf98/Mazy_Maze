@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Update_at_4_17_2023_3_42_PM_[Changes]" date="1681735366410" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2023_3_42_PM_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 4/17/2023 3:42 PM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ATP-Project-PartA/algorithms/maze3D/Maze3DState.class" />
+    <option name="AFTER_PATH" value="out/production/ATP-Project-PartA/algorithms/maze3D/Maze3DState.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2023_3_42_PM_[Changes]/Maze3DState.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ATP-Project-PartA/algorithms/maze3D/SearchableMaze3D.class" />
+    <option name="AFTER_PATH" value="out/production/ATP-Project-PartA/algorithms/maze3D/SearchableMaze3D.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2023_3_42_PM_[Changes]/SearchableMaze3D.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ATP-Project-PartA/test/GeneralCheckingFunctions.class" />
+    <option name="AFTER_PATH" value="out/production/ATP-Project-PartA/test/GeneralCheckingFunctions.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2023_3_42_PM_[Changes]/GeneralCheckingFunctions.class" />
+  </binary>
+</changelist>

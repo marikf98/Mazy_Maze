@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2da5225f-907e-4b23-8e6e-d618612ed3cb" name="Changes" comment="Fixes Isearchable interface">
-      <change beforePath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/ASearchingAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/ASearchingAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/ISearchable.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/ISearchable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/ISearchingAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/ISearchingAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +65,7 @@
       <recent name="algorithms.search" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.RunSearchOnMaze">
+  <component name="RunManager" selected="Application.RunMazeGenerator">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="ATP-Project-PartA" />
@@ -77,6 +75,19 @@
     </configuration>
     <configuration name="RunMaze3DGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.RunMaze3DGenerator" />
+      <module name="ATP-Project-PartA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RunMazeGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.RunMazeGenerator" />
       <module name="ATP-Project-PartA" />
       <extension name="coverage">
         <pattern>
@@ -116,29 +127,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BestFirstSearchTest.testLessNodesThenBFS" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ATP-Project-PartA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="algorithms.search.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="algorithms.search" />
-      <option name="MAIN_CLASS_NAME" value="algorithms.search.BestFirstSearchTest" />
-      <option name="METHOD_NAME" value="testLessNodesThenBFS" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.RunMazeGenerator" />
         <item itemvalue="Application.RunSearchOnMaze" />
         <item itemvalue="JUnit.BestFirstSearchTest" />
         <item itemvalue="Application.RunMaze3DGenerator" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.BestFirstSearchTest.testLessNodesThenBFS" />
       </list>
     </recent_temporary>
   </component>
@@ -256,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681736828406</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Fixes Isearchable interface">
+      <created>1681737159089</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1681737159089</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

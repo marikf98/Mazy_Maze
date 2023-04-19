@@ -2,6 +2,7 @@ package algorithms.maze3D;
 import algorithms.search.AState;
 
 public class Maze3DState extends AState {
+    //THIS REPREST THE SATE OF A 3D MAZE
         private int row;
         private int column;
 

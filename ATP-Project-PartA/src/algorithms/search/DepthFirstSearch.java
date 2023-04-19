@@ -55,6 +55,7 @@ public class DepthFirstSearch extends ASearchingAlgorithm{
                     }
 
                 }
+                Collections.reverse(neighbours);
                 for(AState neighbour : neighbours)
                 {
                     collection.push(neighbour);

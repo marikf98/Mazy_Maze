@@ -4,14 +4,13 @@ import algorithms.maze3D.IMazeGenerator3D;
 import algorithms.maze3D.Maze3D;
 import algorithms.maze3D.MyMaze3DGenerator;
 import algorithms.maze3D.SearchableMaze3D;
-import algorithms.mazeGenerators.IMazeGenerator;
-import algorithms.mazeGenerators.Maze;
-import algorithms.mazeGenerators.MyMazeGenerator;
 import algorithms.search.*;
 
 import java.util.ArrayList;
 
 public class RunSearchOnMaze3D {
+
+    //This is to genrat a random maze and give a path in it
         public static void main(String[] args) {
             IMazeGenerator3D mg = new MyMaze3DGenerator();
             Maze3D maze = mg.generate(6,6,6);

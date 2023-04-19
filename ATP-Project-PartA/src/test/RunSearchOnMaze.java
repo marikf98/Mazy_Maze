@@ -7,12 +7,12 @@ public class RunSearchOnMaze {
         IMazeGenerator mg = new MyMazeGenerator();
 //        IMazeGenerator mg = new EmptyMazeGenerator();
 
-        Maze maze = mg.generate(10, 11);
+        Maze maze = mg.generate(1000, 1000);
         SearchableMaze searchableMaze = new SearchableMaze(maze);
         solveProblem(searchableMaze, new BreadthFirstSearch());
         solveProblem(searchableMaze, new DepthFirstSearch());
         solveProblem(searchableMaze, new BestFirstSearch());
-        maze.print();
+
     }
     private static void solveProblem(ISearchable domain, ISearchingAlgorithm searcher) {
 //Solve a searching problem with a searcher

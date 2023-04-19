@@ -1,15 +1,7 @@
 package algorithms.maze3D;
 
-import algorithms.mazeGenerators.Maze;
 import algorithms.search.AState;
 import algorithms.search.ISearchable;
-import algorithms.search.MazeState;
-
-import java.util.ArrayList;
-
-
-
-import algorithms.mazeGenerators.Maze;
 
 import java.util.ArrayList;
 

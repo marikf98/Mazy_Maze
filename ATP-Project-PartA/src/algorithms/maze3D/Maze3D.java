@@ -1,12 +1,10 @@
 package algorithms.maze3D;
 
-import algorithms.mazeGenerators.Maze;
-import algorithms.mazeGenerators.Position;
-
 public class Maze3D {
     private int [][][] maze;
     private Position3D[][][] positionMatrix;
 
+    /*the builder for the 3D maze*/
     public Maze3D(int [][][] maze)
     {
         this.maze = maze;
@@ -20,10 +18,12 @@ public class Maze3D {
             }
         }
     }
+    /*give the Postion of a index*/
     public Position3D  getPosition3D(int i, int j, int z){
         return positionMatrix[i][j][z];
 
     }
+    /*get the maze fuction*/
     public int[][][] getMaze() {
         return maze;
     }
@@ -31,18 +31,23 @@ public class Maze3D {
     public void setMaze(int[][][] maze) {
         this.maze = maze;
     }
+    /*get a matrix of positon rather ther numbers*/
 
     public Position3D[][][] getPositionMatrix() {
         return positionMatrix;
     }
-
+        /*set a new matrix of postion*/
     public void setPositionMatrix(Position3D[][][] positionMatrix) {
         this.positionMatrix = positionMatrix;
     }
+    //get tthe start of a maze
     public Position3D getStartPosition() {return positionMatrix[0][0][0];}
-
+    //get the eand of a maze
     public Position3D getGoalPosition() {return  positionMatrix[0][maze[0].length - 1][maze[0][0].length-1];}
 
+
+
+    //print the maze in a way that represnt a 3d maze
     public void printMaze3D() {
         for (int z = 0; z < this.maze.length; z++) {
             System.out.println("Level " + z + " of the maze:");
@@ -55,6 +60,8 @@ public class Maze3D {
             System.out.println();
         }
     }
+
+    //get the value in a curret cell
 
     public int getCellValue(int depth, int row,int column) {
         return this.getMaze()[depth][row][column];

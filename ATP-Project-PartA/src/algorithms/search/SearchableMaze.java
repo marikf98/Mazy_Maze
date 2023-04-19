@@ -10,7 +10,7 @@ public class SearchableMaze implements ISearchable{
     private MazeState[][] visitedMatrix;
     private int [][] flagMatrix;
 
-
+    //a constructor for the class
     public SearchableMaze(Maze maze) {
         this.maze = maze;
         this.solved = false;
@@ -26,9 +26,11 @@ public class SearchableMaze implements ISearchable{
         }
         flagMatrix[0][0] = 1;
     }
-
+    //get the len of the maze
     public int getRowsLength() {return this.maze.getRowsLength();}
     public int getColumnsLength(){return this.maze.getColumnsLength();}
+
+    //set all the maze as unvisited
     public void setUnvisited()
     {
         for(int i = 0; i < maze.getRowsLength(); i++)
@@ -50,7 +52,7 @@ public class SearchableMaze implements ISearchable{
     }
 
 
-//    public ArrayList<AState> getAllPossibleStates(MazeState mState)
+    //get all the poissible move from where the curret state is
     public ArrayList<AState> getAllPossibleStates(AState state)
     {
         MazeState mState = (MazeState) state;
@@ -254,10 +256,10 @@ public class SearchableMaze implements ISearchable{
     public boolean isSolved() {
         return solved;
     }
-
+    //get the start of the maze
     @Override
     public AState getStart() {return visitedMatrix[0][0];}
-
+    //get the end of a maze
     @Override
     public AState getGoal() {
         return visitedMatrix[maze.getRowsLength()-1][maze.getColumnsLength()-1];

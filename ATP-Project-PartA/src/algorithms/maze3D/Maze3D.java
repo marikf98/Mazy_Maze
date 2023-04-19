@@ -41,13 +41,13 @@ public class Maze3D {
     }
     public Position3D getStartPosition() {return positionMatrix[0][0][0];}
 
-    public Position3D getGoalPosition() {return  positionMatrix[maze.length - 1][maze[0].length - 1][0];}
+    public Position3D getGoalPosition() {return  positionMatrix[0][maze[0].length - 1][maze[0][0].length-1];}
 
     public void printMaze3D() {
-        for (int z = 0; z < this.maze[0][0].length; z++) {
+        for (int z = 0; z < this.maze.length; z++) {
             System.out.println("Level " + z + " of the maze:");
-            for (int x = 0; x < this.maze.length; x++) {
-                for (int y = 0; y < this.maze[x].length; y++) {
+            for (int x = 0; x < this.maze[0].length; x++) {
+                for (int y = 0; y < this.maze[0][0].length; y++) {
                     System.out.print(this.maze[x][y][z] == 1 ? "█" : " ");
                 }
                 System.out.println();
@@ -56,7 +56,7 @@ public class Maze3D {
         }
     }
 
-    public int getCellValue(int row, int column,int depth) {
-        return this.getMaze()[row][column][depth];
+    public int getCellValue(int depth, int row,int column) {
+        return this.getMaze()[depth][row][column];
     }
 }

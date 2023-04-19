@@ -14,7 +14,7 @@ public class Position3D {
     }
 
 
-    public Position3D(int row, int column,int depth) {
+    public Position3D(int depth,int row, int column) {
         this.row = row;
         this.column = column;
         this.depth=depth;
@@ -25,7 +25,7 @@ public class Position3D {
 
     @Override
     public String toString() {
-        return "{" + row + "," + column + ","+depth+"}";
+        return "{" +depth+","+ row + "," + column+ "}" ;
     }
 
     @Override

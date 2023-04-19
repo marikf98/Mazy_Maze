@@ -38,9 +38,9 @@ public class SearchableMaze3D implements ISearchable {
             flagMatrix[0][0][0] = 1;
         }
 
-        public int getRowsLength() {return this.maze.getMaze().length;}
-        public int getColumnsLength(){return this.maze.getMaze()[0].length;}
-        public int getDepthLength(){return this.maze.getMaze()[0][0].length;}
+        public int getRowsLength() {return this.maze.getMaze()[0].length;}
+        public int getColumnsLength(){return this.maze.getMaze()[0][0].length;}
+        public int getDepthLength(){return this.maze.getMaze().length;}
         public void setUnvisited()
         {
             for(int i = 0; i < maze.getMaze().length; i++)
@@ -73,10 +73,10 @@ public class SearchableMaze3D implements ISearchable {
             try
             {
                 /** down **/
-                if(maze.getCellValue(row+1,column,depth) == 0 && flagMatrix[row+1][column][depth] == 0)
+                if(maze.getCellValue(depth,row+1,column) == 0 && flagMatrix[depth][row+1][column] == 0)
                 {
-                    possibleMoves.add(visitedMatrix[row+1][column][depth]);
-                    flagMatrix[row+1][column][depth] = 1;
+                    possibleMoves.add(visitedMatrix[depth][row+1][column]);
+                    flagMatrix[depth][row+1][column] = 1;
 
                 }
             }
@@ -86,11 +86,11 @@ public class SearchableMaze3D implements ISearchable {
             try
             {
                 /** up **/
-                if(maze.getCellValue(row-1,column,depth) == 0 && flagMatrix[row-1][column][depth] == 0)
-
+                if(maze.getCellValue(depth,row-1,column) == 0 && flagMatrix[depth][row-1][column] == 0)
                 {
-                    possibleMoves.add(visitedMatrix[row-1][column][depth]);
-                    flagMatrix[row-1][column][depth] = 1;
+                    possibleMoves.add(visitedMatrix[depth][row-1][column]);
+                    flagMatrix[depth][row-1][column] = 1;
+
                 }
             }
             catch (ArrayIndexOutOfBoundsException ignored)
@@ -99,11 +99,11 @@ public class SearchableMaze3D implements ISearchable {
             try
             {
                 /** left **/
-                if(maze.getCellValue(row,column-1,depth) == 0 && flagMatrix[row][column-1][depth] == 0)
-
+                if(maze.getCellValue(depth,row,column-1) == 0 && flagMatrix[depth][row][column-1] == 0)
                 {
-                    possibleMoves.add(visitedMatrix[row][column-1][depth]);
-                    flagMatrix[row][column-1][depth] = 1;
+                    possibleMoves.add(visitedMatrix[depth][row][column-1]);
+                    flagMatrix[depth][row][column-1] = 1;
+
                 }
             }
             catch (ArrayIndexOutOfBoundsException ignored)
@@ -112,10 +112,10 @@ public class SearchableMaze3D implements ISearchable {
             try
             {
                 /** right **/
-                if(maze.getCellValue(row,column+1,depth) == 0 && flagMatrix[row][column+1][depth] == 0)
+                if(maze.getCellValue(depth,row,column+1) == 0 && flagMatrix[depth][row][column+1] == 0)
                 {
-                    possibleMoves.add(visitedMatrix[row][column+1][depth]);
-                    flagMatrix[row][column+1][depth] = 1;
+                    possibleMoves.add(visitedMatrix[depth][row][column-1]);
+                    flagMatrix[depth][row][column+1] = 1;
 
                 }
 
@@ -124,10 +124,10 @@ public class SearchableMaze3D implements ISearchable {
             {}
             try
             {
-                /** up **/
-                if (maze.getCellValue(row, column + 1, depth) == 0 && flagMatrix[row][column][depth + 1] == 0) {
-                    possibleMoves.add(visitedMatrix[row][column][depth + 1]);
-                    flagMatrix[row][column][depth + 1] = 1;
+                /** out **/
+                if (maze.getCellValue(row, column, depth+1) == 0 && flagMatrix[depth+1][row][column] == 0) {
+                    possibleMoves.add(visitedMatrix[depth+1][row][column]);
+                    flagMatrix[depth+1][row][column] = 1;
 
                 }
             }
@@ -135,10 +135,10 @@ public class SearchableMaze3D implements ISearchable {
             {}
             try
             {
-                /** down **/
-                if (maze.getCellValue(row, column + 1, depth) == 0 && flagMatrix[row][column][depth - 1] == 0) {
-                    possibleMoves.add(visitedMatrix[row][column][depth - 1]);
-                    flagMatrix[row][column][depth - 1] = 1;
+                /** in **/
+                if (maze.getCellValue(depth-1, row , column) == 0 && flagMatrix[depth-1][row][column] == 0) {
+                    possibleMoves.add(visitedMatrix[depth-1][row][column]);
+                    flagMatrix[depth-1][row][column] = 1;
 
                 }
             }
@@ -164,7 +164,7 @@ public class SearchableMaze3D implements ISearchable {
 
         @Override
         public AState getGoal() {
-            return visitedMatrix[maze.getMaze().length-1][maze.getMaze()[0].length-1][0];
+            return visitedMatrix[0][maze.getMaze()[0].length-1][maze.getMaze()[0][0].length-1];
         }
 
 

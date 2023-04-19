@@ -13,10 +13,10 @@ public class MyMaze3DGenerator extends AMaze3DGenerator {
     private int sizeZ;
     private Random rand;
 
-    public Maze3D generate(int row, int column, int depth) {
-        this.sizeX = row;
-        this.sizeY = column;
-        this.sizeZ = depth;
+    public Maze3D generate(int depth,int row, int column) {
+        this.sizeX = depth;
+        this.sizeY = row;
+        this.sizeZ = column;
         this.rand = new Random();
         this.maze = new int[sizeX][sizeY][sizeZ];
         Maze3D maze3D = new Maze3D(maze);
@@ -62,9 +62,9 @@ public class MyMaze3DGenerator extends AMaze3DGenerator {
             //carve a path between walls
 
             if (maze[newX][newY][newZ] == 1) {
-                int wallX = (newX + curr.getRowIndex()) / 2;
-                int wallY = (newY + curr.getColumnIndex()) / 2;
-                int wallZ = (newZ + curr.getDepthIndex()) / 2;
+                int wallX = (newX + curr.getDepthIndex()) / 2;
+                int wallY = (newY + curr.getRowIndex()) / 2;
+                int wallZ = (newZ + curr.getColumnIndex()) / 2;
                 maze[wallX][wallY][wallZ] = 0;
 
                 generateDFS(new Position3D(newX, newY, newZ), maze);

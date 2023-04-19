@@ -1,0 +1,303 @@
+Index: ATP-Project-PartA/src/algorithms/maze3D/MyMaze3DGenerator.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package algorithms.maze3D;\r\n\r\nimport java.util.Arrays;\r\nimport java.util.Collections;\r\nimport java.util.List;\r\nimport java.util.Random;\r\n\r\npublic class MyMaze3DGenerator extends AMaze3DGenerator {\r\n\r\n    private int[][][] maze;\r\n    private int sizeX;\r\n    private int sizeY;\r\n    private int sizeZ;\r\n    private Random rand;\r\n\r\n    public Maze3D generate(int row, int column, int depth) {\r\n        this.sizeX = row;\r\n        this.sizeY = column;\r\n        this.sizeZ = depth;\r\n        this.rand = new Random();\r\n        this.maze = new int[sizeX][sizeY][sizeZ];\r\n        Maze3D maze3D = new Maze3D(maze);\r\n        //init the maze wiith walls all over\r\n\r\n        for (int x = 0; x < sizeX; x++) {\r\n            for (int y = 0; y < sizeY; y++) {\r\n                for (int z = 0; z < sizeZ; z++) {\r\n                    maze[x][y][z] = 1;\r\n                }\r\n            }\r\n        }\r\n\r\n        Position3D start = new Position3D(0, 0, 0);\r\n        Position3D end = new Position3D(sizeX - 1, sizeY - 1, 0);\r\n        generateDFS(start, this.maze);\r\n        return new Maze3D(maze);\r\n\r\n\r\n    }\r\n\r\n    private void generateDFS(Position3D curr, int[][][] maze) {\r\n        if (maze[curr.getRowIndex()][curr.getColumnIndex()][curr.getDepthIndex()] == 0) {\r\n            return;\r\n        }\r\n\r\n        maze[curr.getRowIndex()][curr.getColumnIndex()][curr.getDepthIndex()] = 0;\r\n        int[][] directions = {{0, 1, 0}, {0, -1, 0}, {1, 0, 0}, {-1, 0, 0}, {0, 0, 1}, {0, 0, -1}};\r\n\r\n        List<int[]> directionsList = Arrays.asList(directions);\r\n        Collections.shuffle(directionsList);\r\n\r\n        for (int[] direction : directionsList) {\r\n            int newX = curr.getRowIndex() + direction[0];\r\n            int newY = curr.getColumnIndex() + direction[1];\r\n            int newZ = curr.getDepthIndex() + direction[2];\r\n\r\n\r\n            if (newX < 0 || newX >= sizeX || newY < 0 || newY >= sizeY || newZ < 0 || newZ >= sizeZ) {\r\n                continue;\r\n            }\r\n\r\n            //carve a path between walls\r\n\r\n            if (maze[newX][newY][newZ] == 1) {\r\n                int wallX = (newX + curr.getRowIndex()) / 2;\r\n                int wallY = (newY + curr.getColumnIndex()) / 2;\r\n                int wallZ = (newZ + curr.getDepthIndex()) / 2;\r\n                maze[wallX][wallY][wallZ] = 0;\r\n\r\n                generateDFS(new Position3D(newX, newY, newZ), maze);\r\n\r\n            }\r\n\r\n        }\r\n    }\r\n}\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ATP-Project-PartA/src/algorithms/maze3D/MyMaze3DGenerator.java b/ATP-Project-PartA/src/algorithms/maze3D/MyMaze3DGenerator.java
+--- a/ATP-Project-PartA/src/algorithms/maze3D/MyMaze3DGenerator.java	(revision 43fc682a3d35e8e07bf17a67356ba047ad418897)
++++ b/ATP-Project-PartA/src/algorithms/maze3D/MyMaze3DGenerator.java	(date 1681896855665)
+@@ -13,10 +13,10 @@
+     private int sizeZ;
+     private Random rand;
+ 
+-    public Maze3D generate(int row, int column, int depth) {
+-        this.sizeX = row;
+-        this.sizeY = column;
+-        this.sizeZ = depth;
++    public Maze3D generate(int depth,int row, int column) {
++        this.sizeX = depth;
++        this.sizeY = row;
++        this.sizeZ = column;
+         this.rand = new Random();
+         this.maze = new int[sizeX][sizeY][sizeZ];
+         Maze3D maze3D = new Maze3D(maze);
+@@ -62,9 +62,9 @@
+             //carve a path between walls
+ 
+             if (maze[newX][newY][newZ] == 1) {
+-                int wallX = (newX + curr.getRowIndex()) / 2;
+-                int wallY = (newY + curr.getColumnIndex()) / 2;
+-                int wallZ = (newZ + curr.getDepthIndex()) / 2;
++                int wallX = (newX + curr.getDepthIndex()) / 2;
++                int wallY = (newY + curr.getRowIndex()) / 2;
++                int wallZ = (newZ + curr.getColumnIndex()) / 2;
+                 maze[wallX][wallY][wallZ] = 0;
+ 
+                 generateDFS(new Position3D(newX, newY, newZ), maze);
+Index: ATP-Project-PartA/src/algorithms/maze3D/Maze3D.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package algorithms.maze3D;\r\n\r\nimport algorithms.mazeGenerators.Maze;\r\nimport algorithms.mazeGenerators.Position;\r\n\r\npublic class Maze3D {\r\n    private int [][][] maze;\r\n    private Position3D[][][] positionMatrix;\r\n\r\n    public Maze3D(int [][][] maze)\r\n    {\r\n        this.maze = maze;\r\n        this.positionMatrix = new Position3D[maze.length][maze[0].length][maze[0][0].length];\r\n        for(int i = 0; i < maze.length; i++)\r\n        {\r\n            for(int j = 0; j < maze[0].length; j++) {\r\n                for (int z = 0; z < maze[0].length; z++) {\r\n                    positionMatrix[i][j][z] = new Position3D(i, j,z);\r\n                }\r\n            }\r\n        }\r\n    }\r\n    public Position3D  getPosition3D(int i, int j, int z){\r\n        return positionMatrix[i][j][z];\r\n\r\n    }\r\n    public int[][][] getMaze() {\r\n        return maze;\r\n    }\r\n\r\n    public void setMaze(int[][][] maze) {\r\n        this.maze = maze;\r\n    }\r\n\r\n    public Position3D[][][] getPositionMatrix() {\r\n        return positionMatrix;\r\n    }\r\n\r\n    public void setPositionMatrix(Position3D[][][] positionMatrix) {\r\n        this.positionMatrix = positionMatrix;\r\n    }\r\n    public Position3D getStartPosition() {return positionMatrix[0][0][0];}\r\n\r\n    public Position3D getGoalPosition() {return  positionMatrix[maze.length - 1][maze[0].length - 1][0];}\r\n\r\n    public void printMaze3D() {\r\n        for (int z = 0; z < this.maze[0][0].length; z++) {\r\n            System.out.println(\"Level \" + z + \" of the maze:\");\r\n            for (int x = 0; x < this.maze.length; x++) {\r\n                for (int y = 0; y < this.maze[x].length; y++) {\r\n                    System.out.print(this.maze[x][y][z] == 1 ? \"█\" : \" \");\r\n                }\r\n                System.out.println();\r\n            }\r\n            System.out.println();\r\n        }\r\n    }\r\n\r\n    public int getCellValue(int row, int column,int depth) {\r\n        return this.getMaze()[row][column][depth];\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ATP-Project-PartA/src/algorithms/maze3D/Maze3D.java b/ATP-Project-PartA/src/algorithms/maze3D/Maze3D.java
+--- a/ATP-Project-PartA/src/algorithms/maze3D/Maze3D.java	(revision 43fc682a3d35e8e07bf17a67356ba047ad418897)
++++ b/ATP-Project-PartA/src/algorithms/maze3D/Maze3D.java	(date 1681897572391)
+@@ -41,13 +41,13 @@
+     }
+     public Position3D getStartPosition() {return positionMatrix[0][0][0];}
+ 
+-    public Position3D getGoalPosition() {return  positionMatrix[maze.length - 1][maze[0].length - 1][0];}
++    public Position3D getGoalPosition() {return  positionMatrix[0][maze[0].length - 1][maze[0][0].length-1];}
+ 
+     public void printMaze3D() {
+-        for (int z = 0; z < this.maze[0][0].length; z++) {
++        for (int z = 0; z < this.maze.length; z++) {
+             System.out.println("Level " + z + " of the maze:");
+-            for (int x = 0; x < this.maze.length; x++) {
+-                for (int y = 0; y < this.maze[x].length; y++) {
++            for (int x = 0; x < this.maze[0].length; x++) {
++                for (int y = 0; y < this.maze[0][0].length; y++) {
+                     System.out.print(this.maze[x][y][z] == 1 ? "█" : " ");
+                 }
+                 System.out.println();
+@@ -56,7 +56,7 @@
+         }
+     }
+ 
+-    public int getCellValue(int row, int column,int depth) {
+-        return this.getMaze()[row][column][depth];
++    public int getCellValue(int depth, int row,int column) {
++        return this.getMaze()[depth][row][column];
+     }
+ }
+Index: ATP-Project-PartA/src/algorithms/search/DepthFirstSearch.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package algorithms.search;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.Collections;\r\nimport java.util.Stack;\r\n\r\npublic class DepthFirstSearch extends ASearchingAlgorithm{\r\n    private Stack<AState> collection;\r\n\r\n    public DepthFirstSearch() {\r\n        super();\r\n        this.collection = new Stack<>();\r\n    }\r\n\r\n    @Override\r\n    public Solution solve(ISearchable maze) {\r\n        if(maze == null)\r\n        {\r\n            System.out.println(\"You need to supply a valid searchable\");\r\n            return null;\r\n        }\r\n        AState startNode = maze.getStart();\r\n        AState goalNode = maze.getGoal();\r\n        collection.push(startNode);\r\n        AState temp = startNode;\r\n        AState prev = null;\r\n        ArrayList<AState> neighbours = null;\r\n\r\n        while(!collection.empty())\r\n        {\r\n            prev = temp;\r\n            temp = collection.pop();\r\n            if(!temp.isVisited())\r\n            {\r\n                temp.setVisited();\r\n                numberOfNodesEvaluated++;\r\n                if(temp.equals(goalNode))\r\n                {\r\n                    goalNode.setPrev(prev);\r\n                    temp.setPrev(prev);\r\n                    break;\r\n                }\r\n                //delete cast\r\n                neighbours = maze.getAllPossibleStates( temp);\r\n                for(AState state: neighbours)\r\n                {\r\n                    state.setPrev(temp);\r\n                    if(state.getDiagonalMove())\r\n                    {\r\n                        state.setCost(temp.getCost() + 15);\r\n                    }\r\n                    else\r\n                    {\r\n                        state.setCost(temp.getCost() + 10);\r\n                    }\r\n\r\n                }\r\n                for(AState neighbour : neighbours)\r\n                {\r\n                    collection.push(neighbour);\r\n                }\r\n            }\r\n\r\n\r\n        }\r\n\r\n        startNode.setPrev(null);\r\n        Solution sol = new Solution(getPath(temp));\r\n        resetMaze(maze);\r\n        return sol;\r\n    }\r\n\r\n    @Override\r\n    public String getName() {\r\n        return \"This is Depth first algorithm\";\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ATP-Project-PartA/src/algorithms/search/DepthFirstSearch.java b/ATP-Project-PartA/src/algorithms/search/DepthFirstSearch.java
+--- a/ATP-Project-PartA/src/algorithms/search/DepthFirstSearch.java	(revision 43fc682a3d35e8e07bf17a67356ba047ad418897)
++++ b/ATP-Project-PartA/src/algorithms/search/DepthFirstSearch.java	(date 1681896353129)
+@@ -41,7 +41,8 @@
+                     break;
+                 }
+                 //delete cast
+-                neighbours = maze.getAllPossibleStates( temp);
++//                neighbours = maze.getAllPossibleStates( temp);
++                neighbours = maze.getAllPossibleStates(temp);
+                 for(AState state: neighbours)
+                 {
+                     state.setPrev(temp);
+Index: ATP-Project-PartA/src/algorithms/maze3D/IMazeGenerator3D.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package algorithms.maze3D;\r\n\r\npublic interface IMazeGenerator3D {\r\n    Maze3D generate(int depth, int row, int column);\r\n    long measureAlgorithmTimeMillis( int row, int column,int depth);\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ATP-Project-PartA/src/algorithms/maze3D/IMazeGenerator3D.java b/ATP-Project-PartA/src/algorithms/maze3D/IMazeGenerator3D.java
+--- a/ATP-Project-PartA/src/algorithms/maze3D/IMazeGenerator3D.java	(revision 43fc682a3d35e8e07bf17a67356ba047ad418897)
++++ b/ATP-Project-PartA/src/algorithms/maze3D/IMazeGenerator3D.java	(date 1681897747873)
+@@ -2,5 +2,5 @@
+ 
+ public interface IMazeGenerator3D {
+     Maze3D generate(int depth, int row, int column);
+-    long measureAlgorithmTimeMillis( int row, int column,int depth);
++    long measureAlgorithmTimeMillis( int depth, int row,int column);
+ }
+Index: ATP-Project-PartA/src/algorithms/maze3D/Position3D.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package algorithms.maze3D;\r\n\r\npublic class Position3D {\r\n    private int row;\r\n    private int column;\r\n    private int depth;\r\n\r\n    public int getDepthIndex() {\r\n        return depth;\r\n    }\r\n\r\n    public void setDepthIndex(int depth) {\r\n        this.depth = depth;\r\n    }\r\n\r\n\r\n    public Position3D(int row, int column,int depth) {\r\n        this.row = row;\r\n        this.column = column;\r\n        this.depth=depth;\r\n    }\r\n    public int getRowIndex() {return row;}\r\n    public int getColumnIndex() {return column;}\r\n\r\n\r\n    @Override\r\n    public String toString() {\r\n        return \"{\" + row + \",\" + column + \",\"+depth+\"}\";\r\n    }\r\n\r\n    @Override\r\n    public boolean equals(Object o) {\r\n        if (this == o) return true;\r\n        if (o == null || getClass() != o.getClass()) return false;\r\n        Position3D position = (Position3D) o;\r\n        return row == position.row && column == position.column && depth==position.depth;\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ATP-Project-PartA/src/algorithms/maze3D/Position3D.java b/ATP-Project-PartA/src/algorithms/maze3D/Position3D.java
+--- a/ATP-Project-PartA/src/algorithms/maze3D/Position3D.java	(revision 43fc682a3d35e8e07bf17a67356ba047ad418897)
++++ b/ATP-Project-PartA/src/algorithms/maze3D/Position3D.java	(date 1681896665963)
+@@ -14,7 +14,7 @@
+     }
+ 
+ 
+-    public Position3D(int row, int column,int depth) {
++    public Position3D(int depth,int row, int column) {
+         this.row = row;
+         this.column = column;
+         this.depth=depth;
+@@ -25,7 +25,7 @@
+ 
+     @Override
+     public String toString() {
+-        return "{" + row + "," + column + ","+depth+"}";
++        return "{" +depth+","+ row + "," + column+ "}" ;
+     }
+ 
+     @Override
+Index: ATP-Project-PartA/src/algorithms/maze3D/SearchableMaze3D.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package algorithms.maze3D;\r\n\r\nimport algorithms.mazeGenerators.Maze;\r\nimport algorithms.search.AState;\r\nimport algorithms.search.ISearchable;\r\nimport algorithms.search.MazeState;\r\n\r\nimport java.util.ArrayList;\r\n\r\n\r\n\r\nimport algorithms.mazeGenerators.Maze;\r\n\r\nimport java.util.ArrayList;\r\n\r\npublic class SearchableMaze3D implements ISearchable {\r\n        private Maze3D maze;\r\n        private boolean solved = false;\r\n        private Maze3DState[][][] visitedMatrix;\r\n        private int [][][] flagMatrix;\r\n\r\n\r\n        public SearchableMaze3D(Maze3D maze) {\r\n            this.maze = maze;\r\n            this.solved = false;\r\n            visitedMatrix = new Maze3DState[maze.getMaze().length][maze.getMaze()[0].length][maze.getMaze()[0][0].length];\r\n            flagMatrix = new int [maze.getMaze().length][maze.getMaze()[0].length][maze.getMaze()[0][0].length];\r\n            for(int i = 0; i < maze.getMaze().length; i++)\r\n            {\r\n                for(int j = 0; j < maze.getMaze()[0].length; j++)\r\n                {\r\n                    for(int z=0;z<maze.getMaze()[0][0].length;z++) {\r\n                        visitedMatrix[i][j][z] = new Maze3DState(maze.getPosition3D(i, j, z));\r\n                        flagMatrix[i][j][z] = 0;\r\n                    }\r\n                }\r\n            }\r\n            flagMatrix[0][0][0] = 1;\r\n        }\r\n\r\n        public int getRowsLength() {return this.maze.getMaze().length;}\r\n        public int getColumnsLength(){return this.maze.getMaze()[0].length;}\r\n        public int getDepthLength(){return this.maze.getMaze()[0][0].length;}\r\n        public void setUnvisited()\r\n        {\r\n            for(int i = 0; i < maze.getMaze().length; i++)\r\n            {\r\n                for(int j = 0; j < maze.getMaze()[0].length; j++) {\r\n                    for (int z = 0; z < maze.getMaze()[0][0].length; z++) {\r\n                        if (i == 0 && j == 0 && z==0) {\r\n                            visitedMatrix[i][j][z].setUnVisited();\r\n                            visitedMatrix[i][j][z].setPrev(null);\r\n                            continue;\r\n                        }\r\n                        visitedMatrix[i][j][z].setUnVisited();\r\n                        visitedMatrix[i][j][z].setPrev(null);\r\n                        flagMatrix[i][j][z] = 0;\r\n\r\n                    }\r\n                }\r\n            }\r\n        }\r\n        @Override\r\n        public ArrayList<AState> getAllPossibleStates(AState state)\r\n        {\r\n            Maze3DState mState = (Maze3DState) state;\r\n            ArrayList<AState> possibleMoves = new ArrayList<>();\r\n            int row = mState.getRow();\r\n            int column = mState.getColumn();\r\n            int depth =mState.getDepth();\r\n            int counter = 0;\r\n\r\n            try\r\n            {\r\n                /** down **/\r\n                if(maze.getCellValue(row+1,column,depth) == 0 && flagMatrix[row+1][column][depth] == 0)\r\n                {\r\n                    possibleMoves.add(visitedMatrix[row+1][column][depth]);\r\n                    flagMatrix[row+1][column][depth] = 1;\r\n\r\n                }\r\n            }\r\n            catch (ArrayIndexOutOfBoundsException ignored)\r\n            {}\r\n\r\n            try\r\n            {\r\n                /** up **/\r\n                if(maze.getCellValue(row-1,column,depth) == 0 && flagMatrix[row-1][column][depth] == 0)\r\n\r\n                {\r\n                    possibleMoves.add(visitedMatrix[row-1][column][depth]);\r\n                    flagMatrix[row-1][column][depth] = 1;\r\n                }\r\n            }\r\n            catch (ArrayIndexOutOfBoundsException ignored)\r\n            {}\r\n\r\n            try\r\n            {\r\n                /** left **/\r\n                if(maze.getCellValue(row,column-1,depth) == 0 && flagMatrix[row][column-1][depth] == 0)\r\n\r\n                {\r\n                    possibleMoves.add(visitedMatrix[row][column-1][depth]);\r\n                    flagMatrix[row][column-1][depth] = 1;\r\n                }\r\n            }\r\n            catch (ArrayIndexOutOfBoundsException ignored)\r\n            {}\r\n\r\n            try\r\n            {\r\n                /** right **/\r\n                if(maze.getCellValue(row,column+1,depth) == 0 && flagMatrix[row][column+1][depth] == 0)\r\n                {\r\n                    possibleMoves.add(visitedMatrix[row][column+1][depth]);\r\n                    flagMatrix[row][column+1][depth] = 1;\r\n\r\n                }\r\n\r\n            }\r\n            catch (ArrayIndexOutOfBoundsException ignored)\r\n            {}\r\n            try\r\n            {\r\n                /** up **/\r\n                if (maze.getCellValue(row, column + 1, depth) == 0 && flagMatrix[row][column][depth + 1] == 0) {\r\n                    possibleMoves.add(visitedMatrix[row][column][depth + 1]);\r\n                    flagMatrix[row][column][depth + 1] = 1;\r\n\r\n                }\r\n            }\r\n            catch (ArrayIndexOutOfBoundsException ignored)\r\n            {}\r\n            try\r\n            {\r\n                /** down **/\r\n                if (maze.getCellValue(row, column + 1, depth) == 0 && flagMatrix[row][column][depth - 1] == 0) {\r\n                    possibleMoves.add(visitedMatrix[row][column][depth - 1]);\r\n                    flagMatrix[row][column][depth - 1] = 1;\r\n\r\n                }\r\n            }\r\n            catch (ArrayIndexOutOfBoundsException ignored)\r\n            {}\r\n\r\n\r\n\r\n\r\n            return possibleMoves;\r\n        }\r\n\r\n        public void setSolved(boolean solved) {\r\n            this.solved = solved;\r\n        }\r\n\r\n        public boolean isSolved() {\r\n            return solved;\r\n        }\r\n\r\n        @Override\r\n        public AState getStart() {return visitedMatrix[0][0][0];}\r\n\r\n        @Override\r\n        public AState getGoal() {\r\n            return visitedMatrix[maze.getMaze().length-1][maze.getMaze()[0].length-1][0];\r\n        }\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ATP-Project-PartA/src/algorithms/maze3D/SearchableMaze3D.java b/ATP-Project-PartA/src/algorithms/maze3D/SearchableMaze3D.java
+--- a/ATP-Project-PartA/src/algorithms/maze3D/SearchableMaze3D.java	(revision 43fc682a3d35e8e07bf17a67356ba047ad418897)
++++ b/ATP-Project-PartA/src/algorithms/maze3D/SearchableMaze3D.java	(date 1681897572386)
+@@ -38,9 +38,9 @@
+             flagMatrix[0][0][0] = 1;
+         }
+ 
+-        public int getRowsLength() {return this.maze.getMaze().length;}
+-        public int getColumnsLength(){return this.maze.getMaze()[0].length;}
+-        public int getDepthLength(){return this.maze.getMaze()[0][0].length;}
++        public int getRowsLength() {return this.maze.getMaze()[0].length;}
++        public int getColumnsLength(){return this.maze.getMaze()[0][0].length;}
++        public int getDepthLength(){return this.maze.getMaze().length;}
+         public void setUnvisited()
+         {
+             for(int i = 0; i < maze.getMaze().length; i++)
+@@ -73,10 +73,10 @@
+             try
+             {
+                 /** down **/
+-                if(maze.getCellValue(row+1,column,depth) == 0 && flagMatrix[row+1][column][depth] == 0)
++                if(maze.getCellValue(depth,row+1,column) == 0 && flagMatrix[depth][row+1][column] == 0)
+                 {
+-                    possibleMoves.add(visitedMatrix[row+1][column][depth]);
+-                    flagMatrix[row+1][column][depth] = 1;
++                    possibleMoves.add(visitedMatrix[depth][row+1][column]);
++                    flagMatrix[depth][row+1][column] = 1;
+ 
+                 }
+             }
+@@ -86,11 +86,11 @@
+             try
+             {
+                 /** up **/
+-                if(maze.getCellValue(row-1,column,depth) == 0 && flagMatrix[row-1][column][depth] == 0)
+-
++                if(maze.getCellValue(depth,row-1,column) == 0 && flagMatrix[depth][row-1][column] == 0)
+                 {
+-                    possibleMoves.add(visitedMatrix[row-1][column][depth]);
+-                    flagMatrix[row-1][column][depth] = 1;
++                    possibleMoves.add(visitedMatrix[depth][row-1][column]);
++                    flagMatrix[depth][row-1][column] = 1;
++
+                 }
+             }
+             catch (ArrayIndexOutOfBoundsException ignored)
+@@ -99,11 +99,11 @@
+             try
+             {
+                 /** left **/
+-                if(maze.getCellValue(row,column-1,depth) == 0 && flagMatrix[row][column-1][depth] == 0)
+-
++                if(maze.getCellValue(depth,row,column-1) == 0 && flagMatrix[depth][row][column-1] == 0)
+                 {
+-                    possibleMoves.add(visitedMatrix[row][column-1][depth]);
+-                    flagMatrix[row][column-1][depth] = 1;
++                    possibleMoves.add(visitedMatrix[depth][row][column-1]);
++                    flagMatrix[depth][row][column-1] = 1;
++
+                 }
+             }
+             catch (ArrayIndexOutOfBoundsException ignored)
+@@ -112,10 +112,10 @@
+             try
+             {
+                 /** right **/
+-                if(maze.getCellValue(row,column+1,depth) == 0 && flagMatrix[row][column+1][depth] == 0)
++                if(maze.getCellValue(depth,row,column+1) == 0 && flagMatrix[depth][row][column+1] == 0)
+                 {
+-                    possibleMoves.add(visitedMatrix[row][column+1][depth]);
+-                    flagMatrix[row][column+1][depth] = 1;
++                    possibleMoves.add(visitedMatrix[depth][row][column-1]);
++                    flagMatrix[depth][row][column+1] = 1;
+ 
+                 }
+ 
+@@ -124,10 +124,10 @@
+             {}
+             try
+             {
+-                /** up **/
+-                if (maze.getCellValue(row, column + 1, depth) == 0 && flagMatrix[row][column][depth + 1] == 0) {
+-                    possibleMoves.add(visitedMatrix[row][column][depth + 1]);
+-                    flagMatrix[row][column][depth + 1] = 1;
++                /** out **/
++                if (maze.getCellValue(row, column, depth+1) == 0 && flagMatrix[depth+1][row][column] == 0) {
++                    possibleMoves.add(visitedMatrix[depth+1][row][column]);
++                    flagMatrix[depth+1][row][column] = 1;
+ 
+                 }
+             }
+@@ -135,10 +135,10 @@
+             {}
+             try
+             {
+-                /** down **/
+-                if (maze.getCellValue(row, column + 1, depth) == 0 && flagMatrix[row][column][depth - 1] == 0) {
+-                    possibleMoves.add(visitedMatrix[row][column][depth - 1]);
+-                    flagMatrix[row][column][depth - 1] = 1;
++                /** in **/
++                if (maze.getCellValue(depth-1, row , column) == 0 && flagMatrix[depth-1][row][column] == 0) {
++                    possibleMoves.add(visitedMatrix[depth-1][row][column]);
++                    flagMatrix[depth-1][row][column] = 1;
+ 
+                 }
+             }
+@@ -164,7 +164,7 @@
+ 
+         @Override
+         public AState getGoal() {
+-            return visitedMatrix[maze.getMaze().length-1][maze.getMaze()[0].length-1][0];
++            return visitedMatrix[0][maze.getMaze()[0].length-1][maze.getMaze()[0][0].length-1];
+         }
+ 
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"2da5225f-907e-4b23-8e6e-d618612ed3cb\" name=\"Changes\" comment=\"fix import of the astate\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/BreadthFirstSearch.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/BreadthFirstSearch.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/SearchableMaze.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/SearchableMaze.class\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Enum\" />\r\n        <option value=\"JUnit5 Test Class\" />\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2Nh8SylfmYmH1gUiz2QpXBPwWEm\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,\r\n    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,\r\n    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,\r\n    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-15&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\marik\\Documents\\GitHub\\Mazy_Maze\\ATP-Project-PartA\\src\" />\r\n      <recent name=\"C:\\Users\\marik\\Documents\\GitHub\\Mazy_Maze\" />\r\n      <recent name=\"C:\\Users\\marik\\Documents\\GitHub\\Mazy_Maze\\ATP-Project-PartA\\src\\algorithms\\mazeGenerators\" />\r\n      <recent name=\"C:\\Users\\marik\\Documents\\GitHub\\Mazy_Maze\\src\\src\" />\r\n    </key>\r\n    <key name=\"CreateTestDialog.Recents.Supers\">\r\n      <recent name=\"\" />\r\n    </key>\r\n    <key name=\"CreateTestDialog.RecentsKey\">\r\n      <recent name=\"algorithms.search\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.RunSearchOnMaze3D\">\r\n    <configuration name=\"RunMaze3DGenerator\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"test.RunMaze3DGenerator\" />\r\n      <module name=\"ATP-Project-PartA\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"test.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"RunMazeGenerator\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"test.RunMazeGenerator\" />\r\n      <module name=\"ATP-Project-PartA\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"test.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"RunSearchOnMaze\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"test.RunSearchOnMaze\" />\r\n      <module name=\"ATP-Project-PartA\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"test.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"RunSearchOnMaze3D\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"test.RunSearchOnMaze3D\" />\r\n      <module name=\"ATP-Project-PartA\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"test.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"BestFirstSearchTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"ATP-Project-PartA\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"algorithms.search.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"algorithms.search\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"algorithms.search.BestFirstSearchTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.RunSearchOnMaze3D\" />\r\n        <item itemvalue=\"Application.RunSearchOnMaze\" />\r\n        <item itemvalue=\"Application.RunMazeGenerator\" />\r\n        <item itemvalue=\"JUnit.BestFirstSearchTest\" />\r\n        <item itemvalue=\"Application.RunMaze3DGenerator\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"2da5225f-907e-4b23-8e6e-d618612ed3cb\" name=\"Changes\" comment=\"\" />\r\n      <created>1680104956306</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1680104956306</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"dfghj\">\r\n      <created>1680107665434</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680107665434</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"dfghj\">\r\n      <created>1680108497879</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680108497879</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"working maze\">\r\n      <created>1680429466608</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680429466608</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"working random maze\">\r\n      <created>1680447083724</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680447083724</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"started working on search algorithms\">\r\n      <created>1680536656744</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680536656744</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Working BFS and DFS\">\r\n      <created>1680709188728</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680709188728</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Working BFS and DFS and BEST\">\r\n      <created>1680806447343</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680806447343</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"Fixed some bugs. all the moodle test are successful\">\r\n      <created>1680879863896</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680879863896</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"added kruskal\">\r\n      <created>1681140974702</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681140974702</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"working generator , need to fix searcher\">\r\n      <created>1681409231289</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681409231289</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"finished tests and 2d generation and solvers\">\r\n      <created>1681472508208</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681472508208</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"finished tests and 2d generation and solvers\">\r\n      <created>1681566807881</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681566807881</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"finished tests and 2d generation and solvers\">\r\n      <created>1681584339363</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681584339363</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"Fixes Isearchable interface\">\r\n      <created>1681735586575</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681735586575</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\"Fixes Isearchable interface\">\r\n      <created>1681736828406</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681736828406</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00016\" summary=\"Fixes Isearchable interface\">\r\n      <created>1681737159089</created>\r\n      <option name=\"number\" value=\"00016\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681737159089</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00017\" summary=\"fixed input check\">\r\n      <created>1681816281835</created>\r\n      <option name=\"number\" value=\"00017\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681816281835</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"18\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"dfghj\" />\r\n    <MESSAGE value=\"working maze\" />\r\n    <MESSAGE value=\"working random maze\" />\r\n    <MESSAGE value=\"started working on search algorithms\" />\r\n    <MESSAGE value=\"Working BFS and DFS\" />\r\n    <MESSAGE value=\"Working BFS and DFS and BEST\" />\r\n    <MESSAGE value=\"Fixed some bugs. all the moodle test are successful\" />\r\n    <MESSAGE value=\"added kruskal\" />\r\n    <MESSAGE value=\"working generator , need to fix searcher\" />\r\n    <MESSAGE value=\"finished tests and 2d generation and solvers\" />\r\n    <MESSAGE value=\"Fixes Isearchable interface\" />\r\n    <MESSAGE value=\"fixed input check\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"fixed input check\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/SearchableMaze.java</url>\r\n          <line>246</line>\r\n          <option name=\"timeStamp\" value=\"61\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/MazeState.java</url>\r\n          <line>35</line>\r\n          <option name=\"timeStamp\" value=\"88\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/mazeGenerators/MyMazeGenerator.java</url>\r\n          <line>46</line>\r\n          <option name=\"timeStamp\" value=\"180\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/mazeGenerators/MyMazeGenerator.java</url>\r\n          <line>66</line>\r\n          <option name=\"timeStamp\" value=\"181\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/ATP-Project-PartA/JUnit/algorithms/search/BestFirstSearchTest.java</url>\r\n          <line>52</line>\r\n          <option name=\"timeStamp\" value=\"206\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/test/RunMaze3DGenerator.java</url>\r\n          <line>15</line>\r\n          <option name=\"timeStamp\" value=\"207\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/SearchableMaze.java</url>\r\n          <line>43</line>\r\n          <option name=\"timeStamp\" value=\"230\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/test/RunSearchOnMaze3D.java</url>\r\n          <line>19</line>\r\n          <option name=\"timeStamp\" value=\"231\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/DepthFirstSearch.java</url>\r\n          <line>43</line>\r\n          <option name=\"timeStamp\" value=\"232\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/DepthFirstSearch.java</url>\r\n          <line>36</line>\r\n          <option name=\"timeStamp\" value=\"233\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 43fc682a3d35e8e07bf17a67356ba047ad418897)
++++ b/.idea/workspace.xml	(date 1681897572334)
+@@ -6,8 +6,15 @@
+   <component name="ChangeListManager">
+     <list default="true" id="2da5225f-907e-4b23-8e6e-d618612ed3cb" name="Changes" comment="fix import of the astate">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/BreadthFirstSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/BreadthFirstSearch.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/SearchableMaze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/SearchableMaze.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/maze3D/Maze3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/maze3D/Maze3D.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/maze3D/MyMaze3DGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/maze3D/MyMaze3DGenerator.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/maze3D/Position3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/maze3D/Position3D.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/maze3D/SearchableMaze3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/maze3D/SearchableMaze3D.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/DepthFirstSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/DepthFirstSearch.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/maze3D/Maze3D.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/maze3D/Maze3D.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/maze3D/MyMaze3DGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/maze3D/MyMaze3DGenerator.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/maze3D/Position3D.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/maze3D/Position3D.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/DepthFirstSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/DepthFirstSearch.class" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -349,11 +356,6 @@
+           <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/DepthFirstSearch.java</url>
+           <line>43</line>
+           <option name="timeStamp" value="232" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/DepthFirstSearch.java</url>
+-          <line>36</line>
+-          <option name="timeStamp" value="233" />
+         </line-breakpoint>
+       </breakpoints>
+     </breakpoint-manager>

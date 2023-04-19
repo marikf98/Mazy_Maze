@@ -3,14 +3,23 @@ package algorithms.search;
 import algorithms.mazeGenerators.Maze;
 
 import java.util.ArrayList;
-
+/**this is an adapter class for the maze, it receives a maze instance and creates a searchable maze instance,
+ * the class implements the ISearchable interface
+ * maze - the maze that is adapted
+ * solved - hold if the maze been solved
+ * visitedMatrix - holds all the location that where already discovered
+ * flagMatrix - a helper matrix for marking discovered nodes
+ * SearchableMaze(Maze maze) - the constructor of this class , it receives a maze to adapt and initializes all the filed
+ * setUnvisited() - this function resets all the maze after it has been searched and initializes it back to its original state
+ * getAllPossibleStates(AState state) - this function receives a state of the maze and returns a list of all the neighbours that can be reached from this state
+ * all the other function are setter and getter functions**/
 public class SearchableMaze implements ISearchable{
     private Maze maze;
     private boolean solved = false;
     private MazeState[][] visitedMatrix;
     private int [][] flagMatrix;
 
-    //a constructor for the class
+
     public SearchableMaze(Maze maze) {
         this.maze = maze;
         this.solved = false;
@@ -26,11 +35,9 @@ public class SearchableMaze implements ISearchable{
         }
         flagMatrix[0][0] = 1;
     }
-    //get the len of the maze
+
     public int getRowsLength() {return this.maze.getRowsLength();}
     public int getColumnsLength(){return this.maze.getColumnsLength();}
-
-    //set all the maze as unvisited
     public void setUnvisited()
     {
         for(int i = 0; i < maze.getRowsLength(); i++)
@@ -52,7 +59,6 @@ public class SearchableMaze implements ISearchable{
     }
 
 
-    //get all the poissible move from where the curret state is
     public ArrayList<AState> getAllPossibleStates(AState state)
     {
         MazeState mState = (MazeState) state;
@@ -239,13 +245,6 @@ public class SearchableMaze implements ISearchable{
         {}
         counter =0;
 
-
-
-
-
-
-
-
         return possibleMoves;
     }
 
@@ -256,10 +255,10 @@ public class SearchableMaze implements ISearchable{
     public boolean isSolved() {
         return solved;
     }
-    //get the start of the maze
+
     @Override
     public AState getStart() {return visitedMatrix[0][0];}
-    //get the end of a maze
+
     @Override
     public AState getGoal() {
         return visitedMatrix[maze.getRowsLength()-1][maze.getColumnsLength()-1];

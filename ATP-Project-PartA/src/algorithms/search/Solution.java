@@ -1,7 +1,11 @@
 package algorithms.search;
 
 import java.util.ArrayList;
-
+/**
+ * this class represents a solution to a search problem
+ * pathToGoal - is a list that holds all the nodes of the solution path
+ * getSolutionPath - returns the list of the solution
+ * print - prints the solution**/
 public class Solution {
     private ArrayList<AState> pathToGoal;
 

@@ -19,9 +19,9 @@ public abstract class AState {
         this.visited = false;
     }
 
-//    public void setGoal(boolean goal) {
-//        this.isGoal = goal;
-//    }
+    public void setGoal(boolean goal) {
+        this.isGoal = goal;
+    }
 
     /**getter function for the visited field**/
     public boolean isVisited() {

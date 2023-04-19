@@ -1,13 +1,20 @@
 package algorithms.search;
 
 import java.util.*;
-
+/**this is the BreadthFirstSearch class which extends the ASearchingAlgorithm class
+ *solve(ISearchable maze) - this function solves the maze using the BFS algorithm **/
 public class BreadthFirstSearch extends ASearchingAlgorithm{
     public BreadthFirstSearch() {
         super();
         this.collection =  new LinkedList<AState>();
     }
-
+    /**
+     *  first we initialize the start position and the goal position and add the start position to the queue, we iterate over the queue and
+     *  add the neighbors of the current position to the queue,
+     * each iteration we check if the state that we got from the queue is the goal node if it is we break the loop
+     * during the iteration we set the cost of getting to each node
+     * at the end we reset the maze and return a Solution object that holds the path to the solution of the maze
+     * for each state that we check we increment the number of nodes visited by one **/
     @Override
     public Solution solve(ISearchable maze) {
         if(maze == null)
@@ -39,7 +46,6 @@ public class BreadthFirstSearch extends ASearchingAlgorithm{
                 }
 
                 ArrayList<AState> possibleMoves = new ArrayList<>();
-                //delete cast***
                 possibleMoves = maze.getAllPossibleStates(temp);
                 for(AState state: possibleMoves)
                 {
@@ -63,7 +69,7 @@ public class BreadthFirstSearch extends ASearchingAlgorithm{
         return sol;
     }
 
-
+    /** a getter function for the name**/
     @Override
     public String getName()
     {

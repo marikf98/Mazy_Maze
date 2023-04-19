@@ -3,7 +3,8 @@ package algorithms.search;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Stack;
-
+/**this is the DepthFirstSearch class which extends the ASearchingAlgorithm class
+ *solve(ISearchable maze) - this function solves the maze using the DFS algorithm **/
 public class DepthFirstSearch extends ASearchingAlgorithm{
     private Stack<AState> collection;
 
@@ -12,6 +13,13 @@ public class DepthFirstSearch extends ASearchingAlgorithm{
         this.collection = new Stack<>();
     }
 
+    /**
+     *  first we initialize the start position and the goal position and add the start position to the stack, we iterate over the stack and
+     *  add the neighbors of the current position to the stack,
+     * each iteration we check if the state that we got from the stack is the goal node if it is we break the loop
+     * during the iteration we set the cost of getting to each node
+     * at the end we reset the maze and return a Solution object that holds the path to the solution of the maze
+     * for each state that we check we increment the number of nodes visited by one **/
     @Override
     public Solution solve(ISearchable maze) {
         if(maze == null)
@@ -40,8 +48,7 @@ public class DepthFirstSearch extends ASearchingAlgorithm{
                     temp.setPrev(prev);
                     break;
                 }
-                //delete cast
-//                neighbours = maze.getAllPossibleStates( temp);
+
                 neighbours = maze.getAllPossibleStates(temp);
                 for(AState state: neighbours)
                 {
@@ -71,6 +78,7 @@ public class DepthFirstSearch extends ASearchingAlgorithm{
         resetMaze(maze);
         return sol;
     }
+    /** a getter function for the name**/
 
     @Override
     public String getName() {

@@ -1,6 +1,11 @@
 package algorithms.search;
 
 import algorithms.mazeGenerators.Position;
+/**this class represents a state of the maze and extends the AState class
+ * row, column - represent the location of the state on the maze
+ * m_isDiagonalMove - represent if the move to this state has been done diagonally
+ * all the other function are the constructor and the getter and setters of the class
+ * all the function in this class are getters setters and the constructor*/
 
 public class MazeState extends AState
 {

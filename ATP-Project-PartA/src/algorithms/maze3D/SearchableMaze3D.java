@@ -13,6 +13,10 @@ public class SearchableMaze3D implements ISearchable {
 
 
         public SearchableMaze3D(Maze3D maze) {
+            if(maze == null)
+            {
+                return;
+            }
             this.maze = maze;
             this.solved = false;
             visitedMatrix = new Maze3DState[maze.getMaze().length][maze.getMaze()[0].length][maze.getMaze()[0][0].length];
@@ -55,6 +59,10 @@ public class SearchableMaze3D implements ISearchable {
         @Override
         public ArrayList<AState> getAllPossibleStates(AState state)
         {
+            if(state == null)
+            {
+                return null;
+            }
             Maze3DState mState = (Maze3DState) state;
             ArrayList<AState> possibleMoves = new ArrayList<>();
             int row = mState.getRow();

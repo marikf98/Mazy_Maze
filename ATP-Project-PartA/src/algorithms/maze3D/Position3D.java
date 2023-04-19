@@ -16,6 +16,10 @@ public class Position3D {
 
 
     public Position3D(int depth,int row, int column) {
+        if(depth < 0 || row < 0 || column < 0)
+        {
+            return;
+        }
         this.row = row;
         this.column = column;
         this.depth=depth;

@@ -20,7 +20,9 @@ public class SearchableMaze implements ISearchable{
     private int [][] flagMatrix;
 
 
-    public SearchableMaze(Maze maze) {
+    public SearchableMaze(Maze maze)
+    {
+        if(maze == null){return;}
         this.maze = maze;
         this.solved = false;
         visitedMatrix = new MazeState[maze.getRowsLength()][maze.getColumnsLength()];
@@ -61,6 +63,7 @@ public class SearchableMaze implements ISearchable{
 
     public ArrayList<AState> getAllPossibleStates(AState state)
     {
+        if(state == null){return null;}
         MazeState mState = (MazeState) state;
         ArrayList<AState> possibleMoves = new ArrayList<>();
         int row = mState.getRow();
@@ -243,7 +246,7 @@ public class SearchableMaze implements ISearchable{
         }
         catch (ArrayIndexOutOfBoundsException ignored)
         {}
-        counter =0;
+        counter = 0;
 
         return possibleMoves;
     }

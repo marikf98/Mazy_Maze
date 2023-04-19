@@ -8,6 +8,7 @@ public class Maze {
     /**this is the constructor of the Maze class, it receives a 2D array of ints and initializes the maze and position matrix**/
     public Maze(int [][] maze)
     {
+        if(maze == null){return;}
         this.maze = maze;
         this.positionMatrix = new Position[maze.length][maze[0].length];
         for(int i = 0; i < maze.length; i++)
@@ -18,25 +19,27 @@ public class Maze {
             }
         }
     }
-//
-//    public  void setIn (int i, int j)
-//    {
-//        this.maze[i][j] = 2;
-//    }
-//
-//    public void setOut(int i, int j)
-//    {
-//        this.maze[i][j] = 3;
-//    }
+
+    public  void setIn (int i, int j)
+    {
+        this.maze[i][j] = 2;
+    }
+
+    public void setOut(int i, int j)
+    {
+        this.maze[i][j] = 3;
+    }
 
     /**this function lets us get a value from a cell in the maze where 1 is a wall and 0 is a path**/
     public int getCellValue (int i, int j)
     {
+        if(i < 0 || j < 0 || i >= maze.length || j >= maze[0].length){return -1;}
         return maze[i][j];
     }
     /**this function lets us set a value to a cell in the maze where 1 is a wall and 0 is a path**/
     public void setCellValue (int i, int j, int val)
     {
+        if(i < 0 || j < 0 || i >= maze.length || j >= maze[0].length){return;}
         this.maze[i][j] = val;
     }
 
@@ -47,34 +50,54 @@ public class Maze {
     public int getColumnsLength(){return maze[0].length;}
 
     /**this function returns the position of a cell in the maze from a given index**/
-    public Position getPosition(int i, int j) {return positionMatrix[i][j];}
+    public Position getPosition(int i, int j)
+    {
+        if(i < 0 || j < 0 || i >= maze.length || j >= maze[0].length){return null;}
+        return positionMatrix[i][j];
+    }
 
     /**this function prints the maze**/
     public void print() {
         System.out.print("╔");
-        for (int j = 0; j < maze[0].length * 2 + 1; j++) {
+        for (int j = 0; j < maze[0].length * 2 + 1; j++)
+        {
             System.out.print("═");
         }
+
         System.out.println("╗");
 
-        for (int i = 0; i < maze.length; i++) {
+        for (int i = 0; i < maze.length; i++)
+        {
             System.out.print("║ ");
-            for (int j = 0; j < maze[0].length; j++) {
-                if (i == 0 && j == 0) {
+
+            for (int j = 0; j < maze[0].length; j++)
+            {
+                if (i == 0 && j == 0)
+                {
                     System.out.print("S ");
-                } else if (i == maze.length - 1 && j == maze[0].length - 1) {
+                }
+
+                else if (i == maze.length - 1 && j == maze[0].length - 1)
+                {
                     System.out.print("E ");
-                } else {
+                }
+
+                else
+                {
                     System.out.print(maze[i][j] + " ");
                 }
             }
+
             System.out.println("║");
         }
 
         System.out.print("╚");
-        for (int j = 0; j < maze[0].length * 2 + 1; j++) {
+
+        for (int j = 0; j < maze[0].length * 2 + 1; j++)
+        {
             System.out.print("═");
         }
+
         System.out.println("╝");
     }
 

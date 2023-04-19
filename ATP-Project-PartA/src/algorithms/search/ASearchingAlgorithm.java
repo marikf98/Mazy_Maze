@@ -19,6 +19,8 @@ public abstract class ASearchingAlgorithm implements ISearchingAlgorithm {
     /**this method returns the path of the solution, the path is a list of states**/
     public ArrayList<AState> getPath(AState endState)
     {
+        if(endState == null){return null;}
+
         ArrayList<AState> solution = new ArrayList<>();
         while(endState != null)
         {
@@ -31,6 +33,7 @@ public abstract class ASearchingAlgorithm implements ISearchingAlgorithm {
     /**this method resets the searchable to its original state after it has been solved**/
     public void resetMaze(ISearchable maze)
     {
+        if(maze == null){return;}
         (maze).setUnvisited();
     }
 }

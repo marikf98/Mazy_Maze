@@ -27,7 +27,8 @@ public class BestFirstSearch extends BreadthFirstSearch{
 class StateComparator implements Comparator<AState>
 {
     @Override
-    public int compare(AState first, AState second) {
+    public int compare(AState first, AState second)
+    {
         if(first.getCost() < second.getCost())
         {
             return 1;

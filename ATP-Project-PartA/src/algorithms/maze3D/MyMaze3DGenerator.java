@@ -14,6 +14,8 @@ public class MyMaze3DGenerator extends AMaze3DGenerator {
     private Random rand;
 
     public Maze3D generate(int depth,int row, int column) {
+        if(depth < 1 || row < 1 || column < 1)
+            return null;
         this.sizeX = depth;
         this.sizeY = row;
         this.sizeZ = column;
@@ -39,6 +41,10 @@ public class MyMaze3DGenerator extends AMaze3DGenerator {
     }
 
     private void generateDFS(Position3D curr, int[][][] maze) {
+        if (maze == null || curr == null)
+        {
+            return;
+        }
         if (maze[curr.getRowIndex()][curr.getColumnIndex()][curr.getDepthIndex()] == 0) {
             return;
         }

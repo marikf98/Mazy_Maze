@@ -14,12 +14,17 @@ public abstract class AState {
 
 /** the constructor for the class**/
     public AState(String location) {
+        if(location == null)
+        {
+            return;
+        }
         this.location = location;
         this.prev = null;
         this.visited = false;
     }
 
-    public void setGoal(boolean goal) {
+    public void setGoal(boolean goal)
+    {
         this.isGoal = goal;
     }
 
@@ -54,7 +59,9 @@ public abstract class AState {
         return cost;
     }
 
-    public void setCost(int cost) {
+    public void setCost(int cost)
+    {
+        if(cost < 0){return;}
         this.cost = cost;
     }
     /**getter and setter for the location field**/
@@ -65,6 +72,7 @@ public abstract class AState {
     /**this function checks if two states are equal comparing by their location and visited field**/
     public boolean equals(AState other)
     {
+        if(other == null){return false;}
         if(this == other){return true;}
 
         if(!(this.visited == other.isVisited()))

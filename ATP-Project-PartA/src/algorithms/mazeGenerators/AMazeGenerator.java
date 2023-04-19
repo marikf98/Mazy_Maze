@@ -9,7 +9,10 @@ public abstract class AMazeGenerator implements IMazeGenerator{
     /**this function measures how long it takes the algorithm to generate a maze**/
     @Override
     public long measureAlgorithmTimeMillis(int rows, int columns) {
-
+        if(rows < 2 || columns < 2)
+        {
+            return 0;
+        }
         long start = System.currentTimeMillis();
         generate(rows, columns);
         long finish = System.currentTimeMillis();

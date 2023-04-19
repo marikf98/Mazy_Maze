@@ -9,7 +9,9 @@ import java.util.ArrayList;
 public class Solution {
     private ArrayList<AState> pathToGoal;
 
-    public Solution(ArrayList<AState> pathToGoal) {
+    public Solution(ArrayList<AState> pathToGoal)
+    {
+        if(pathToGoal == null){return;}
         this.pathToGoal = pathToGoal;
     }
 

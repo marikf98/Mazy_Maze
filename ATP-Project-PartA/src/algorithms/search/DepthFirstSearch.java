@@ -41,7 +41,7 @@ public class DepthFirstSearch extends ASearchingAlgorithm{
                     break;
                 }
                 //delete cast
-                neighbours = maze.getAllPossibleStates((MazeState) temp);
+                neighbours = maze.getAllPossibleStates( temp);
                 for(AState state: neighbours)
                 {
                     state.setPrev(temp);

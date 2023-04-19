@@ -98,6 +98,14 @@ public class MyMazeGenerator extends AMazeGenerator{
         {
             maze.setCellValue(1,0,0);
         }
+        if(rand.nextInt(2) + 1 == 1)
+        {
+            maze.setCellValue(maze.getRowsLength() - 1,maze.getColumnsLength() - 2,0);
+        }
+        else
+        {
+            maze.setCellValue(maze.getRowsLength() - 2,maze.getColumnsLength() - 1,0);
+        }
         return maze;
 
     }

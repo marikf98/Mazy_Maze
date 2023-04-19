@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2da5225f-907e-4b23-8e6e-d618612ed3cb" name="Changes" comment="fixed input check">
+    <list default="true" id="2da5225f-907e-4b23-8e6e-d618612ed3cb" name="Changes" comment="started writing docstring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/mazeGenerators/MyMazeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/mazeGenerators/MyMazeGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/BreadthFirstSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/BreadthFirstSearch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/DepthFirstSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/DepthFirstSearch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/SearchableMaze.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/SearchableMaze.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ATP-Project-PartA/src/test/RunSearchOnMaze.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartA/src/test/RunSearchOnMaze.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/AState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/AState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/BreadthFirstSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/BreadthFirstSearch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/DepthFirstSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/search/DepthFirstSearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/mazeGenerators/MyMazeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/algorithms/mazeGenerators/MyMazeGenerator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartA/test/RunSearchOnMaze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartA/test/RunSearchOnMaze.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -273,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681816281835</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="started writing docstring">
+      <created>1681843971105</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1681843971105</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -300,7 +306,8 @@
     <MESSAGE value="finished tests and 2d generation and solvers" />
     <MESSAGE value="Fixes Isearchable interface" />
     <MESSAGE value="fixed input check" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed input check" />
+    <MESSAGE value="started writing docstring" />
+    <option name="LAST_COMMIT_MESSAGE" value="started writing docstring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -312,48 +319,58 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/test/RunSearchOnMaze.java</url>
-          <line>12</line>
-          <option name="timeStamp" value="129" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/test/RunSearchOnMaze.java</url>
           <line>13</line>
           <option name="timeStamp" value="147" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/mazeGenerators/MyMazeGenerator.java</url>
           <line>46</line>
           <option name="timeStamp" value="180" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/mazeGenerators/MyMazeGenerator.java</url>
           <line>66</line>
           <option name="timeStamp" value="181" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/ATP-Project-PartA/JUnit/algorithms/search/BestFirstSearchTest.java</url>
           <line>52</line>
           <option name="timeStamp" value="206" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/test/RunMaze3DGenerator.java</url>
           <line>15</line>
           <option name="timeStamp" value="207" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/test/RunSearchOnMaze.java</url>
-          <line>10</line>
-          <option name="timeStamp" value="212" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/BreadthFirstSearch.java</url>
           <line>42</line>
           <option name="timeStamp" value="213" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/SearchableMaze.java</url>
-          <line>233</line>
+          <line>246</line>
           <option name="timeStamp" value="214" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/SearchableMaze.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="215" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/test/RunSearchOnMaze.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="216" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/test/RunSearchOnMaze.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="217" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/DepthFirstSearch.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="218" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -364,6 +381,7 @@
         <watch expression="possibleMoves.get(1)" />
         <watch expression="edges" />
         <watch expression="((MyMaze3DGenerator)mazeGenerator).rand" custom="algorithms.maze3D.MyMaze3DGenerator" />
+        <watch expression="prev" />
       </configuration>
     </watches-manager>
   </component>

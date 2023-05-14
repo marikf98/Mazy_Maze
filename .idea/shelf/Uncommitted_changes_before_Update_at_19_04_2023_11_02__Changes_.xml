@@ -1,9 +1,0 @@
-<changelist name="Uncommitted_changes_before_Update_at_19_04_2023_11_02_[Changes]" date="1681891340652" recycled="true" deleted="true">
-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_04_2023_11_02_[Changes]/shelved.patch" />
-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 19/04/2023 11:02 [Changes]" />
-  <binary>
-    <option name="BEFORE_PATH" value="out/production/ATP-Project-PartA/algorithms/search/AState.class" />
-    <option name="AFTER_PATH" value="out/production/ATP-Project-PartA/algorithms/search/AState.class" />
-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_04_2023_11_02_[Changes]/AState.class" />
-  </binary>
-</changelist>

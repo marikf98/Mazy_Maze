@@ -9,43 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2da5225f-907e-4b23-8e6e-d618612ed3cb" name="Changes" comment="finished product">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_04_2023_16_07_[Changes]/BreadthFirstSearch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_04_2023_16_07_[Changes]/SearchableMaze3D.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_04_2023_16_07_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_04_2023_16_07__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_04_2023_23_06_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_04_2023_23_06__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_04_2023_19_43_[Changes]/ISearchingAlgorithm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_04_2023_19_43_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_04_2023_19_43__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_04_2023_11_02_[Changes]/AState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_04_2023_11_02_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_04_2023_11_02__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_04_2023_12_49_[Changes]/DepthFirstSearch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_04_2023_12_49_[Changes]/Maze3D.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_04_2023_12_49_[Changes]/MyMaze3DGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_04_2023_12_49_[Changes]/Position3D.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_04_2023_12_49_[Changes]/SearchableMaze3D.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_04_2023_12_49_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_04_2023_12_49__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2023_2_55_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2023_2_55_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2023_3_42_PM_[Changes]/GeneralCheckingFunctions.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2023_3_42_PM_[Changes]/Maze3DState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2023_3_42_PM_[Changes]/SearchableMaze3D.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2023_3_42_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2023_3_42_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_18_2023_9_06_PM_[Changes]/RunSearchOnMaze.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_18_2023_9_06_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_18_2023_9_06_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2023_1_14_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2023_1_14_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2023_1_18_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2023_1_18_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2023_5_29_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2023_5_29_PM__Changes_.xml" beforeDir="false" />
-    </list>
+    <list default="true" id="2da5225f-907e-4b23-8e6e-d618612ed3cb" name="Changes" comment="changed name" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -192,7 +156,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680104956306</updated>
-      <workItem from="1684051008005" duration="648000" />
+      <workItem from="1684051008005" duration="732000" />
     </task>
     <task id="LOCAL-00001" summary="dfghj">
       <created>1680107665434</created>
@@ -369,7 +333,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681922820009</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="changed name">
+      <created>1684051901817</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1684051901817</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -402,43 +373,44 @@
     <MESSAGE value="fix import of the astate" />
     <MESSAGE value="started writing docstring" />
     <MESSAGE value="finished product" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished product" />
+    <MESSAGE value="changed name" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed name" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/SearchableMaze.java</url>
+          <url>file://$PROJECT_DIR$/ATP-Project-PartB/src/algorithms/search/SearchableMaze.java</url>
           <line>249</line>
           <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/MazeState.java</url>
+          <url>file://$PROJECT_DIR$/ATP-Project-PartB/src/algorithms/search/MazeState.java</url>
           <line>35</line>
           <option name="timeStamp" value="88" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ATP-Project-PartA/JUnit/algorithms/search/BestFirstSearchTest.java</url>
+          <url>file://$PROJECT_DIR$/ATP-Project-PartB/JUnit/algorithms/search/BestFirstSearchTest.java</url>
           <line>52</line>
           <option name="timeStamp" value="206" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/test/RunMaze3DGenerator.java</url>
+          <url>file://$PROJECT_DIR$/ATP-Project-PartB/src/test/RunMaze3DGenerator.java</url>
           <line>16</line>
           <option name="timeStamp" value="207" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/SearchableMaze.java</url>
+          <url>file://$PROJECT_DIR$/ATP-Project-PartB/src/algorithms/search/SearchableMaze.java</url>
           <line>45</line>
           <option name="timeStamp" value="230" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/test/RunSearchOnMaze3D.java</url>
+          <url>file://$PROJECT_DIR$/ATP-Project-PartB/src/test/RunSearchOnMaze3D.java</url>
           <line>18</line>
           <option name="timeStamp" value="231" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ATP-Project-PartA/src/algorithms/search/DepthFirstSearch.java</url>
+          <url>file://$PROJECT_DIR$/ATP-Project-PartB/src/algorithms/search/DepthFirstSearch.java</url>
           <line>44</line>
           <option name="timeStamp" value="233" />
         </line-breakpoint>

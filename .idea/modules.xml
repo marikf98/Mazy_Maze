@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ATP-Project-PartA/ATP-Project-PartA.iml" filepath="$PROJECT_DIR$/ATP-Project-PartA/ATP-Project-PartA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ATP-Project-PartB/ATP-Project-PartA.iml" filepath="$PROJECT_DIR$/ATP-Project-PartB/ATP-Project-PartA.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Mazy_Maze.iml" filepath="$PROJECT_DIR$/.idea/Mazy_Maze.iml" />
     </modules>
   </component>

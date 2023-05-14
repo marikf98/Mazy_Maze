@@ -9,7 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2da5225f-907e-4b23-8e6e-d618612ed3cb" name="Changes" comment="changed name" />
+    <list default="true" id="2da5225f-907e-4b23-8e6e-d618612ed3cb" name="Changes" comment="created the needed classes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/IO/MyCompressorOutputStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/IO/MyCompressorOutputStream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/IO/MyDecompressorInputStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/IO/MyDecompressorInputStream.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -157,6 +161,7 @@
       <option name="presentableId" value="Default" />
       <updated>1680104956306</updated>
       <workItem from="1684051008005" duration="732000" />
+      <workItem from="1684051934665" duration="4623000" />
     </task>
     <task id="LOCAL-00001" summary="dfghj">
       <created>1680107665434</created>
@@ -340,7 +345,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684051901817</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="created the needed classes">
+      <created>1684052377877</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1684052377877</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,7 +386,8 @@
     <MESSAGE value="started writing docstring" />
     <MESSAGE value="finished product" />
     <MESSAGE value="changed name" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed name" />
+    <MESSAGE value="created the needed classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="created the needed classes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

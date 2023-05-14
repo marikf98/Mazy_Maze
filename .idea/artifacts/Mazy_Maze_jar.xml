@@ -2,7 +2,7 @@
   <artifact type="jar" name="Mazy_Maze:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/Mazy_Maze_jar</output-path>
     <root id="archive" name="Mazy_Maze.jar">
-      <element id="module-output" name="ATP-Project-PartA" />
+      <element id="module-output" name="ATP-Project-PartB" />
     </root>
   </artifact>
 </component>

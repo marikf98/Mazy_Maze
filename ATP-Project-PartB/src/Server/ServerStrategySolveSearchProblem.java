@@ -3,6 +3,9 @@ package Server;
 import IO.SimpleCompressorOutputStream;
 import algorithms.mazeGenerators.Maze;
 import algorithms.mazeGenerators.MyMazeGenerator;
+import algorithms.search.BreadthFirstSearch;
+import algorithms.search.SearchableMaze;
+import algorithms.search.Solution;
 
 import java.io.InputStream;
 import java.io.ObjectInputStream;
@@ -16,11 +19,11 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy {
             ObjectInputStream fromClient = new ObjectInputStream(inFromClient);
             ObjectOutputStream toClient = new ObjectOutputStream(outToClient);
 
-            Maze  al = (int[]) fromClient.readObject();
-            MyMazeGenerator myMazeGenerator=new MyMazeGenerator();
-            Maze maze =myMazeGenerator.generate(al[0],al[1]);
-            SimpleCompressorOutputStream simpleCompressorOutputStream=new SimpleCompressorOutputStream(outToClient);
-            simpleCompressorOutputStream.write(maze.toByteArray());
+            Maze  al = (Maze) fromClient.readObject();
+            SearchableMaze searchableMaze=new SearchableMaze(al);
+            BreadthFirstSearch breadthFirstSearch=new BreadthFirstSearch();
+            Solution solution = breadthFirstSearch.solve(searchableMaze);
+            toClient.writeObject(solution);
             toClient.flush();
             fromClient.close();
             toClient.close();

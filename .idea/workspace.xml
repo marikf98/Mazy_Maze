@@ -11,7 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2da5225f-907e-4b23-8e6e-d618612ed3cb" name="Changes" comment="created the needed classes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/ServerStrategyGenerateMaze.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/ServerStrategyGenerateMaze.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/ServerStrategySolveSearchProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/ServerStrategySolveSearchProblem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -367,7 +366,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684500409700</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="created the needed classes">
+      <created>1684508286821</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1684508286821</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

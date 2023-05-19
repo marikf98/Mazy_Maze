@@ -1,5 +1,7 @@
 package Server;
 
+import IO.MyCompressorOutputStream;
+import IO.SimpleCompressorOutputStream;
 import algorithms.mazeGenerators.*;
 
 import java.io.InputStream;
@@ -21,22 +23,12 @@ public class ServerStrategyGenerateMaze implements IServerStrategy {
             ObjectInputStream fromClient = new ObjectInputStream(inFromClient);
             ObjectOutputStream toClient = new ObjectOutputStream(outToClient);
 
-            ArrayList<Integer> al = (ArrayList<Integer>) fromClient.readObject();
+            int[]  al = (int[]) fromClient.readObject();
             MyMazeGenerator myMazeGenerator=new MyMazeGenerator();
-            Maze maze =myMazeGenerator.generate(al.get(0),al.get(1));
-
-
-
-
-
-
-
-
-
-
-            toClient.writeObject(al);
+            Maze maze =myMazeGenerator.generate(al[0],al[1]);
+            MyCompressorOutputStream simpleCompressorOutputStream=new MyCompressorOutputStream(outToClient);
+            simpleCompressorOutputStream.write(maze.toByteArray());
             toClient.flush();
-
             fromClient.close();
             toClient.close();
         } catch (Exception e) {

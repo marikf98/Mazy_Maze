@@ -10,7 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2da5225f-907e-4b23-8e6e-d618612ed3cb" name="Changes" comment="created the needed classes">
-      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/test/RunCompressDecompressMaze.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/test/RunCompressDecompressMaze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/ServerStrategyGenerateMaze.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/ServerStrategyGenerateMaze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/ServerStrategySolveSearchProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/ServerStrategySolveSearchProblem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

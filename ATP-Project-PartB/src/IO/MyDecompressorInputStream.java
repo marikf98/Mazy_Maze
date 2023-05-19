@@ -15,8 +15,9 @@ public class MyDecompressorInputStream extends InputStream {
         this.in = in;
     }
     @Override
-    public int read() throws IOException {
-        return 0;
+    public int read() throws IOException
+    {
+        return in.read();
     }
 
     @Override

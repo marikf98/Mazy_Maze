@@ -29,7 +29,7 @@ public class Maze {
         int xSize = bytes[bytes.length - 2];
         int ySize = bytes[bytes.length - 1];
         this.maze = new int[xSize][ySize];
-        this.positionMatrix = new Position[maze.length][maze[0].length];
+        this.positionMatrix = new Position[xSize][ySize];
         int counter = 0;
         for(int i = 0; i < xSize; i ++)
         {

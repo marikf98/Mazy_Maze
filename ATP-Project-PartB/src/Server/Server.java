@@ -17,7 +17,7 @@ public class Server {
         this.strategy = strategy;
     }
 
-    public void start(){
+    public void start() {
         try {
             ServerSocket serverSocket = new ServerSocket(port);
             serverSocket.setSoTimeout(listeningIntervalMS);
@@ -28,13 +28,17 @@ public class Server {
                     Socket clientSocket = serverSocket.accept();
                     System.out.println("Client accepted: " + clientSocket.toString());
 
-                    try {
-                        strategy.applyStrategy(clientSocket.getInputStream(), clientSocket.getOutputStream());
-                        clientSocket.close();
-                    } catch (IOException e){
-                        e.printStackTrace();
-                    }
-                } catch (SocketTimeoutException e){
+                    // Handle client connection in a separate thread
+                    Thread clientThread = new Thread(() -> {
+                        try {
+                            strategy.applyStrategy(clientSocket.getInputStream(), clientSocket.getOutputStream());
+                            clientSocket.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    });
+                    clientThread.start();
+                } catch (SocketTimeoutException e) {
                     System.out.println("Socket timeout");
                 }
             }
@@ -43,7 +47,7 @@ public class Server {
         }
     }
 
-    public void stop(){
+    public void stop() {
         stop = true;
     }
 }

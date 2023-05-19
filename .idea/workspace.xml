@@ -9,9 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2da5225f-907e-4b23-8e6e-d618612ed3cb" name="Changes" comment="created the needed classes">
+    <list default="true" id="2da5225f-907e-4b23-8e6e-d618612ed3cb" name="Changes" comment="push client">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/ServerStrategySolveSearchProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/ServerStrategySolveSearchProblem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -373,7 +372,42 @@
       <option name="project" value="LOCAL" />
       <updated>1684508286821</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="created the needed classes">
+      <created>1684509817097</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1684509817097</updated>
+    </task>
+    <task id="LOCAL-00032" summary="finish server">
+      <created>1684509849720</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1684509849720</updated>
+    </task>
+    <task id="LOCAL-00033" summary="finish server.java">
+      <created>1684509917305</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1684509917305</updated>
+    </task>
+    <task id="LOCAL-00034" summary="push client">
+      <created>1684510077640</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1684510077640</updated>
+    </task>
+    <task id="LOCAL-00035" summary="push client">
+      <created>1684510148735</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1684510148735</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,7 +442,10 @@
     <MESSAGE value="finished product" />
     <MESSAGE value="changed name" />
     <MESSAGE value="created the needed classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="created the needed classes" />
+    <MESSAGE value="finish server" />
+    <MESSAGE value="finish server.java" />
+    <MESSAGE value="push client" />
+    <option name="LAST_COMMIT_MESSAGE" value="push client" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -22,6 +22,9 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy {
             Maze  al = (Maze) fromClient.readObject();
             SearchableMaze searchableMaze=new SearchableMaze(al);
             BreadthFirstSearch breadthFirstSearch=new BreadthFirstSearch();
+
+
+            //the soultion to the maze
             Solution solution = breadthFirstSearch.solve(searchableMaze);
             toClient.writeObject(solution);
             toClient.flush();

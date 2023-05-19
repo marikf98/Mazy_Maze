@@ -9,51 +9,43 @@ import java.util.zip.Deflater;
 
 public class SimpleCompressorOutputStream extends OutputStream {
     private OutputStream out;
-    private int count;
-    private int currentBit;
 
     public SimpleCompressorOutputStream(OutputStream out) {
         this.out = out;
-        this.count = 0;
-        this.currentBit = -1;;
-    }
-
-    @Override
-    public void flush() throws IOException {
-        write_compress();
-        out.flush();
-    }
-
-    @Override
-    public void close() throws IOException {
-        flush();
-        out.close();
     }
 
     @Override
     public void write(int b) throws IOException {
-        if (currentBit == -1) {
-            currentBit = b;
-            count = 1;
-        } else if (currentBit == b) {
-            count++;
-        } else {
-            write_compress();
-            currentBit = b;
-            count = 1;
-        }
+        out.write(b);
     }
 
+    @Override
+    public void write(byte[] bytes) throws IOException {
+        byte[] compressedBytes = compress(bytes);
+        out.write(compressedBytes);
+    }
 
+    public byte[] compress(byte[] bytes) {
+        ByteArrayOutputStream compressedStream = new ByteArrayOutputStream();
 
+        int count = 1;
+        byte currentByte = bytes[0];
 
-    public void write_compress() throws IOException {
-        if (currentBit == 1) {
-            out.write('.');  // Represents 1
-        } else {
-            out.write(',');  // Represents 0
+        for (int i = 1; i < bytes.length; i++) {
+            if (bytes[i] == currentByte) {
+                count++;
+            } else {
+                compressedStream.write(count);
+                compressedStream.write(currentByte);
+                count = 1;
+                currentByte = bytes[i];
+            }
         }
-        out.write(Integer.toString(count).getBytes());
+
+        compressedStream.write(count);
+        compressedStream.write(currentByte);
+
+        return compressedStream.toByteArray();
     }
 
 }

@@ -1,5 +1,8 @@
 package algorithms.mazeGenerators;
 
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
 public class Maze {
     /** this is the Maze class, it represents a maze**/
     private int [][] maze;/** the maze is represented by a 2D array of ints**/
@@ -16,6 +19,25 @@ public class Maze {
             for(int j = 0; j < maze[0].length; j++)
             {
                 positionMatrix[i][j] = new Position(i,j);
+            }
+        }
+    }
+
+    public Maze(byte[] bytes)
+    {
+        if(bytes == null) {return;}
+        int xSize = bytes[bytes.length - 2];
+        int ySize = bytes[bytes.length - 1];
+        this.maze = new int[xSize][ySize];
+        this.positionMatrix = new Position[maze.length][maze[0].length];
+        int counter = 0;
+        for(int i = 0; i < xSize; i ++)
+        {
+            for(int j = 0; j < ySize; j ++)
+            {
+                maze[i][j] = bytes[counter];
+                positionMatrix[i][j] = new Position(i,j);
+                counter++;
             }
         }
     }
@@ -106,5 +128,18 @@ public class Maze {
 
     /**this function returns the goal position of the maze**/
     public Position getGoalPosition() {return  positionMatrix[maze.length - 1][maze[0].length - 1];}
+
+    public byte[] toByteArray()
+    {
+        byte[] compressedMaze = new byte[maze.length*maze[0].length + 2];
+        int[] flattedMaze = Stream.of(maze).flatMapToInt(IntStream::of).toArray();
+        for(int i = 0; i < flattedMaze.length; i++)
+        {
+            compressedMaze[i] = (byte) flattedMaze[i];
+        }
+        compressedMaze[compressedMaze.length - 2] = (byte) maze.length; /**Will hold the X size of the maze**/
+        compressedMaze[compressedMaze.length - 1] = (byte) maze[0].length;/**Will hold the Y size of the maze**/
+        return compressedMaze;
+    }
 
 }

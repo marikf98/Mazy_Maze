@@ -10,12 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2da5225f-907e-4b23-8e6e-d618612ed3cb" name="Changes" comment="added new constructor">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/IO/MyDecompressorInputStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/IO/MyDecompressorInputStream.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/IO/SimpleDecompressorInputStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/IO/SimpleDecompressorInputStream.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/IserverStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/IServerStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/algorithms/mazeGenerators/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/algorithms/mazeGenerators/Maze.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/test/RunCompressDecompressMaze.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/test/RunCompressDecompressMaze.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -378,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684502057357</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="added new constructor">
+      <created>1684506067410</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1684506067410</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -455,19 +459,14 @@
           <option name="timeStamp" value="233" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ATP-Project-PartB/src/test/RunCompressDecompressMaze.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="234" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ATP-Project-PartB/src/test/RunCompressDecompressMaze.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="236" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ATP-Project-PartB/src/algorithms/mazeGenerators/Maze.java</url>
           <line>141</line>
-          <option name="timeStamp" value="237" />
+          <option name="timeStamp" value="242" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ATP-Project-PartB/src/IO/MyDecompressorInputStream.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="247" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

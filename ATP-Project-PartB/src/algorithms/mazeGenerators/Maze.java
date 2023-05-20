@@ -1,9 +1,10 @@
 package algorithms.mazeGenerators;
 
+import java.io.Serializable;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class Maze {
+public class Maze implements Serializable {
     /** this is the Maze class, it represents a maze**/
     private int [][] maze;/** the maze is represented by a 2D array of ints**/
     private Position [][] positionMatrix;/** the position matrix is a 2D array of positions that also represents a maze**/

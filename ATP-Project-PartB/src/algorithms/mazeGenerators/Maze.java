@@ -132,12 +132,17 @@ public class Maze implements Serializable {
 
     public byte[] toByteArray()
     {
-        byte[] compressedMaze = new byte[maze.length*maze[0].length + 2];
+        byte[] compressedMaze = new byte[maze.length*maze[0].length + 6];
         int[] flattedMaze = Stream.of(maze).flatMapToInt(IntStream::of).toArray();
         for(int i = 0; i < flattedMaze.length; i++)
         {
             compressedMaze[i] = (byte) flattedMaze[i];
         }
+
+        compressedMaze[compressedMaze.length - 6] = 0; /**start x coordinate**/
+        compressedMaze[compressedMaze.length - 5] = 0;/**start y coordinate**/
+        compressedMaze[compressedMaze.length - 4] = (byte) (maze.length - 1);/**end x coordinate**/
+        compressedMaze[compressedMaze.length - 3] = (byte) (maze[0].length - 1);/**end y coordinate**/
         compressedMaze[compressedMaze.length - 2] = (byte) maze.length; /**Will hold the X size of the maze**/
         compressedMaze[compressedMaze.length - 1] = (byte) maze[0].length;/**Will hold the Y size of the maze**/
         return compressedMaze;

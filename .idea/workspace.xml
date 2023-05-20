@@ -9,23 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2da5225f-907e-4b23-8e6e-d618612ed3cb" name="Changes" comment="finished ServerStrategyGenerateMaze">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/Client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/IO/MyDecompressorInputStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/IO/MyDecompressorInputStream.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/test/RunCommunicateWithServers.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/test/RunCommunicateWithServers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SimpleDecoSavedMaze.maze" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleDecoSavedMaze.maze" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Client/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/IO/MyDecompressorInputStream.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/IO/MyDecompressorInputStream.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Server$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Server$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Server$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Server$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/savedMaze.maze" beforeDir="false" afterPath="$PROJECT_DIR$/savedMaze.maze" afterDir="false" />
+    <list default="true" id="2da5225f-907e-4b23-8e6e-d618612ed3cb" name="Changes" comment="all the test run now">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/algorithms/mazeGenerators/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/algorithms/mazeGenerators/Maze.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +79,7 @@
       <recent name="algorithms.search" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.RunCompressDecompressMaze">
+  <component name="RunManager" selected="Application.RunCommunicateWithServers">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="ATP-Project-PartB" />
@@ -157,8 +143,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.RunCompressDecompressMaze" />
         <item itemvalue="Application.RunCommunicateWithServers" />
+        <item itemvalue="Application.RunCompressDecompressMaze" />
         <item itemvalue="Application.RunMazeGenerator" />
         <item itemvalue="JUnit.BestFirstSearchTest" />
         <item itemvalue="Application.Main" />
@@ -479,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684590808442</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="all the test run now">
+      <created>1684594640605</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1684594640605</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -517,7 +510,8 @@
     <MESSAGE value="added new constructor" />
     <MESSAGE value="created singleton" />
     <MESSAGE value="finished ServerStrategyGenerateMaze" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished ServerStrategyGenerateMaze" />
+    <MESSAGE value="all the test run now" />
+    <option name="LAST_COMMIT_MESSAGE" value="all the test run now" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

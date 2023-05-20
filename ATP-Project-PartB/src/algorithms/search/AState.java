@@ -1,10 +1,12 @@
 package algorithms.search;
 
+import java.io.Serializable;
 import java.util.Comparator;
 
 /**This abstract lass represents a state in the search problem. it has the location as a String, a boolean visited filled
  * so we can know it was searched already, and the cost of the move to this location, and the prev state that will hold the state that discovered this one **/
-public abstract class AState {
+public abstract class AState implements Serializable
+{
     private boolean visited;
     private AState prev;
     private int cost;

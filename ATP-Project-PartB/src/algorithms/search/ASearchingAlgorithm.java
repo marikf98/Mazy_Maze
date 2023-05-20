@@ -1,8 +1,10 @@
 package algorithms.search;
 
+import java.io.Serializable;
 import java.util.*;
 /**this abstract class is the parent of all searching algorithms it uses an abstract collection so each searcher can override it with the type it needs, it is initialised as a priority queue **/
-public abstract class ASearchingAlgorithm implements ISearchingAlgorithm {
+public abstract class ASearchingAlgorithm implements ISearchingAlgorithm, Serializable
+{
     protected int numberOfNodesEvaluated;
     protected Collection<AState> collection;
 

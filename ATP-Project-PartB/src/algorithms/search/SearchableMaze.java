@@ -2,6 +2,7 @@ package algorithms.search;
 
 import algorithms.mazeGenerators.Maze;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 /**this is an adapter class for the maze, it receives a maze instance and creates a searchable maze instance,
  * the class implements the ISearchable interface
@@ -13,7 +14,7 @@ import java.util.ArrayList;
  * setUnvisited() - this function resets all the maze after it has been searched and initializes it back to its original state
  * getAllPossibleStates(AState state) - this function receives a state of the maze and returns a list of all the neighbours that can be reached from this state
  * all the other function are setter and getter functions**/
-public class SearchableMaze implements ISearchable{
+public class SearchableMaze implements ISearchable, Serializable {
     private Maze maze;
     private boolean solved = false;
     private MazeState[][] visitedMatrix;

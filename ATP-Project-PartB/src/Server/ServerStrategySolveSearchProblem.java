@@ -77,7 +77,7 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy {
     /**This function looks for a solution in the files,
      * if it finds a match by the maze array it returns its solution, otherwise it returns null**/
     private Solution getSolution(byte[] maze){
-        AtomicInteger counter = new AtomicInteger(0); // we use atomic integer here so it will support multithreads
+        AtomicInteger counter = new AtomicInteger(0); // we use atomic integer here so it will support multi-threads
         try
         {
             FileInputStream file = new FileInputStream(tempDirectoryPath + "/Mazes");
@@ -86,12 +86,18 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy {
             {
                 if(Arrays.toString(maze).equals(scanner.nextLine()))
                 {
-                    FileInputStream reader = new FileInputStream()
+                    FileInputStream foundFile = new FileInputStream(tempDirectoryPath + "/Solutions" + counter.get());
+                    ObjectInputStream reader = new ObjectInputStream(foundFile);
+                    Solution solution = (Solution) reader.readObject();
+                    scanner.close();
+                    reader.close();
+                    foundFile.close();
+                    return solution;
                 }
-                counter++;
+                counter.getAndAdd(1);
             }
         }
-        catch(FileNotFoundException e)
+        catch(Exception e)
         {
             e.printStackTrace();
         }

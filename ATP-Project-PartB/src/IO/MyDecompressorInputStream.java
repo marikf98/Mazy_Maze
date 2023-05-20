@@ -25,7 +25,6 @@ public class MyDecompressorInputStream extends InputStream {
     @Override
     public int read(byte[] bytes) throws IOException
     {
-
         byte[] readBytes = in.readAllBytes();
         byte[] decompressed = null;
         try {
@@ -36,13 +35,7 @@ public class MyDecompressorInputStream extends InputStream {
         {
             throw new RuntimeException(e);
         }
-//        List<Byte> byteList = new ArrayList<>();
-//
-//        for(int i = 0; i < readBytes.length; i ++)
-//        {
-//            byteList.add((byte)read());
-//        }
-//
+
         for(int i = 0; i < decompressed.length; i ++)
         {
             bytes[i] = decompressed[i];

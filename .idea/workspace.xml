@@ -10,7 +10,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2da5225f-907e-4b23-8e6e-d618612ed3cb" name="Changes" comment="finished ServerStrategyGenerateMaze">
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/ServerStrategyGenerateMaze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/ServerStrategyGenerateMaze.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/Client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/IO/MyDecompressorInputStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/IO/MyDecompressorInputStream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/test/RunCommunicateWithServers.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/test/RunCommunicateWithServers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleDecoSavedMaze.maze" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleDecoSavedMaze.maze" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Client/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/IO/MyDecompressorInputStream.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/IO/MyDecompressorInputStream.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Server$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Server$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Server$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Server$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/test/RunCommunicateWithServers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/savedMaze.maze" beforeDir="false" afterPath="$PROJECT_DIR$/savedMaze.maze" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +93,7 @@
       <recent name="algorithms.search" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.RunCommunicateWithServers">
+  <component name="RunManager" selected="Application.RunCompressDecompressMaze">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="ATP-Project-PartB" />
@@ -142,8 +157,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.RunCommunicateWithServers" />
         <item itemvalue="Application.RunCompressDecompressMaze" />
+        <item itemvalue="Application.RunCommunicateWithServers" />
         <item itemvalue="Application.RunMazeGenerator" />
         <item itemvalue="JUnit.BestFirstSearchTest" />
         <item itemvalue="Application.Main" />
@@ -507,62 +522,20 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/ATP-Project-PartB/src/algorithms/search/SearchableMaze.java</url>
-          <line>251</line>
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/ATP-Project-PartB/src/algorithms/search/MazeState.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="88" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ATP-Project-PartB/JUnit/algorithms/search/BestFirstSearchTest.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="206" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ATP-Project-PartB/src/test/RunMaze3DGenerator.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="207" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ATP-Project-PartB/src/algorithms/search/SearchableMaze.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="230" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ATP-Project-PartB/src/test/RunSearchOnMaze3D.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="231" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ATP-Project-PartB/src/algorithms/search/DepthFirstSearch.java</url>
-          <line>44</line>
-          <option name="timeStamp" value="233" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ATP-Project-PartB/src/algorithms/mazeGenerators/Maze.java</url>
-          <line>142</line>
-          <option name="timeStamp" value="242" />
+          <url>file://$PROJECT_DIR$/ATP-Project-PartB/src/IO/MyDecompressorInputStream.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="283" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ATP-Project-PartB/src/IO/MyDecompressorInputStream.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="247" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ATP-Project-PartB/src/test/RunCommunicateWithServers.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="254" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ATP-Project-PartB/src/test/RunCommunicateWithServers.java</url>
-          <line>77</line>
-          <option name="timeStamp" value="255" />
+          <line>27</line>
+          <option name="timeStamp" value="284" />
         </line-breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="javascript-exception" />
+      </default-breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">

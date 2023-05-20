@@ -88,14 +88,15 @@ public class Server {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                Runing();
+                running();
             }
         }).start();
     }
 
 
-    public void Runing() {
+    public void running() {
         try {
+            this.executor = Executors.newFixedThreadPool(configurations.getThreadPoolSize());
             ServerSocket serverSocket = new ServerSocket(port);
             serverSocket.setSoTimeout(listeningIntervalMS);
             while (!stop)
@@ -106,12 +107,14 @@ public class Server {
                     executor.execute(new Runnable() {
                         @Override
                         public void run() {
-                            HandClient(clientSocket);
+                            handClient(clientSocket);
                         }
                     });
                 }
                 catch (Exception ex)
-                {}
+                {
+                    System.out.println(ex.getMessage());
+                }
             }
             executor.shutdown();
             serverSocket.close();
@@ -120,7 +123,7 @@ public class Server {
         {}
 
     }
-    private void HandClient(Socket ClientSoc)
+    private void handClient(Socket ClientSoc)
     {
         try
         {

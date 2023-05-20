@@ -21,7 +21,9 @@ public class Server {
         this.port = port;
         this.listeningIntervalMS = listeningIntervalMS;
         this.strategy = strategy;
-        this.executor = Executors.newFixedThreadPool(Configurations.getInstance().getThreadPoolSize() );   }
+
+        this.executor = Executors.newFixedThreadPool(Configurations.getInstance().getThreadPoolSize() );
+    }
 
     public void start() {
         try {

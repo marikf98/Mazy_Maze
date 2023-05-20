@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Objects;
 import java.util.Properties;
 
 public class Configurations {
@@ -30,6 +31,11 @@ public class Configurations {
         {
             InputStream inputStream = new FileInputStream("resources/config.properties");
             properties.load(inputStream);
+            if(Integer.parseInt(properties.getProperty("threadPoolSize")) <= 0)
+            {
+                return defult;
+
+            }
             return Integer.parseInt(properties.getProperty("threadPoolSize"));
         }
         catch (IOException e) {
@@ -44,6 +50,11 @@ public class Configurations {
         {
             InputStream inputStream = new FileInputStream("resources/config.properties");
             properties.load(inputStream);
+            if(!(Objects.equals(properties.getProperty("mazeGeneratingAlgorithm"), "MyMazeGenerator") || Objects.equals(properties.getProperty("mazeGeneratingAlgorithm"), "SimpleMazeGenerator") || Objects.equals(properties.getProperty("mazeGeneratingAlgorithm"), "EmptyMazeGenerator")))
+            {
+                return defult;
+
+            }
             return properties.getProperty("mazeGeneratingAlgorithm");
         }
         catch (IOException e) {
@@ -58,6 +69,11 @@ public class Configurations {
         {
             InputStream inputStream = new FileInputStream("resources/config.properties");
             properties.load(inputStream);
+            if(!(Objects.equals(properties.getProperty("mazeSearchingAlgorithm"), "BestFirstSearch") || Objects.equals(properties.getProperty("mazeGeneratingAlgorithm"), "BreadthFirstSearch") || Objects.equals(properties.getProperty("mazeGeneratingAlgorithm"), "DepthFirstSearch")))
+            {
+                return defult;
+
+            }
             return properties.getProperty("mazeSearchingAlgorithm");
         }
         catch (IOException e) {

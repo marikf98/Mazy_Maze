@@ -10,10 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2da5225f-907e-4b23-8e6e-d618612ed3cb" name="Changes" comment="finished ServerStrategyGenerateMaze">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/Configurations.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/Configurations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SimpleDecoSavedMaze.maze" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleDecoSavedMaze.maze" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Server.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

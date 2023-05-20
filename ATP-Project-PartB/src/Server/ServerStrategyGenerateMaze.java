@@ -46,8 +46,8 @@ public class ServerStrategyGenerateMaze implements IServerStrategy {
             toClient.flush();
             //close the connection
             fromClient.close();
-            toClient.close();
             toClient.writeObject(outByteArray.toByteArray());
+            toClient.close();
         }
         catch (Exception e)
         {

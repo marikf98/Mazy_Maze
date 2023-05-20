@@ -95,13 +95,6 @@ public class Server {
 
 
     public void Runing() {
-        //Check if the input in Config is ok
-        if (configurations.getThreadPoolSize() >= 0) {
-            executor = Executors.newFixedThreadPool(configurations.getThreadPoolSize());
-        } else {
-            executor = Executors.newFixedThreadPool(4);
-        }
-
         try {
             ServerSocket serverSocket = new ServerSocket(port);
             serverSocket.setSoTimeout(listeningIntervalMS);
@@ -118,17 +111,13 @@ public class Server {
                     });
                 }
                 catch (Exception ex)
-                {
-                }
+                {}
             }
             executor.shutdown();
             serverSocket.close();
-
         }
         catch (Exception ex)
-        {
-
-        }
+        {}
 
     }
     private void HandClient(Socket ClientSoc)
@@ -142,6 +131,5 @@ public class Server {
         {}
 
     }
-    //Stop the server
     public void stop(){stop=true;}
 }

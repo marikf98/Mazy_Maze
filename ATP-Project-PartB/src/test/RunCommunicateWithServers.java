@@ -2,7 +2,7 @@ package test;
 import IO.*;
 import Server.*;
 import Client.*;
-import algorithms.*;
+
 import algorithms.mazeGenerators.*;
 import algorithms.search.AState;
 import algorithms.search.Solution;
@@ -18,7 +18,7 @@ public class RunCommunicateWithServers {
         // Initializing servers
         Server mazeGeneratingServer = new Server(5400, 1000, new ServerStrategyGenerateMaze());
         Server solveSearchProblemServer = new Server(5401, 1000, new ServerStrategySolveSearchProblem());
-//         Server stringReverserServer = new Server(5402, 1000, new ServerStrategyStringReverser());
+       // Server stringReverserServer = new Server(5402, 1000, new ServerStrategyStringReverser());
 
         // Starting servers
         solveSearchProblemServer.start();
@@ -93,9 +93,7 @@ public class RunCommunicateWithServers {
                 }
             });
             client.communicateWithServer();
-        }
-        catch (UnknownHostException e)
-        {
+        } catch (UnknownHostException e) {
             e.printStackTrace();
         }
     }
@@ -125,12 +123,8 @@ public class RunCommunicateWithServers {
                 }
             });
             client.communicateWithServer();
-        }
-        catch (UnknownHostException e)
-        {
+        } catch (UnknownHostException e) {
             e.printStackTrace();
         }
-    }
-}
-
+    }}
 

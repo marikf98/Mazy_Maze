@@ -13,7 +13,7 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy {
 
     private final String tempDirectoryPath = System.getProperty("java.io.tmpdir");
     private volatile AtomicInteger solutionCounter = new AtomicInteger(0);
-    private File mazes = new File(tempDirectoryPath + "/Mazes");
+//    private File mazes = new File(tempDirectoryPath + "/Mazes");
 
     @Override
     public void applyStrategy(InputStream inFromClient, OutputStream outToClient)
@@ -23,35 +23,41 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy {
             ObjectOutputStream toClient = new ObjectOutputStream(outToClient);
 
             Maze maze = (Maze) fromClient.readObject();
-            SearchableMaze searchableMaze = new SearchableMaze(maze);
-
-            String generator = Configurations.getInstance().getMazeSearchingAlgorithm();
-            ASearchingAlgorithm searcher = null;
-            if(generator.equals("BestFirstSearch"))
+            Solution solution = getSolution(maze.toByteArray());
+            if (solution == null)
             {
-                searcher = new BestFirstSearch();
-            }
-            else if (generator.equals("BreadthFirstSearch"))
-            {
-                searcher = new BreadthFirstSearch();
-            }
-            else
-            {
-                searcher = new DepthFirstSearch();
-            }
-
-            //the soultion to the maze
-            Solution solution = searcher.solve(searchableMaze);
-            ByteArrayOutputStream byteArray = new ByteArrayOutputStream();
-
+                SearchableMaze searchableMaze = new SearchableMaze(maze);
+                String generator = Configurations.getInstance().getMazeSearchingAlgorithm();
+                ASearchingAlgorithm searcher = null;
+                if (generator.equals("BestFirstSearch"))
+                {
+                    searcher = new BestFirstSearch();
+                }
+                else if (generator.equals("BreadthFirstSearch"))
+                {
+                    searcher = new BreadthFirstSearch();
+                }
+                else
+                {
+                    searcher = new DepthFirstSearch();
+                }
+                //the solution to the maze
+                solution = searcher.solve(searchableMaze);
+//                ByteArrayOutputStream byteArray = new ByteArrayOutputStream();
+                saveSolution(maze.toByteArray(), solution);
+        }
             toClient.writeObject(solution);
             toClient.flush();
             fromClient.close();
             toClient.close();
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
             e.printStackTrace();
         }
     }
+    /**This function saves the solution in a new file
+     * each solution file is linked to a maze in the mazes file**/
     private void saveSolution(byte[] maze, Solution solution)
     {
         try {

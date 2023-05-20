@@ -12,12 +12,8 @@ import java.io.InputStream;
 public class SimpleDecompressorInputStream extends InputStream {
     private InputStream in;
 
-
-
-
     public SimpleDecompressorInputStream(InputStream in) {
         this.in = in;
-
     }
     @Override
     public int read() throws IOException {
@@ -30,7 +26,6 @@ public class SimpleDecompressorInputStream extends InputStream {
     }
     public byte[] decompress(byte[] bytes) throws IOException {
         List<Byte> decompressedList = new ArrayList<>();
-
         int count;
         byte value;
 

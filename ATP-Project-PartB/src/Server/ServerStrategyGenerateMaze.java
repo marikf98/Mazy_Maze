@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 
 
-//mplements the IServerStrategy interface,
+//implements the IServerStrategy interface,
 // indicating that it defines the specific behavior .
 public class ServerStrategyGenerateMaze implements IServerStrategy {
 
@@ -23,14 +23,18 @@ public class ServerStrategyGenerateMaze implements IServerStrategy {
             ObjectInputStream fromClient = new ObjectInputStream(inFromClient);
             ObjectOutputStream toClient = new ObjectOutputStream(outToClient);
 
-            int[]  al = (int[]) fromClient.readObject();
-            MyMazeGenerator myMazeGenerator=new MyMazeGenerator();
+            String generator = Configurations.getInstance().getMazeGeneratingAlgorithm();
+            AMazeGenerator mazeGen = null;
+
+
+            int[] input = (int[]) fromClient.readObject();
+            MyMazeGenerator myMazeGenerator = new MyMazeGenerator();
             //this size of the maze is the one that been pass
-            Maze maze =myMazeGenerator.generate(al[0],al[1]);
-            MyCompressorOutputStream simpleCompressorOutputStream=new MyCompressorOutputStream(outToClient);
+            Maze maze = myMazeGenerator.generate(input[0],input[1]);
+            MyCompressorOutputStream simpleCompressorOutputStream = new MyCompressorOutputStream(outToClient);
             simpleCompressorOutputStream.write(maze.toByteArray());
             toClient.flush();
-            //closse the connection
+            //close the connection
             fromClient.close();
             toClient.close();
         } catch (Exception e) {

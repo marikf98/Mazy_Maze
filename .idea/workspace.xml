@@ -9,9 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2da5225f-907e-4b23-8e6e-d618612ed3cb" name="Changes" comment="created singleton">
+    <list default="true" id="2da5225f-907e-4b23-8e6e-d618612ed3cb" name="Changes" comment="finished ServerStrategyGenerateMaze">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/ServerStrategyGenerateMaze.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/ServerStrategyGenerateMaze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/ServerStrategySolveSearchProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/ServerStrategySolveSearchProblem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/algorithms/search/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/algorithms/search/Solution.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -401,7 +403,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684571650615</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="finished ServerStrategyGenerateMaze">
+      <created>1684572879411</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1684572879411</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -438,7 +447,8 @@
     <MESSAGE value="created the needed classes" />
     <MESSAGE value="added new constructor" />
     <MESSAGE value="created singleton" />
-    <option name="LAST_COMMIT_MESSAGE" value="created singleton" />
+    <MESSAGE value="finished ServerStrategyGenerateMaze" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished ServerStrategyGenerateMaze" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

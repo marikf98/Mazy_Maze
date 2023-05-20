@@ -1,9 +1,12 @@
 package Server;
 
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Server {
     private int port;
@@ -11,11 +14,14 @@ public class Server {
     private IServerStrategy strategy;
     private boolean stop;
 
+    private ExecutorService executor;
+
+
     public Server(int port, int listeningIntervalMS, IServerStrategy strategy) {
         this.port = port;
         this.listeningIntervalMS = listeningIntervalMS;
         this.strategy = strategy;
-    }
+        this.executor = Executors.newFixedThreadPool(Configurations.getInstance().getThreadPoolSize() );   }
 
     public void start() {
         try {
@@ -28,8 +34,7 @@ public class Server {
                     Socket clientSocket = serverSocket.accept();
                     System.out.println("Client accepted: " + clientSocket.toString());
 
-                    // Handle client connection in a separate thread
-                    Thread clientThread = new Thread(() -> {
+                    executor.execute(() -> {
                         try {
                             strategy.applyStrategy(clientSocket.getInputStream(), clientSocket.getOutputStream());
                             clientSocket.close();
@@ -37,11 +42,12 @@ public class Server {
                             e.printStackTrace();
                         }
                     });
-                    clientThread.start();
                 } catch (SocketTimeoutException e) {
                     System.out.println("Socket timeout");
                 }
             }
+
+            executor.shutdown(); // Shutdown the thread pool gracefully after stopping the server
         } catch (IOException e) {
             e.printStackTrace();
         }

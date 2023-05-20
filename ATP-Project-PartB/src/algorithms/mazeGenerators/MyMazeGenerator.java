@@ -1,11 +1,13 @@
 package algorithms.mazeGenerators;
 
+import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.*;
 /**This is the MyMazeGenerator class the extends the AMazeGenerator
  * generate(int rows, int columns) - generates the maze using prims algorithm
  * copyGrid,allNeighbours are helper function for the generate function **/
-public class MyMazeGenerator extends AMazeGenerator{
+public class MyMazeGenerator extends AMazeGenerator implements Serializable
+{
     private int originalRows;
     private int originalColumns;
     private Maze maze;

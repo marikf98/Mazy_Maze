@@ -1,6 +1,9 @@
 package algorithms.mazeGenerators;
 
-public abstract class AMazeGenerator implements IMazeGenerator{
+import java.io.Serializable;
+
+public abstract class AMazeGenerator implements IMazeGenerator, Serializable
+{
     /**this is an abstract class that implements the IMazeGenerator interface,
      * all the generators extend this class, and implement the generate function**/
     @Override

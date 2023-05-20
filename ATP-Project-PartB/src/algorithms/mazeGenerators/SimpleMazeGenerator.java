@@ -1,8 +1,10 @@
 package algorithms.mazeGenerators;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class SimpleMazeGenerator extends AMazeGenerator{
+public class SimpleMazeGenerator extends AMazeGenerator implements Serializable
+{
     /** this generator creates a simple maze with a random number of passages and a random amount of walls**/
 
     /**the generate function receives the size of the maze and creates a random maze **/

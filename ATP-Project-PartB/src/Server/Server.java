@@ -36,14 +36,17 @@ public class Server {
                     Socket clientSocket = serverSocket.accept();
                     System.out.println("Client accepted: " + clientSocket.toString());
 
-                    executor.execute(() -> {
-                        try {
-                            strategy.applyStrategy(clientSocket.getInputStream(), clientSocket.getOutputStream());
-                            clientSocket.close();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    });
+//                    executor.execute(() -> {
+//                        try {
+//                            strategy.applyStrategy(clientSocket.getInputStream(), clientSocket.getOutputStream());
+//                            clientSocket.close();
+//                        } catch (IOException e) {
+//                            e.printStackTrace();
+//                        }
+//                    });
+                    new Thread(() ->{
+                        handleClient(clientSocket);
+                    }).start();
                 } catch (SocketTimeoutException e) {
                     System.out.println("Socket timeout");
                 }
@@ -57,5 +60,19 @@ public class Server {
 
     public void stop() {
         stop = true;
+    }
+
+    private void handleClient(Socket clientSocket)
+    {
+        try
+        {
+            strategy.applyStrategy(clientSocket.getInputStream(), clientSocket.getOutputStream());
+            clientSocket.close();
+
+        }
+        catch (IOException e)
+        {
+           e.printStackTrace();
+        }
     }
 }

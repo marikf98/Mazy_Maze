@@ -45,8 +45,12 @@ public class ServerStrategyGenerateMaze implements IServerStrategy {
             myCompressorOutputStream.write(maze.toByteArray());
             toClient.flush();
             //close the connection
-            fromClient.close();
+
             toClient.writeObject(outByteArray.toByteArray());
+            toClient.flush(); // Flush the output stream
+
+// Close the connection
+            fromClient.close();
             toClient.close();
         }
         catch (Exception e)

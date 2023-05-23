@@ -23,13 +23,12 @@ public class Configurations {
         }
         return instance;
     }
-
     public int getThreadPoolSize()
     {
         int defult = 3;
         try
         {
-            InputStream inputStream = new FileInputStream("resources/config.properties");
+            InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream("config.properties");
             properties.load(inputStream);
             if(Integer.parseInt(properties.getProperty("threadPoolSize")) <= 0)
             {
@@ -48,7 +47,7 @@ public class Configurations {
         String defult = "MyMazeGenerator";
         try
         {
-            InputStream inputStream = new FileInputStream("resources/config.properties");
+            InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream("config.properties");
             properties.load(inputStream);
             if(!(Objects.equals(properties.getProperty("mazeGeneratingAlgorithm"), "MyMazeGenerator") || Objects.equals(properties.getProperty("mazeGeneratingAlgorithm"), "SimpleMazeGenerator") || Objects.equals(properties.getProperty("mazeGeneratingAlgorithm"), "EmptyMazeGenerator")))
             {
@@ -61,15 +60,14 @@ public class Configurations {
             return defult;
         }
     }
-
     public String getMazeSearchingAlgorithm()
     {
         String defult = "BreadthFirstSearch";
         try
         {
-            InputStream inputStream = new FileInputStream("resources/config.properties");
+            InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream("config.properties");
             properties.load(inputStream);
-            if(!(Objects.equals(properties.getProperty("mazeSearchingAlgorithm"), "BestFirstSearch") || Objects.equals(properties.getProperty("mazeGeneratingAlgorithm"), "BreadthFirstSearch") || Objects.equals(properties.getProperty("mazeGeneratingAlgorithm"), "DepthFirstSearch")))
+            if(!((Objects.equals(properties.getProperty("mazeSearchingAlgorithm"), "BestFirstSearch")) || (Objects.equals(properties.getProperty("mazeSearchingAlgorithm"), "BreadthFirstSearch")) || (Objects.equals(properties.getProperty("mazeSearchingAlgorithm"), "DepthFirstSearch"))))
             {
                 return defult;
 
@@ -79,5 +77,6 @@ public class Configurations {
         catch (IOException e) {
             return defult;
         }
+
     }
 }

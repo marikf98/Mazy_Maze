@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class ServerStrategyGenerateMaze implements IServerStrategy {
 
 
+    /**This function creates a maze based of the configuration file**/
     @Override
     public void applyStrategy(InputStream inFromClient, OutputStream outToClient) {
 

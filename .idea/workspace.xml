@@ -13,10 +13,20 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/resources/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/Client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/Client/IClientStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/Client/IClientStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/IO/MyCompressorOutputStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/IO/MyCompressorOutputStream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/IO/MyDecompressorInputStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/IO/MyDecompressorInputStream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/IO/SimpleCompressorOutputStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/IO/SimpleCompressorOutputStream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/IO/SimpleDecompressorInputStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/IO/SimpleDecompressorInputStream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/Configurations.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/Configurations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/IServerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/IServerStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/ServerStrategyGenerateMaze.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/ServerStrategyGenerateMaze.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/ServerStrategySolveSearchProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/ServerStrategySolveSearchProblem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Client/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Configurations.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Configurations.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/ServerStrategyGenerateMaze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/ServerStrategyGenerateMaze.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/ServerStrategySolveSearchProblem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/ServerStrategySolveSearchProblem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/config.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +181,7 @@
       <workItem from="1684590247195" duration="1091000" />
       <workItem from="1684755416090" duration="1724000" />
       <workItem from="1684757328457" duration="1234000" />
-      <workItem from="1684850432534" duration="7503000" />
+      <workItem from="1684850432534" duration="10677000" />
     </task>
     <task id="LOCAL-00001" summary="dfghj">
       <created>1680107665434</created>
@@ -502,7 +512,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684912121837</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="all the test run now">
+      <created>1684913739212</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1684913739212</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -558,28 +575,33 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/ATP-Project-PartB/src/Server/Configurations.java</url>
-          <line>69</line>
+          <line>84</line>
           <option name="timeStamp" value="301" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/ATP-Project-PartB/src/algorithms/search/DepthFirstSearch.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="303" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/ATP-Project-PartB/src/algorithms/mazeGenerators/EmptyMazeGenerator.java</url>
           <line>19</line>
           <option name="timeStamp" value="305" />
         </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/ATP-Project-PartB/src/algorithms/search/BreadthFirstSearch.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="309" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ATP-Project-PartB/src/algorithms/search/BestFirstSearch.java</url>
           <line>13</line>
           <option name="timeStamp" value="310" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/ATP-Project-PartB/src/algorithms/mazeGenerators/EmptyMazeGenerator.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="313" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/ATP-Project-PartB/src/algorithms/mazeGenerators/MyMazeGenerator.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="314" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/ATP-Project-PartB/src/algorithms/mazeGenerators/SimpleMazeGenerator.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="315" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

@@ -24,6 +24,7 @@ public class Maze implements Serializable {
         }
     }
 
+    /**This constructor gets a byte array in a format that toByteArray() method creates and creates a maze with data from the byte array data**/
     public Maze(byte[] bytes)
     {
         if(bytes == null) {return;}
@@ -130,6 +131,7 @@ public class Maze implements Serializable {
     /**this function returns the goal position of the maze**/
     public Position getGoalPosition() {return  positionMatrix[maze.length - 1][maze[0].length - 1];}
 
+    /**This function converts the maze into a 1D byte array**/
     public byte[] toByteArray()
     {
         byte[] compressedMaze = new byte[maze.length*maze[0].length + 6];

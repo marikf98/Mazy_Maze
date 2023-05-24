@@ -13,8 +13,8 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy {
 
     private final String tempDirectoryPath = System.getProperty("java.io.tmpdir");
     private volatile AtomicInteger solutionCounter = new AtomicInteger(0);
-//    private File mazes = new File(tempDirectoryPath + "/Mazes");
 
+    /**This function creates a search algorithm base on the configuration file and then solves the maze using that searcher**/
     @Override
     public void applyStrategy(InputStream inFromClient, OutputStream outToClient)
     {
@@ -22,8 +22,8 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy {
             ObjectInputStream fromClient = new ObjectInputStream(inFromClient);
             ObjectOutputStream toClient = new ObjectOutputStream(outToClient);
 
-            Maze maze = (Maze) fromClient.readObject();
-            Solution solution = getSolution(maze.toByteArray());
+            Maze maze = (Maze) fromClient.readObject(); // this is the maze that we need to solve
+            Solution solution = getSolution(maze.toByteArray());// here we get what searcher we need to create
             if (solution == null)
             {
                 SearchableMaze searchableMaze = new SearchableMaze(maze);
@@ -43,7 +43,6 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy {
                 }
                 //the solution to the maze
                 solution = searcher.solve(searchableMaze);
-//                ByteArrayOutputStream byteArray = new ByteArrayOutputStream();
                 saveSolution(maze.toByteArray(), solution);
         }
             toClient.writeObject(solution);

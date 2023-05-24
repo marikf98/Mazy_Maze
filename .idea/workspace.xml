@@ -11,9 +11,11 @@
   <component name="ChangeListManager">
     <list default="true" id="2da5225f-907e-4b23-8e6e-d618612ed3cb" name="Changes" comment="all the test run now">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/resources/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/Configurations.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/Configurations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartB/src/Server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Configurations.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Configurations.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Server$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Server$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Server$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Server$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/Server/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP-Project-PartB/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP-Project-PartB/config.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +170,7 @@
       <workItem from="1684590247195" duration="1091000" />
       <workItem from="1684755416090" duration="1724000" />
       <workItem from="1684757328457" duration="1234000" />
-      <workItem from="1684850432534" duration="5823000" />
+      <workItem from="1684850432534" duration="6520000" />
     </task>
     <task id="LOCAL-00001" summary="dfghj">
       <created>1680107665434</created>
@@ -485,7 +487,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684595262013</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="all the test run now">
+      <created>1684862103943</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1684862103943</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

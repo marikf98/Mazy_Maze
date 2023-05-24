@@ -53,7 +53,7 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy {
         }
         catch (Exception e)
         {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
     /**This function saves the solution in a new file
@@ -76,7 +76,7 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy {
         }
         catch (IOException e)
         {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
@@ -105,7 +105,7 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy {
         }
         catch(Exception e)
         {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
         return null;
     }

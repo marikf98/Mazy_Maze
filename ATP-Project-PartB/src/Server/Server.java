@@ -60,7 +60,10 @@ public class Server {
             serverSocket.close();
         }
         catch (Exception ex)
-        {}
+        {
+            System.out.println(ex.getMessage());
+
+        }
 
     }
     private void handClient(Socket ClientSoc)
@@ -71,7 +74,10 @@ public class Server {
             ClientSoc.close();
         }
         catch (Exception ex)
-        {}
+        {
+            System.out.println(ex.getMessage());
+
+        }
 
     }
     public void stop(){stop=true;}

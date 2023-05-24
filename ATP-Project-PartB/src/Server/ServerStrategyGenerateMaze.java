@@ -57,7 +57,7 @@ public class ServerStrategyGenerateMaze implements IServerStrategy {
         }
         catch (Exception e)
         {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 }

@@ -28,8 +28,10 @@ public class Maze implements Serializable {
     public Maze(byte[] bytes)
     {
         if(bytes == null) {return;}
-        int xSize = bytes[bytes.length - 2];
-        int ySize = bytes[bytes.length - 1];
+//        int xSize = bytes[bytes.length - 2];
+//        int ySize = bytes[bytes.length - 1];
+        int xSize = bytes[bytes.length - 10]*127 + bytes[bytes.length - 9];
+        int ySize = (bytes.length-10)/(bytes[bytes.length - 10]*127 + bytes[bytes.length - 9]);
         this.maze = new int[xSize][ySize];
         this.positionMatrix = new Position[xSize][ySize];
         int counter = 0;
@@ -134,19 +136,42 @@ public class Maze implements Serializable {
     /**This function converts the maze into a 1D byte array**/
     public byte[] toByteArray()
     {
-        byte[] compressedMaze = new byte[maze.length*maze[0].length + 6];
+        byte[] compressedMaze = new byte[maze.length*maze[0].length + 10];
         int[] flattedMaze = Stream.of(maze).flatMapToInt(IntStream::of).toArray();
         for(int i = 0; i < flattedMaze.length; i++)
         {
             compressedMaze[i] = (byte) flattedMaze[i];
         }
+        int lenArr = this.maze.length;
+        int startXCoordinate = 0;
+        int startYCoordinate = 0;
+//        int startXCoordinate = positionMatrix[0][0].getRowIndex();
+//        int startYCoordinate = positionMatrix[0][0].getColumnIndex();
+        int endXCoordinate = maze.length - 1;
+        int endYCoordinate = maze[0].length - 1;
 
-        compressedMaze[compressedMaze.length - 6] = 0; /**start x coordinate**/
-        compressedMaze[compressedMaze.length - 5] = 0;/**start y coordinate**/
-        compressedMaze[compressedMaze.length - 4] = (byte) (maze.length - 1);/**end x coordinate**/
-        compressedMaze[compressedMaze.length - 3] = (byte) (maze[0].length - 1);/**end y coordinate**/
-        compressedMaze[compressedMaze.length - 2] = (byte) maze.length; /**Will hold the X size of the maze**/
-        compressedMaze[compressedMaze.length - 1] = (byte) maze[0].length;/**Will hold the Y size of the maze**/
+        compressedMaze[compressedMaze.length - 10] = (byte) (lenArr/127);/**Will hold the X size of the maze**/
+        compressedMaze[compressedMaze.length - 9] = (byte) (lenArr%127);/**Will hold the X size of the maze**/
+
+        compressedMaze[compressedMaze.length - 8] = (byte) (startXCoordinate/127);/**start x coordinate**/
+        compressedMaze[compressedMaze.length - 7] = (byte) (startXCoordinate%127);/**start x coordinate**/
+
+        compressedMaze[compressedMaze.length - 6] = (byte) (startYCoordinate/127);/**start y coordinate**/
+        compressedMaze[compressedMaze.length - 5] = (byte) (startYCoordinate%127);/**start y coordinate**/
+
+        compressedMaze[compressedMaze.length - 4] = (byte) (endXCoordinate/127);/**end x coordinate**/
+        compressedMaze[compressedMaze.length - 3] = (byte) (endXCoordinate%127);/**end x coordinate**/
+
+        compressedMaze[compressedMaze.length - 2] = (byte) (endYCoordinate/127);/**end y coordinate**/
+        compressedMaze[compressedMaze.length - 1] = (byte) (endYCoordinate%127);/**end y coordinate**/
+
+
+//        compressedMaze[compressedMaze.length - 6] = 0; /**start x coordinate**/
+//        compressedMaze[compressedMaze.length - 5] = 0;/**start y coordinate**/
+//        compressedMaze[compressedMaze.length - 4] = (byte) ((maze.length - 1)/127);/**end x coordinate**/
+//        compressedMaze[compressedMaze.length - 3] = (byte) (maze[0].length - 1);/**end y coordinate**/
+//        compressedMaze[compressedMaze.length - 2] = (byte) maze.length; /**Will hold the X size of the maze**/
+//        compressedMaze[compressedMaze.length - 1] = (byte) maze[0].length;/**Will hold the Y size of the maze**/
         return compressedMaze;
     }
 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.Error">
+
+    <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="20.0">
+        <Label text="The maze should be greater than 2 * 2" textAlignment="CENTER" textFill="yellow">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <Button style="-fx-background-color: yellow;" text="Back">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+    </VBox>
+
+</AnchorPane>

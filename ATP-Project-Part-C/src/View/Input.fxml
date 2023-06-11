@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.Input">
+
+    <VBox alignment="CENTER" prefHeight="400.0" prefWidth="693.0" spacing="20.0">
+        <Label style="-fx-font-size: 24px;" text="Enter Maze Dimensions" textFill="yellow" />
+
+        <HBox alignment="CENTER" prefHeight="27.0" prefWidth="693.0" spacing="10.0">
+            <Label prefHeight="27.0" prefWidth="79.0" style="-fx-font-size: 18px;" text="Rows:" textFill="yellow" />
+            <TextField fx:id="rowsInput" promptText="Enter the number of rows" />
+        </HBox>
+
+        <HBox alignment="CENTER" spacing="10.0">
+            <Label style="-fx-font-size: 18px;" text="Columns:" textFill="yellow" />
+            <TextField fx:id="colsInput" promptText="Enter the number of columns" />
+        </HBox>
+
+        <HBox alignment="CENTER" spacing="10.0">
+            <Button style="-fx-background-color: yellow;" text="Generate by Input">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <Button style="-fx-background-color: yellow;" text="Generate Random Maze">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+        </HBox>
+    </VBox>
+
+</AnchorPane>

@@ -1,0 +1,17 @@
+.group-box {
+    -fx-alignment: center;
+    -fx-background-color: #000000; /* Black color */
+    -fx-border-color: #FFFF00; /* Yellow color */
+    -fx-border-width: 2px;
+    -fx-padding: 10px;
+}
+
+.group-box > Label {
+    -fx-font-size: 20px;
+    -fx-text-fill: #FFFF00; /* Yellow color */
+}
+
+.group-box > RadioButton {
+    -fx-font-size: 16px;
+    -fx-text-fill: #FFFF00; /* Yellow color */
+}

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="550.0" prefWidth="800.0" style="-fx-background-color: #000000; -fx-border-color: #FFFF00; -fx-border-width: 2px; -fx-padding: 20px;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.Options">
+
+   <top>
+      <AnchorPane prefHeight="156.0" prefWidth="869.0">
+         <ImageView fitHeight="100.0" fitWidth="133.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../resources/Images/blue ghost.png" />
+            </image>
+         </ImageView>
+         <HBox spacing="20" />
+         <Label layoutX="321.0" layoutY="34.0" prefHeight="35.0" prefWidth="196.0" style="-fx-font-size: 24px; -fx-text-fill: #FFFF00;" text="Set up your game:">
+            <font>
+               <Font name="Baskerville Old Face" size="12.0" />
+            </font></Label>
+         <ImageView fitHeight="100.0" fitWidth="170.0" layoutX="746.0" layoutY="2.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../resources/Images/green ghost.png" />
+            </image>
+         </ImageView>
+
+
+      </AnchorPane>
+   </top>
+
+   <left>
+      <VBox alignment="TOP_CENTER" prefHeight="261.0" prefWidth="375.0" spacing="20.0">
+         <Label prefHeight="47.0" prefWidth="261.0" style="-fx-font-size: 20px; -fx-text-fill: #FFFF00;" text="Choose your maze generator:" />
+         <RadioButton prefHeight="25.0" prefWidth="125.0" style="-fx-font-size: 16px; -fx-text-fill: #FFFF00;" text="Empty maze" textAlignment="CENTER">
+            <toggleGroup>
+               <ToggleGroup fx:id="group1" />
+            </toggleGroup>
+         </RadioButton>
+         <RadioButton prefHeight="25.0" prefWidth="125.0" style="-fx-font-size: 16px; -fx-text-fill: #FFFF00;" text="Simple maze" toggleGroup="$group1" />
+         <RadioButton prefHeight="25.0" prefWidth="125.0" style="-fx-font-size: 16px; -fx-text-fill: #FFFF00;" text="Prim maze" toggleGroup="$group1" />
+      </VBox>
+   </left>
+
+
+   <right>
+      <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="375.0" spacing="20.0">
+         <Label prefHeight="47.0" prefWidth="261.0" style="-fx-font-size: 20px; -fx-text-fill: #FFFF00;" text="Choose your maze solver:" />
+         <RadioButton prefHeight="25.0" prefWidth="125.0" style="-fx-font-size: 16px; -fx-text-fill: #FFFF00;" text="BFS">
+            <toggleGroup>
+               <ToggleGroup fx:id="group2" />
+            </toggleGroup>
+         </RadioButton>
+         <RadioButton prefHeight="25.0" prefWidth="125.0" style="-fx-font-size: 16px; -fx-text-fill: #FFFF00;" text="DFS" toggleGroup="$group2" />
+         <RadioButton prefHeight="25.0" prefWidth="125.0" style="-fx-font-size: 16px; -fx-text-fill: #FFFF00;" text="BestFs" textAlignment="CENTER" toggleGroup="$group2" />
+      </VBox>
+   </right>
+
+   <bottom>
+      <AnchorPane>
+         <ImageView fitHeight="100.0" fitWidth="133.0" layoutY="-16.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../resources/Images/orange ghost.png" />
+            </image>
+         </ImageView>
+         <Button layoutX="342.0" layoutY="14.0" prefHeight="39.0" prefWidth="155.0" style="-fx-font-size: 18px; -fx-text-fill: black; -fx-background-color: #FFFF00" text="Start" />
+         <ImageView fitHeight="100.0" fitWidth="170.0" layoutX="755.0" layoutY="-16.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../resources/Images/red ghost.png" />
+            </image>
+         </ImageView>
+      </AnchorPane>
+
+   </bottom>
+   <center>
+      <ImageView fitHeight="135.0" fitWidth="142.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@../../resources/Images/pac-man-super-mario-bros-pixel-art-minecraft-png-favpng-Rru2767J82KYgUPjz87DpWizH-removebg-preview.png" />
+         </image>
+      </ImageView>
+   </center>
+
+</BorderPane>

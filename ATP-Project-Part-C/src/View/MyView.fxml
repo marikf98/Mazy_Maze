@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MyViewController">
+
+    <top>
+        <MenuBar style="-fx-background-color: yellow;">
+            <menus>
+                <Menu style="-fx-text-fill: black;" text="File">
+                    <items>
+                        <MenuItem style="-fx-text-fill: black;" text="New" />
+                        <MenuItem style="-fx-text-fill: black;" text="Save" />
+                        <MenuItem style="-fx-text-fill: black;" text="Load" />
+                    </items>
+                </Menu>
+                <Menu style="-fx-text-fill: black;" text="Option">
+                    <items>
+                        <MenuItem style="-fx-text-fill: black;" text="Properties" />
+                    </items>
+                </Menu>
+                <Menu style="-fx-text-fill: black;" text="Exit">
+                </Menu>
+                <Menu style="-fx-text-fill: black;" text="Help">
+                </Menu>
+                <Menu style="-fx-text-fill: black;" text="About">
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" prefHeight="998.0" prefWidth="1245.0" spacing="20.0">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+
+            <Label style="-fx-font-size: 24px;" text="Welcome to the maze game" textFill="yellow" />
+            <Button onAction="#onHelloButtonClick" style="-fx-background-color: yellow;" text="Hello!">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+        </VBox>
+    </center>
+
+</BorderPane>

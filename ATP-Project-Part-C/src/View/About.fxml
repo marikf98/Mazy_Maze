@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.shape.Arc?>
+<StackPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.About">
+    <children>
+        <Pane style="-fx-background-color: #000000;">
+            <Arc centerX="50.0" centerY="50.0" radiusX="40.0" radiusY="40.0" length="300.0" startAngle="45.0" fill="yellow" stroke="yellow" strokeWidth="4.0" />
+            <Arc centerX="120.0" centerY="50.0" radiusX="40.0" radiusY="40.0" length="300.0" startAngle="45.0" fill="yellow" stroke="yellow" strokeWidth="4.0" />
+            <Arc centerX="190.0" centerY="50.0" radiusX="40.0" radiusY="40.0" length="300.0" startAngle="45.0" fill="yellow" stroke="yellow" strokeWidth="4.0" />
+            <Arc centerX="260.0" centerY="50.0" radiusX="40.0" radiusY="40.0" length="300.0" startAngle="45.0" fill="yellow" stroke="yellow" strokeWidth="4.0" />
+        </Pane>
+        <VBox alignment="CENTER" spacing="20.0">
+            <Label text="Brought to you by:" textFill="yellow" textAlignment="CENTER">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+            <Label text="Mark Feldman &amp; Omer Laufer studios" textFill="yellow" textAlignment="CENTER">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Label>
+            <Label text="The Prim algorithm was used for generating the maze" textFill="yellow" wrapText="true" textAlignment="CENTER">
+                <font>
+                    <Font size="16.0" />
+                </font>
+            </Label>
+            <Label text="The maze solution is done using: BFS, DFS, and BestFS" textFill="yellow" wrapText="true" textAlignment="CENTER">
+                <font>
+                    <Font size="16.0" />
+                </font>
+            </Label>
+
+            <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="83.0" text="Button" style="-fx-background-color: yellow;">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+        </VBox>
+    </children>
+</StackPane>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import javafx.scene.media.Media?>
+<BorderPane prefHeight="550.0" prefWidth="800.0" style="-fx-background-color: #000000; -fx-border-color: #FFFF00; -fx-border-width: 2px; -fx-padding: 20px;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.Options">
+
+    <fx:define>
+        <!-- Define the media file -->
+        <Media fx:id="media" source="@../../resources/Sounds/choose-your-character.mp3" />
+    </fx:define>
+
+    <top>
+        <VBox alignment="CENTER" prefHeight="104.0" prefWidth="756.0" spacing="10">
+            <Label prefHeight="65.0" prefWidth="386.0" style="-fx-font-size: 36px; -fx-text-fill: #FFFF00;" text="Choose your character:">
+                <font>
+                    <Font name="Baskerville Old Face" size="18.0" />
+                </font>
+            </Label>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" prefHeight="94.0" prefWidth="325.0" spacing="10">
+            <HBox alignment="CENTER" spacing="10">
+                <Button style="-fx-background-color: black;">
+                    <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="140.0">
+                            <image>
+                                <Image url="@../../resources/Images/blue ghost.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button style="-fx-background-color: black;">
+                    <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="140.0">
+                            <image>
+                                <Image url="@../../resources/Images/red ghost.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button style="-fx-background-color: black;">
+                    <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="140.0">
+                            <image>
+                                <Image url="@../../resources/Images/pac-man-super-mario-bros-pixel-art-minecraft-png-favpng-Rru2767J82KYgUPjz87DpWizH-removebg-preview.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button style="-fx-background-color: black;">
+                    <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="140.0">
+                            <image>
+                                <Image url="@../../resources/Images/green ghost.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button style="-fx-background-color: black;">
+                    <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="140.0">
+                            <image>
+                                <Image url="@../../resources/Images/orange ghost.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </HBox>
+        </VBox>
+    </center>
+    <bottom>
+        <Button layoutX="342.0" layoutY="14.0" prefHeight="39.0" prefWidth="155.0" style="-fx-font-size: 18px; -fx-text-fill: black; -fx-background-color: #FFFF00" text="Back" />
+
+    </bottom>
+
+</BorderPane>
